@@ -1,0 +1,54 @@
+# ===== Dependencias =====
+node_modules/
+**/node_modules/
+
+# ===== Compilación Rust / Tauri (¡NO subir, pesa GB!) =====
+target/
+**/target/
+**/gen/schemas
+
+# ===== Build frontend =====
+dist/
+dist-ssr/
+**/dist/
+
+# ===== Logs =====
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== Entornos / secretos =====
+.env
+.env.*
+*.local
+*.local.*
+*.key
+*.pem
+
+# ===== Editores / sistema =====
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.sw?
+
+# ===== Herramientas de IA =====
+.claude/
+.crush/
+.direnv
+
+# ===== Grabaciones / artefactos locales =====
+recording_*
+playwright-report/
+test-results/
+blob-report/
+
+# ===== Binarios de releases (opcional: si quieres subirlos, comenta esta línea) =====
+releases/*.msi
+releases/*.exe
+releases/*.zip
