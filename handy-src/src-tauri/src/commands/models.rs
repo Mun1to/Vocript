@@ -1,4 +1,4 @@
-use crate::managers::model::{ModelInfo, ModelManager};
+use crate::managers::model::{FoundModel, ModelInfo, ModelManager};
 use crate::managers::transcription::{ModelStateEvent, TranscriptionManager};
 use crate::settings::{get_settings, write_settings, ModelUnloadTimeout};
 use std::sync::Arc;
@@ -217,5 +217,36 @@ pub async fn cancel_download(
 ) -> Result<(), String> {
     model_manager
         .cancel_download(&model_id)
+        .map_err(|e| e.to_string())
+}
+
+/// Import an existing model file or directory (e.g. from a previous Handy
+/// install or any folder) into MuVox by hard-linking it — reusing the same
+/// bytes on disk instead of re-downloading. Returns the resulting model id.
+#[tauri::command]
+#[specta::specta]
+pub async fn import_model_from_path(
+    model_manager: State<'_, Arc<ModelManager>>,
+    path: String,
+) -> Result<String, String> {
+    let manager = model_manager.inner().clone();
+    let source = std::path::PathBuf::from(path);
+    tokio::task::spawn_blocking(move || manager.import_model_from_path(&source))
+        .await
+        .map_err(|e| format!("Import task failed: {}", e))?
+        .map_err(|e| e.to_string())
+}
+
+/// Scan common locations on the computer for speech models that already exist,
+/// so the user can reuse them without downloading again.
+#[tauri::command]
+#[specta::specta]
+pub async fn scan_for_external_models(
+    model_manager: State<'_, Arc<ModelManager>>,
+) -> Result<Vec<FoundModel>, String> {
+    let manager = model_manager.inner().clone();
+    tokio::task::spawn_blocking(move || manager.scan_for_external_models())
+        .await
+        .map_err(|e| format!("Scan task failed: {}", e))?
         .map_err(|e| e.to_string())
 }

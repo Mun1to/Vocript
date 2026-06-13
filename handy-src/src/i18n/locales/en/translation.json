@@ -200,6 +200,18 @@
     "models": {
       "title": "Transcription Models",
       "description": "Select a transcription model or download additional models. Different models offer varying levels of accuracy and speed.",
+      "import": {
+        "title": "Reuse existing models",
+        "description": "Already have a model on this computer (e.g. from a previous install)? Reuse it instead of downloading again.",
+        "scan": "Scan computer",
+        "file": "Import file (.bin)",
+        "folder": "Import folder",
+        "use": "Use",
+        "already": "Already added",
+        "imported": "Model imported",
+        "failed": "Could not import the model",
+        "noneFound": "No reusable models found on this computer."
+      },
       "yourModels": "Downloaded Models",
       "availableModels": "Available to Download",
       "downloaded": "Downloaded",

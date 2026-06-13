@@ -1,11 +1,35 @@
-# MuVox
+# VoCript
 
 > Transcriptor de audio a texto personalizado, 100% offline.
 > Fork de [Handy](https://github.com/cjpais/handy) v0.8.3 · Modelo Whisper Turbo.
 
+<p align="center">
+  <a href="https://github.com/Mun1to/Vocript/releases/latest">
+    <img src="https://img.shields.io/github/v/release/Mun1to/Vocript?label=Descargar%20VoCript&style=for-the-badge&color=2563eb" alt="Descargar VoCript" />
+  </a>
+</p>
+
 ---
 
-## ¿Qué es MuVox?
+## ⬇️ Descargar
+
+1. Entra en **[la última versión (Releases)](https://github.com/Mun1to/Vocript/releases/latest)**.
+2. Descarga el instalador `VoCript_x.y.z_x64-setup.exe`.
+3. Ejecútalo y sigue los pasos. ¡Listo!
+
+> Windows puede mostrar un aviso de "editor desconocido" (la app no está firmada
+> con certificado de pago). Pulsa **Más información → Ejecutar de todas formas**.
+
+## 🔄 Actualizaciones
+
+VoCript se actualiza **solo**: al abrirlo comprueba si hay una versión nueva y,
+si la hay, te ofrece instalarla con un clic (no hay que volver a descargar nada
+a mano). Las versiones se publican automáticamente desde GitHub Actions cada vez
+que se sube una etiqueta de versión.
+
+---
+
+## ¿Qué es VoCript?
 
 Aplicación de dictado por voz para Windows. Pulsas un atajo, hablas, y el texto
 se escribe donde tengas el cursor. Todo el reconocimiento ocurre en local (sin
@@ -13,7 +37,7 @@ enviar audio a ningún servidor). Es un fork personalizado de Handy con:
 
 - Identidad propia (nombre, logo y colores azules)
 - Captura de audio desde el primer milisegundo (VAD ajustado)
-- Español como idioma por defecto
+- Español como idioma por defecto, optimizado para acentos y puntuación
 
 ---
 

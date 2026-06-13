@@ -400,6 +400,8 @@ pub fn run(cli_args: CliArgs) {
             commands::models::is_model_loading,
             commands::models::has_any_models_available,
             commands::models::has_any_models_or_downloads,
+            commands::models::import_model_from_path,
+            commands::models::scan_for_external_models,
             commands::audio::update_microphone_mode,
             commands::audio::get_microphone_mode,
             commands::audio::get_windows_microphone_permission_status,
@@ -459,11 +461,11 @@ pub fn run(cli_args: CliArgs) {
                     Target::new(if let Some(data_dir) = portable::data_dir() {
                         TargetKind::Folder {
                             path: data_dir.join("logs"),
-                            file_name: Some("muvox".into()),
+                            file_name: Some("vocript".into()),
                         }
                     } else {
                         TargetKind::LogDir {
-                            file_name: Some("muvox".into()),
+                            file_name: Some("vocript".into()),
                         }
                     })
                     .filter(|metadata| {
@@ -512,7 +514,7 @@ pub fn run(cli_args: CliArgs) {
             // for portable mode (redirects WebView2 cache to portable Data dir)
             let mut win_builder =
                 tauri::WebviewWindowBuilder::new(app, "main", tauri::WebviewUrl::App("/".into()))
-                    .title("MuVox")
+                    .title("VoCript")
                     .inner_size(680.0, 570.0)
                     .min_inner_size(680.0, 570.0)
                     .resizable(true)

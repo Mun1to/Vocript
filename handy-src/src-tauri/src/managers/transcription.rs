@@ -543,11 +543,11 @@ impl TranscriptionManager {
                             let params = WhisperInferenceParams {
                                 language: whisper_language,
                                 translate: settings.translate_to_english,
-                                initial_prompt: if settings.custom_words.is_empty() {
-                                    None
-                                } else {
-                                    Some(settings.custom_words.join(", "))
-                                },
+                                initial_prompt: build_whisper_initial_prompt(
+                                    &validated_language,
+                                    &settings.custom_words,
+                                    settings.translate_to_english,
+                                ),
                                 ..Default::default()
                             };
 
@@ -730,6 +730,41 @@ impl TranscriptionManager {
         self.maybe_unload_immediately("transcription");
 
         Ok(final_result)
+    }
+}
+
+/// Build the Whisper `initial_prompt`.
+///
+/// Whisper uses the initial prompt as fake "previous context", which strongly
+/// biases the style of the output. For Spanish we seed it with a natural,
+/// fully-accented and punctuated sentence so the model produces proper tildes
+/// (á é í ó ú ñ ü) and opening punctuation (¿ ¡) with correct capitalization,
+/// instead of stripping accents — by far the biggest quality win for Spanish.
+///
+/// Any user-defined custom words are appended so they are still biased for.
+/// The Spanish seed is skipped when translating to English (where it would
+/// only confuse the decoder).
+fn build_whisper_initial_prompt(
+    language: &str,
+    custom_words: &[String],
+    translate_to_english: bool,
+) -> Option<String> {
+    const SPANISH_SEED: &str = "Hola, ¿cómo estás? Esta es una transcripción en español con acentos, mayúsculas y signos de puntuación correctos. El niño y el pingüino comieron piña después del fútbol. ¡Qué día tan bonito!";
+
+    let mut parts: Vec<String> = Vec::new();
+
+    if !translate_to_english && (language == "es" || language.starts_with("es")) {
+        parts.push(SPANISH_SEED.to_string());
+    }
+
+    if !custom_words.is_empty() {
+        parts.push(custom_words.join(", "));
+    }
+
+    if parts.is_empty() {
+        None
+    } else {
+        Some(parts.join(" "))
     }
 }
 

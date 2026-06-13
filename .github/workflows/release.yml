@@ -1,0 +1,76 @@
+name: Release VoCript
+
+# Se dispara al subir una etiqueta de versión (p. ej. `git tag v0.8.4 && git push --tags`)
+# o manualmente desde la pestaña Actions de GitHub.
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    permissions:
+      contents: write # necesario para crear la Release y subir el instalador
+    runs-on: windows-latest
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Instalar Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Instalar Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache de Rust
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: "handy-src/src-tauri -> target"
+
+      - name: Instalar LLVM (libclang para bindgen)
+        uses: KyleMayes/install-llvm-action@v2
+        with:
+          version: "18.1"
+
+      - name: Instalar Vulkan SDK
+        uses: jakoch/install-vulkan-sdk-action@v1
+        with:
+          vulkan_version: 1.4.350.0
+          install_runtime: true
+          cache: true
+
+      - name: Instalar Ninja
+        uses: seanmiddleditch/gha-setup-ninja@v6
+
+      - name: Instalar dependencias del frontend
+        working-directory: handy-src
+        run: bun install
+
+      - name: Descargar modelo Silero VAD (recurso requerido)
+        working-directory: handy-src
+        shell: bash
+        run: |
+          mkdir -p src-tauri/resources/models
+          curl -L -o src-tauri/resources/models/silero_vad_v4.onnx https://blob.handy.computer/silero_vad_v4.onnx
+
+      - name: Compilar, firmar y publicar la Release
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LIBCLANG_PATH: ${{ env.LLVM_PATH }}\bin
+          CMAKE_GENERATOR: Ninja
+          # Clave de firma del auto-updater (añádela en Settings → Secrets).
+          # La clave no tiene contraseña, así que el password va vacío (no hace
+          # falta crear el secret TAURI_SIGNING_PRIVATE_KEY_PASSWORD).
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ""
+        with:
+          projectPath: handy-src
+          tagName: ${{ github.ref_name }}
+          releaseName: "VoCript ${{ github.ref_name }}"
+          releaseBody: "Descarga el instalador (`.exe`) más abajo. Si ya tienes VoCript instalado, se actualizará solo."
+          releaseDraft: false
+          prerelease: false
+          includeUpdaterJson: true

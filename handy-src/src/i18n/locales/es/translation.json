@@ -158,6 +158,18 @@
     "models": {
       "title": "Modelos de Transcripción",
       "description": "Selecciona un modelo de transcripción o descarga modelos adicionales. Diferentes modelos ofrecen distintos niveles de precisión y velocidad.",
+      "import": {
+        "title": "Reutilizar modelos existentes",
+        "description": "¿Ya tienes un modelo en este ordenador (por ejemplo, de una instalación anterior)? Reutilízalo en vez de descargarlo otra vez.",
+        "scan": "Buscar en el equipo",
+        "file": "Importar archivo (.bin)",
+        "folder": "Importar carpeta",
+        "use": "Usar",
+        "already": "Ya añadido",
+        "imported": "Modelo importado",
+        "failed": "No se pudo importar el modelo",
+        "noneFound": "No se encontraron modelos reutilizables en este equipo."
+      },
       "downloaded": "Descargados",
       "available": "Disponibles para Descargar",
       "deleteConfirm": "¿Estás seguro de que deseas eliminar {{modelName}}? Necesitarás descargarlo de nuevo para usarlo.",

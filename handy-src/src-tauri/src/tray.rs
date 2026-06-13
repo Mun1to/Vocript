@@ -87,9 +87,9 @@ pub fn tray_tooltip() -> String {
 
 fn version_label() -> String {
     if cfg!(debug_assertions) {
-        format!("MuVox v{} (Dev)", env!("CARGO_PKG_VERSION"))
+        format!("VoCript v{} (Dev)", env!("CARGO_PKG_VERSION"))
     } else {
-        format!("MuVox v{}", env!("CARGO_PKG_VERSION"))
+        format!("VoCript v{}", env!("CARGO_PKG_VERSION"))
     }
 }
 

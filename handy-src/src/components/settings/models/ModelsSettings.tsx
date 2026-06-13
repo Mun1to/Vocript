@@ -1,12 +1,21 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { ask } from "@tauri-apps/plugin-dialog";
-import { ChevronDown, Globe } from "lucide-react";
+import { ask, open } from "@tauri-apps/plugin-dialog";
+import {
+  ChevronDown,
+  Globe,
+  Search,
+  FileUp,
+  FolderSearch,
+  Download,
+  Check,
+} from "lucide-react";
+import { toast } from "sonner";
 import type { ModelCardStatus } from "@/components/onboarding";
 import { ModelCard } from "@/components/onboarding";
 import { useModelStore } from "@/stores/modelStore";
 import { LANGUAGES } from "@/lib/constants/languages.ts";
-import type { ModelInfo } from "@/bindings";
+import type { ModelInfo, FoundModel } from "@/bindings";
 
 // check if model supports a language based on its supported_languages list
 const modelSupportsLanguage = (model: ModelInfo, langCode: string): boolean => {
@@ -21,6 +30,10 @@ export const ModelsSettings: React.FC = () => {
   const [languageSearch, setLanguageSearch] = useState("");
   const languageDropdownRef = useRef<HTMLDivElement>(null);
   const languageSearchInputRef = useRef<HTMLInputElement>(null);
+  // Import / reuse existing models
+  const [scanning, setScanning] = useState(false);
+  const [scanResults, setScanResults] = useState<FoundModel[] | null>(null);
+  const [importingPath, setImportingPath] = useState<string | null>(null);
   const {
     models,
     currentModel,
@@ -34,6 +47,8 @@ export const ModelsSettings: React.FC = () => {
     cancelDownload,
     selectModel,
     deleteModel,
+    importModel,
+    scanForModels,
   } = useModelStore();
 
   // click outside handler for language dropdown
@@ -153,6 +168,57 @@ export const ModelsSettings: React.FC = () => {
     }
   };
 
+  const doImport = async (path: string) => {
+    setImportingPath(path);
+    try {
+      const id = await importModel(path);
+      if (id) {
+        toast.success(t("settings.models.import.imported"));
+        setScanResults((prev) =>
+          prev ? prev.filter((f) => f.path !== path) : prev,
+        );
+      } else {
+        toast.error(t("settings.models.import.failed"));
+      }
+    } finally {
+      setImportingPath(null);
+    }
+  };
+
+  const handleScan = async () => {
+    setScanning(true);
+    try {
+      const found = await scanForModels();
+      setScanResults(found);
+      if (found.length === 0) {
+        toast.info(t("settings.models.import.noneFound"));
+      }
+    } finally {
+      setScanning(false);
+    }
+  };
+
+  const handleImportFile = async () => {
+    const selected = await open({
+      multiple: false,
+      directory: false,
+      filters: [{ name: "Whisper model", extensions: ["bin"] }],
+    });
+    if (typeof selected === "string") {
+      await doImport(selected);
+    }
+  };
+
+  const handleImportFolder = async () => {
+    const selected = await open({ multiple: false, directory: true });
+    if (typeof selected === "string") {
+      await doImport(selected);
+    }
+  };
+
+  const formatSize = (sizeMb: number): string =>
+    sizeMb >= 1024 ? `${(sizeMb / 1024).toFixed(1)} GB` : `${sizeMb} MB`;
+
   // Filter models based on language filter
   const filteredModels = useMemo(() => {
     return models.filter((model: ModelInfo) => {
@@ -215,6 +281,100 @@ export const ModelsSettings: React.FC = () => {
           {t("settings.models.description")}
         </p>
       </div>
+
+      {/* Reuse existing models: scan the computer or import manually */}
+      <div className="rounded-lg border border-mid-gray/30 p-4 space-y-3">
+        <div>
+          <h2 className="text-sm font-medium">
+            {t("settings.models.import.title")}
+          </h2>
+          <p className="text-xs text-text/60 mt-0.5">
+            {t("settings.models.import.description")}
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={handleScan}
+            disabled={scanning}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-logo-primary/20 text-logo-primary hover:bg-logo-primary/30 transition-colors disabled:opacity-50"
+          >
+            {scanning ? (
+              <span className="w-3.5 h-3.5 border-2 border-current border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <Search className="w-3.5 h-3.5" />
+            )}
+            {t("settings.models.import.scan")}
+          </button>
+          <button
+            type="button"
+            onClick={handleImportFile}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-mid-gray/10 text-text/70 hover:bg-mid-gray/20 transition-colors"
+          >
+            <FileUp className="w-3.5 h-3.5" />
+            {t("settings.models.import.file")}
+          </button>
+          <button
+            type="button"
+            onClick={handleImportFolder}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-mid-gray/10 text-text/70 hover:bg-mid-gray/20 transition-colors"
+          >
+            <FolderSearch className="w-3.5 h-3.5" />
+            {t("settings.models.import.folder")}
+          </button>
+        </div>
+
+        {scanResults && scanResults.length > 0 && (
+          <div className="space-y-2 pt-1">
+            {scanResults.map((f) => (
+              <div
+                key={f.path}
+                className="flex items-center gap-3 rounded-md bg-mid-gray/5 px-3 py-2"
+              >
+                <div className="min-w-0 flex-1">
+                  <div className="text-sm font-medium truncate">{f.name}</div>
+                  <div
+                    className="text-xs text-text/50 truncate"
+                    title={f.path}
+                  >
+                    {f.path}
+                  </div>
+                </div>
+                <span className="text-xs text-text/50 shrink-0">
+                  {formatSize(f.size_mb)}
+                </span>
+                {f.already_imported ? (
+                  <span className="flex items-center gap-1 text-xs text-green-600 shrink-0">
+                    <Check className="w-3.5 h-3.5" />
+                    {t("settings.models.import.already")}
+                  </span>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => doImport(f.path)}
+                    disabled={importingPath === f.path}
+                    className="flex items-center gap-1 px-2.5 py-1 text-xs font-medium rounded-md bg-logo-primary/20 text-logo-primary hover:bg-logo-primary/30 transition-colors disabled:opacity-50 shrink-0"
+                  >
+                    {importingPath === f.path ? (
+                      <span className="w-3 h-3 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                    ) : (
+                      <Download className="w-3.5 h-3.5" />
+                    )}
+                    {t("settings.models.import.use")}
+                  </button>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {scanResults && scanResults.length === 0 && (
+          <p className="text-xs text-text/50">
+            {t("settings.models.import.noneFound")}
+          </p>
+        )}
+      </div>
+
       {filteredModels.length > 0 ? (
         <div className="space-y-6">
           {/* Downloaded Models Section — header always visible so filter stays accessible */}

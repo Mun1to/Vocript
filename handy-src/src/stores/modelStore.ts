@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 import { produce } from "immer";
 import { listen } from "@tauri-apps/api/event";
-import { commands, type ModelInfo } from "@/bindings";
+import { commands, type ModelInfo, type FoundModel } from "@/bindings";
 import { toast } from "sonner";
 
 interface DownloadProgress {
@@ -41,6 +41,8 @@ interface ModelsStore {
   checkFirstRun: () => Promise<boolean>;
   selectModel: (modelId: string) => Promise<boolean>;
   downloadModel: (modelId: string) => Promise<boolean>;
+  importModel: (path: string) => Promise<string | null>;
+  scanForModels: () => Promise<FoundModel[]>;
   cancelDownload: (modelId: string) => Promise<boolean>;
   deleteModel: (modelId: string) => Promise<boolean>;
   getModelInfo: (modelId: string) => ModelInfo | undefined;
@@ -203,6 +205,40 @@ export const useModelStore = create<ModelsStore>()(
           }),
         );
         return false;
+      }
+    },
+
+    importModel: async (path: string) => {
+      try {
+        set({ error: null });
+        const result = await commands.importModelFromPath(path);
+        if (result.status === "ok") {
+          // Refresh model list + current selection so the imported model shows up.
+          await get().loadModels();
+          await get().loadCurrentModel();
+          set({ hasAnyModels: true, isFirstRun: false });
+          return result.data;
+        }
+        set({ error: `Failed to import model: ${result.error}` });
+        return null;
+      } catch (err) {
+        set({ error: `Failed to import model: ${err}` });
+        return null;
+      }
+    },
+
+    scanForModels: async () => {
+      try {
+        set({ error: null });
+        const result = await commands.scanForExternalModels();
+        if (result.status === "ok") {
+          return result.data;
+        }
+        set({ error: `Failed to scan for models: ${result.error}` });
+        return [];
+      } catch (err) {
+        set({ error: `Failed to scan for models: ${err}` });
+        return [];
       }
     },
 

@@ -60,6 +60,24 @@ pub struct DownloadProgress {
     pub percentage: f64,
 }
 
+/// A speech model found elsewhere on the computer that can be reused by MuVox
+/// without re-downloading. Returned by `scan_for_external_models`.
+#[derive(Debug, Clone, Serialize, Deserialize, Type)]
+pub struct FoundModel {
+    /// Absolute path to the existing model file or directory.
+    pub path: String,
+    /// Id of the predefined model this file corresponds to, if recognized.
+    pub suggested_id: Option<String>,
+    /// Human-readable name for display.
+    pub name: String,
+    /// Approximate size in MB.
+    pub size_mb: u64,
+    /// Whether the model is a directory (e.g. Parakeet) vs a single .bin file.
+    pub is_directory: bool,
+    /// True if this path is already inside MuVox's own models directory.
+    pub already_imported: bool,
+}
+
 /// RAII guard that cleans up download state (`is_downloading` flag and cancel flag)
 /// when dropped, unless explicitly disarmed. This ensures consistent cleanup on
 /// every error path without requiring manual cleanup at each `?` or `return Err`.
@@ -1469,6 +1487,315 @@ impl ModelManager {
 
         info!("Download cancellation initiated for: {}", model_id);
         Ok(())
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+    // Import & auto-discovery of models already present on the computer.
+    // Lets MuVox reuse models from a previous install (e.g. Handy) or any
+    // folder, instead of re-downloading. Files are hard-linked into the models
+    // directory when possible (same bytes on disk, no duplication), falling
+    // back to a copy across volumes.
+    // ──────────────────────────────────────────────────────────────────────
+
+    /// Look up a predefined (non-custom) model by its on-disk filename/dirname.
+    fn predefined_by_filename(&self, fname: &str) -> Option<ModelInfo> {
+        let models = self.available_models.lock().unwrap();
+        models
+            .values()
+            .find(|m| m.filename == fname && !m.is_custom)
+            .cloned()
+    }
+
+    /// Re-run custom `.bin` discovery so a freshly imported custom model appears.
+    fn rescan_custom_models(&self) -> Result<()> {
+        let mut models = self.available_models.lock().unwrap();
+        Self::discover_custom_whisper_models(&self.models_dir, &mut models)
+    }
+
+    /// Hard-link `src` to `dst`, falling back to a full copy if the link fails
+    /// (e.g. the source is on a different volume).
+    fn link_or_copy_file(src: &Path, dst: &Path) -> Result<()> {
+        if let Some(parent) = dst.parent() {
+            fs::create_dir_all(parent)?;
+        }
+        if fs::hard_link(src, dst).is_err() {
+            fs::copy(src, dst)?;
+        }
+        Ok(())
+    }
+
+    /// Recursively hard-link (or copy) a directory tree from `src` to `dst`.
+    fn link_or_copy_dir_tree(src: &Path, dst: &Path) -> Result<()> {
+        fs::create_dir_all(dst)?;
+        for entry in fs::read_dir(src)? {
+            let entry = entry?;
+            let path = entry.path();
+            let target = dst.join(entry.file_name());
+            if path.is_dir() {
+                Self::link_or_copy_dir_tree(&path, &target)?;
+            } else {
+                Self::link_or_copy_file(&path, &target)?;
+            }
+        }
+        Ok(())
+    }
+
+    /// Import an existing model file (`.bin`) or directory into MuVox.
+    /// Returns the id of the model that became available.
+    pub fn import_model_from_path(&self, source: &Path) -> Result<String> {
+        if !source.exists() {
+            return Err(anyhow::anyhow!("Path does not exist: {}", source.display()));
+        }
+
+        let file_name = source
+            .file_name()
+            .and_then(|s| s.to_str())
+            .ok_or_else(|| anyhow::anyhow!("Invalid path"))?
+            .to_string();
+
+        if source.is_dir() {
+            // Directory-based model (Parakeet/Moonshine/…): identify by folder name.
+            let model = self.predefined_by_filename(&file_name).ok_or_else(|| {
+                anyhow::anyhow!(
+                    "Unrecognized model folder '{}'. Expected a known model directory (e.g. parakeet-tdt-0.6b-v3-int8).",
+                    file_name
+                )
+            })?;
+            let target = self.models_dir.join(&model.filename);
+            if source != target && !target.exists() {
+                Self::link_or_copy_dir_tree(source, &target).map_err(|e| {
+                    let _ = fs::remove_dir_all(&target);
+                    anyhow::anyhow!("Failed to import model directory: {}", e)
+                })?;
+            }
+            self.update_download_status()?;
+            info!(
+                "Imported directory model '{}' from {}",
+                model.id,
+                source.display()
+            );
+            Ok(model.id)
+        } else {
+            // File-based model: only Whisper `.bin` files are supported.
+            if !file_name.ends_with(".bin") {
+                return Err(anyhow::anyhow!(
+                    "Only .bin model files are supported (got '{}').",
+                    file_name
+                ));
+            }
+            let predefined = self.predefined_by_filename(&file_name);
+            let target = self.models_dir.join(&file_name);
+            if source != target && !target.exists() {
+                Self::link_or_copy_file(source, &target)?;
+            }
+            self.update_download_status()?;
+            let id = if let Some(m) = predefined {
+                m.id
+            } else {
+                // Custom model: re-run discovery; its id is the filename sans ".bin".
+                self.rescan_custom_models()?;
+                file_name.trim_end_matches(".bin").to_string()
+            };
+            info!("Imported file model '{}' from {}", id, source.display());
+            Ok(id)
+        }
+    }
+
+    /// Compute total size of a directory tree in bytes (best effort).
+    fn dir_size_bytes(path: &Path) -> u64 {
+        let mut total = 0u64;
+        if let Ok(entries) = fs::read_dir(path) {
+            for entry in entries.flatten() {
+                let p = entry.path();
+                if p.is_dir() {
+                    total += Self::dir_size_bytes(&p);
+                } else if let Ok(meta) = p.metadata() {
+                    total += meta.len();
+                }
+            }
+        }
+        total
+    }
+
+    /// Evaluate one filesystem entry against the set of known models and push a
+    /// `FoundModel` if it matches a known model or looks like a custom `.bin`.
+    fn consider_entry(
+        path: &Path,
+        known: &HashMap<String, (String, String, bool)>,
+        own_models_dir: &Path,
+        out: &mut Vec<FoundModel>,
+        seen: &mut HashSet<String>,
+    ) {
+        let fname = match path.file_name().and_then(|s| s.to_str()) {
+            Some(s) => s.to_string(),
+            None => return,
+        };
+        let is_dir = path.is_dir();
+        let key = path.to_string_lossy().to_string();
+
+        if let Some((id, name, expect_dir)) = known.get(&fname) {
+            if *expect_dir == is_dir && seen.insert(key.clone()) {
+                let size = if is_dir {
+                    Self::dir_size_bytes(path)
+                } else {
+                    path.metadata().map(|m| m.len()).unwrap_or(0)
+                };
+                out.push(FoundModel {
+                    path: key,
+                    suggested_id: Some(id.clone()),
+                    name: name.clone(),
+                    size_mb: size / (1024 * 1024),
+                    is_directory: is_dir,
+                    already_imported: path.starts_with(own_models_dir),
+                });
+            }
+            return;
+        }
+
+        // Unknown but large `.bin` → candidate custom Whisper model.
+        if !is_dir && fname.ends_with(".bin") {
+            if let Ok(meta) = path.metadata() {
+                if meta.len() > 100 * 1024 * 1024 && seen.insert(key.clone()) {
+                    let name = fname.trim_end_matches(".bin").replace(['-', '_'], " ");
+                    out.push(FoundModel {
+                        path: key,
+                        suggested_id: None,
+                        name,
+                        size_mb: meta.len() / (1024 * 1024),
+                        is_directory: false,
+                        already_imported: path.starts_with(own_models_dir),
+                    });
+                }
+            }
+        }
+    }
+
+    /// Match the immediate children of a `models` folder.
+    fn scan_models_dir(
+        dir: &Path,
+        known: &HashMap<String, (String, String, bool)>,
+        own_models_dir: &Path,
+        out: &mut Vec<FoundModel>,
+        seen: &mut HashSet<String>,
+    ) {
+        if let Ok(entries) = fs::read_dir(dir) {
+            for entry in entries.flatten() {
+                Self::consider_entry(&entry.path(), known, own_models_dir, out, seen);
+            }
+        }
+    }
+
+    /// Shallow recursive scan of a loose folder (Downloads, Documents, …).
+    fn scan_loose_dir(
+        dir: &Path,
+        depth: usize,
+        max_depth: usize,
+        known: &HashMap<String, (String, String, bool)>,
+        own_models_dir: &Path,
+        out: &mut Vec<FoundModel>,
+        seen: &mut HashSet<String>,
+    ) {
+        let entries = match fs::read_dir(dir) {
+            Ok(e) => e,
+            Err(_) => return,
+        };
+        for entry in entries.flatten() {
+            let path = entry.path();
+            Self::consider_entry(&path, known, own_models_dir, out, seen);
+            if path.is_dir() && depth < max_depth {
+                // Don't recurse into a directory that itself matched a known model.
+                let fname = path
+                    .file_name()
+                    .and_then(|s| s.to_str())
+                    .unwrap_or_default()
+                    .to_string();
+                let matched_dir = known.get(&fname).map(|(_, _, d)| *d).unwrap_or(false);
+                if !matched_dir {
+                    Self::scan_loose_dir(
+                        &path,
+                        depth + 1,
+                        max_depth,
+                        known,
+                        own_models_dir,
+                        out,
+                        seen,
+                    );
+                }
+            }
+        }
+    }
+
+    /// Scan common locations for speech models that already exist on the
+    /// computer (e.g. from a previous Handy install or a downloads folder), so
+    /// the user can reuse them instead of downloading again.
+    pub fn scan_for_external_models(&self) -> Result<Vec<FoundModel>> {
+        // filename/dirname -> (id, display name, is_directory)
+        let known: HashMap<String, (String, String, bool)> = {
+            let models = self.available_models.lock().unwrap();
+            models
+                .values()
+                .filter(|m| !m.is_custom)
+                .map(|m| {
+                    (
+                        m.filename.clone(),
+                        (m.id.clone(), m.name.clone(), m.is_directory),
+                    )
+                })
+                .collect()
+        };
+
+        let mut out: Vec<FoundModel> = Vec::new();
+        let mut seen: HashSet<String> = HashSet::new();
+
+        // 1) App-data roots: look inside every "<app>/models" folder.
+        for var in ["APPDATA", "LOCALAPPDATA"] {
+            if let Ok(root) = std::env::var(var) {
+                if let Ok(children) = fs::read_dir(PathBuf::from(root)) {
+                    for child in children.flatten() {
+                        let models_dir = child.path().join("models");
+                        if models_dir.is_dir() {
+                            Self::scan_models_dir(
+                                &models_dir,
+                                &known,
+                                &self.models_dir,
+                                &mut out,
+                                &mut seen,
+                            );
+                        }
+                    }
+                }
+            }
+        }
+
+        // 2) Loose user folders (shallow).
+        if let Ok(profile) = std::env::var("USERPROFILE") {
+            let profile = PathBuf::from(profile);
+            for sub in ["Downloads", "Documents", "Desktop"] {
+                let dir = profile.join(sub);
+                if dir.is_dir() {
+                    Self::scan_loose_dir(
+                        &dir,
+                        0,
+                        2,
+                        &known,
+                        &self.models_dir,
+                        &mut out,
+                        &mut seen,
+                    );
+                }
+            }
+        }
+
+        // Recognized models first, then largest first.
+        out.sort_by(|a, b| {
+            b.suggested_id
+                .is_some()
+                .cmp(&a.suggested_id.is_some())
+                .then(b.size_mb.cmp(&a.size_mb))
+        });
+
+        info!("Scan for external models found {} candidate(s)", out.len());
+        Ok(out)
     }
 }
 
