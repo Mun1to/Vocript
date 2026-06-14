@@ -65,7 +65,7 @@
   },
   "plugins": {
     "updater": {
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEZGRkY3RjdGNzU2OEQxOTkKUldTWjBXaDFmMy8vLzlVUktuUlAzUlZGR04zeWJYNk50QnJXbE1oUE1lOFB0NmhQcG1yeHZjQUgK",
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDlGNzczOUU0REVFODVGRDEKUldUUlgramU1RGwzbnh5UFFwSk5WRjRyVXRRU1d0TlYvTVdneDVBOUljWlRZV0pHOWhkRGRSZU4K",
       "endpoints": [
         "https://github.com/Mun1to/Vocript/releases/latest/download/latest.json"
       ]

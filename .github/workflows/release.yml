@@ -67,11 +67,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LIBCLANG_PATH: ${{ env.LLVM_PATH }}\bin
           CMAKE_GENERATOR: Ninja
-          # Clave de firma del auto-updater (añádela en Settings → Secrets).
-          # La clave no tiene contraseña, así que el password va vacío (no hace
-          # falta crear el secret TAURI_SIGNING_PRIVATE_KEY_PASSWORD).
+          # Claves de firma del auto-updater (se configuran como secrets del repo).
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
-          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ""
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
           projectPath: handy-src
           tagName: ${{ github.ref_name }}
