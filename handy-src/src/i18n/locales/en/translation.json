@@ -19,6 +19,7 @@
   },
   "onboarding": {
     "subtitle": "To get started, choose a transcription model",
+    "chooseLanguage": "What language will you dictate in?",
     "recommended": "Recommended",
     "download": "Download",
     "downloading": "Downloading...",

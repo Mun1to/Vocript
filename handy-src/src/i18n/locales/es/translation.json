@@ -19,6 +19,7 @@
   },
   "onboarding": {
     "subtitle": "Para comenzar, elige un modelo de transcripción",
+    "chooseLanguage": "¿En qué idioma vas a dictar?",
     "recommended": "Recomendado",
     "download": "Descargar",
     "downloading": "Descargando...",
