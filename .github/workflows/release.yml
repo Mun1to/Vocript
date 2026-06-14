@@ -67,6 +67,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LIBCLANG_PATH: ${{ env.LLVM_PATH }}\bin
           CMAKE_GENERATOR: Ninja
+          # Forzar MSVC (cl.exe) como compilador de C/C++ para whisper.cpp.
+          # LLVM/clang solo se usa para libclang (bindgen). Sin esto, CMake elige
+          # clang para compilar whisper y choca con la STL de MSVC (error STL1000:
+          # "expected Clang 20 or newer").
+          CC: cl
+          CXX: cl
           # Claves de firma del auto-updater (se configuran como secrets del repo).
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
