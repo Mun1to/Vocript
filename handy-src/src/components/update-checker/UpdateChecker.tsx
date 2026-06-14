@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
 import { check } from "@tauri-apps/plugin-updater";
 import { relaunch } from "@tauri-apps/plugin-process";
 import { listen } from "@tauri-apps/api/event";
@@ -72,6 +73,24 @@ const UpdateChecker: React.FC<UpdateCheckerProps> = ({ className = "" }) => {
       if (update) {
         setUpdateAvailable(true);
         setShowUpToDate(false);
+
+        if (!isManualCheckRef.current) {
+          toast.info(
+            t("footer.updateAvailable", { version: update.version }),
+            {
+              description: update.body || undefined,
+              duration: 15000,
+              action: {
+                label: t("footer.updateNow"),
+                onClick: () => installUpdate(),
+              },
+              cancel: {
+                label: t("footer.later"),
+                onClick: () => {},
+              },
+            },
+          );
+        }
       } else {
         setUpdateAvailable(false);
 
