@@ -80,6 +80,19 @@ jobs:
           # anidadas que superan el límite de 260 caracteres de Windows y rompen
           # cl.exe (C1083). Un target corto las mantiene dentro del límite.
           CARGO_TARGET_DIR: C:\t
+          # CRÍTICO para portabilidad: sin esto, ggml/whisper.cpp se compila con
+          # -march=native usando las instrucciones del runner de GitHub (Xeon con
+          # AVX-512). Las CPUs de consumo modernas (Intel Core Ultra, etc.) NO
+          # tienen AVX-512 → la app crashea con "instrucción ilegal" (0xc000001d)
+          # al transcribir. GGML_NATIVE=OFF + baseline AVX2 = binario portable que
+          # funciona en cualquier CPU x86-64 desde 2013. whisper-rs-sys reenvía
+          # estas variables GGML_* directamente a CMake.
+          GGML_NATIVE: "OFF"
+          GGML_AVX: "ON"
+          GGML_AVX2: "ON"
+          GGML_FMA: "ON"
+          GGML_F16C: "ON"
+          GGML_AVX512: "OFF"
           # Claves de firma del auto-updater (se configuran como secrets del repo).
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
