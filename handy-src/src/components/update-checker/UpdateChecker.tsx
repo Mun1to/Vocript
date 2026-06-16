@@ -78,15 +78,11 @@ const UpdateChecker: React.FC<UpdateCheckerProps> = ({ className = "" }) => {
           toast.info(
             t("footer.updateAvailable", { version: update.version }),
             {
-              description: update.body || undefined,
+              description: t("footer.updateAvailableDescription"),
               duration: 15000,
               action: {
                 label: t("footer.updateNow"),
                 onClick: () => installUpdate(),
-              },
-              cancel: {
-                label: t("footer.later"),
-                onClick: () => {},
               },
             },
           );
