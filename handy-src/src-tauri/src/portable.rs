@@ -27,7 +27,7 @@ pub fn init() {
             // empty/invalid marker alongside an existing Data/ dir, this is a
             // real portable install — upgrade the marker in place.
             eprintln!("[portable] upgrading legacy empty marker to magic string");
-            let _ = std::fs::write(&marker_path, "MuVox Portable Mode");
+            let _ = std::fs::write(&marker_path, "VoCript Portable Mode");
             true
         } else {
             false
@@ -95,7 +95,7 @@ pub fn store_path(relative: &str) -> PathBuf {
 /// Extracted for testability.
 fn is_valid_portable_marker(path: &std::path::Path) -> bool {
     std::fs::read_to_string(path)
-        .map(|s| s.trim().starts_with("MuVox Portable Mode"))
+        .map(|s| s.trim().starts_with("VoCript Portable Mode"))
         .unwrap_or(false)
 }
 
@@ -110,7 +110,7 @@ mod tests {
         std::fs::create_dir_all(&dir).unwrap();
         let marker = dir.join("portable");
         let mut f = std::fs::File::create(&marker).unwrap();
-        write!(f, "MuVox Portable Mode").unwrap();
+        write!(f, "VoCript Portable Mode").unwrap();
         assert!(is_valid_portable_marker(&marker));
         std::fs::remove_dir_all(dir).unwrap();
     }
@@ -159,7 +159,7 @@ mod tests {
         std::fs::create_dir_all(&dir).unwrap();
         let marker = dir.join("portable");
         let mut f = std::fs::File::create(&marker).unwrap();
-        write!(f, "  MuVox Portable Mode\n").unwrap();
+        write!(f, "  VoCript Portable Mode\n").unwrap();
         assert!(is_valid_portable_marker(&marker));
         std::fs::remove_dir_all(dir).unwrap();
     }

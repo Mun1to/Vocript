@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "VoCript",
-  "version": "2.2.4",
-  "identifier": "com.muvox.app",
+  "version": "2.2.5",
+  "identifier": "com.vocript.app",
   "build": {
     "beforeDevCommand": "bun run dev",
     "devUrl": "http://localhost:1420",

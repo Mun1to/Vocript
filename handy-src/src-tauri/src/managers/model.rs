@@ -60,7 +60,7 @@ pub struct DownloadProgress {
     pub percentage: f64,
 }
 
-/// A speech model found elsewhere on the computer that can be reused by MuVox
+/// A speech model found elsewhere on the computer that can be reused by VoCript
 /// without re-downloading. Returned by `scan_for_external_models`.
 #[derive(Debug, Clone, Serialize, Deserialize, Type)]
 pub struct FoundModel {
@@ -74,7 +74,7 @@ pub struct FoundModel {
     pub size_mb: u64,
     /// Whether the model is a directory (e.g. Parakeet) vs a single .bin file.
     pub is_directory: bool,
-    /// True if this path is already inside MuVox's own models directory.
+    /// True if this path is already inside VoCript's own models directory.
     pub already_imported: bool,
 }
 
@@ -1491,7 +1491,7 @@ impl ModelManager {
 
     // ──────────────────────────────────────────────────────────────────────
     // Import & auto-discovery of models already present on the computer.
-    // Lets MuVox reuse models from a previous install (e.g. Handy) or any
+    // Lets VoCript reuse models from a previous install (e.g. Handy) or any
     // folder, instead of re-downloading. Files are hard-linked into the models
     // directory when possible (same bytes on disk, no duplication), falling
     // back to a copy across volumes.
@@ -1540,7 +1540,7 @@ impl ModelManager {
         Ok(())
     }
 
-    /// Import an existing model file (`.bin`) or directory into MuVox.
+    /// Import an existing model file (`.bin`) or directory into VoCript.
     /// Returns the id of the model that became available.
     pub fn import_model_from_path(&self, source: &Path) -> Result<String> {
         if !source.exists() {

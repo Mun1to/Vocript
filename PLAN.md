@@ -1,4 +1,4 @@
-# MuVox — Plan de Desarrollo
+# VoCript — Plan de Desarrollo
 
 > Transcriptor de audio a texto personalizado, basado en [Handy](https://github.com/cjpais/handy).
 > Versión base de Handy: 0.8.3 | Modelo: Whisper Turbo
@@ -10,7 +10,7 @@
 | Fase | Estado |
 |------|--------|
 | 0 — Entorno | ✅ Completada |
-| 1 — Identidad (renombrar a MuVox) | ✅ Completada |
+| 1 — Identidad (renombrar a VoCript) | ✅ Completada |
 | 2 — Visual (rosa → azul) | ✅ Completada (falta: iconos PNG de bandeja) |
 | 3 — Audio VAD | ✅ Completada |
 | 4 — Español por defecto | ✅ Completada |
@@ -29,7 +29,7 @@ Variables de entorno permanentes en el usuario:
 - `CMAKE_GENERATOR = Ninja`
 - PATH incluye: `C:\Program Files\CMake\bin`, Ninja (en AppData\Local\Microsoft\WinGet\Packages\Ninja-build...)
 
-Comando para compilar (desde `C:\proyectos\MuVox\handy-src`):
+Comando para compilar (desde `C:\proyectos\VoCript\handy-src`):
 ```powershell
 $env:PATH = "$env:USERPROFILE\.cargo\bin;$env:USERPROFILE\.bun\bin;C:\Program Files\LLVM\bin;C:\Program Files\CMake\bin;" + (Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\Ninja-build*" | Select-Object -First 1).FullName + ";$env:PATH"
 $env:LIBCLANG_PATH = "C:\Program Files\LLVM\bin"
@@ -57,15 +57,15 @@ bun tauri build
 ## Fase 1 — Identidad ✅
 
 Archivos modificados:
-- `package.json` → name: "muvox-app"
-- `index.html` → title: "MuVox"
-- `src-tauri/tauri.conf.json` → productName: "MuVox", identifier: "com.muvox.app", sin signCommand, updater endpoints vacíos
-- `src-tauri/Cargo.toml` → name: "muvox", default-run: "muvox", lib name: "muvox_app_lib"
-- `src-tauri/src/main.rs`, `cli.rs`, `lib.rs`, `tray.rs`, `actions.rs`, `portable.rs`, `managers/history.rs` → todos los strings "Handy"/"handy" → "MuVox"/"muvox"
-- `src-tauri/nsis/installer.nsi` → "MuVox Portable Mode"
-- `src/components/icons/HandyTextLogo.tsx` → SVG de texto "MuVox" (reemplaza paths SVG del logo "handy")
+- `package.json` → name: "vocript-app"
+- `index.html` → title: "VoCript"
+- `src-tauri/tauri.conf.json` → productName: "VoCript", identifier: "com.vocript.app", sin signCommand, updater endpoints vacíos
+- `src-tauri/Cargo.toml` → name: "vocript", default-run: "vocript", lib name: "vocript_app_lib"
+- `src-tauri/src/main.rs`, `cli.rs`, `lib.rs`, `tray.rs`, `actions.rs`, `portable.rs`, `managers/history.rs` → todos los strings "Handy"/"handy" → "VoCript"/"vocript"
+- `src-tauri/nsis/installer.nsi` → "VoCript Portable Mode"
+- `src/components/icons/HandyTextLogo.tsx` → SVG de texto "VoCript" (reemplaza paths SVG del logo "handy")
 
-**Pendiente:** reemplazar los PNGs de bandeja del sistema (`src-tauri/resources/handy.png`, etc.) con versiones azules de MuVox. Requiere editor gráfico.
+**Pendiente:** reemplazar los PNGs de bandeja del sistema (`src-tauri/resources/handy.png`, etc.) con versiones azules de VoCript. Requiere editor gráfico.
 
 ---
 

@@ -221,7 +221,7 @@ pub async fn cancel_download(
 }
 
 /// Import an existing model file or directory (e.g. from a previous Handy
-/// install or any folder) into MuVox by hard-linking it — reusing the same
+/// install or any folder) into VoCript by hard-linking it — reusing the same
 /// bytes on disk instead of re-downloading. Returns the resulting model id.
 #[tauri::command]
 #[specta::specta]

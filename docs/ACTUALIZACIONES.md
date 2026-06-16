@@ -1,7 +1,7 @@
 # Actualizaciones y relación con Handy upstream
 
-MuVox es un fork. Esto explica cómo gestionar las actualizaciones — tanto las del
-propio MuVox como las mejoras que el autor de Handy pueda publicar.
+VoCript es un fork. Esto explica cómo gestionar las actualizaciones — tanto las del
+propio VoCript como las mejoras que el autor de Handy pueda publicar.
 
 ---
 
@@ -13,7 +13,7 @@ El updater automático de Handy está apagado. En `tauri.conf.json`:
 "updater": { "endpoints": [] }
 ```
 
-**Consecuencia:** MuVox nunca se actualiza solo ni intenta descargar versiones de
+**Consecuencia:** VoCript nunca se actualiza solo ni intenta descargar versiones de
 Handy. Tú controlas al 100% qué versión usas. No hay riesgo de que una
 actualización del autor original sobrescriba tus personalizaciones.
 
@@ -42,18 +42,18 @@ y siempre **manual y selectiva**.
 ## Archivos con personalizaciones (no sobrescribir al traer cambios)
 
 Si alguna vez se integra código de Handy, revisar con cuidado estos archivos
-porque contienen cambios propios de MuVox:
+porque contienen cambios propios de VoCript:
 
 | Archivo | Personalización |
 |---------|-----------------|
 | `tauri.conf.json` | productName, identifier, updater vacío, sin signCommand |
-| `Cargo.toml` | name = "muvox" |
-| `package.json`, `index.html` | nombre y título MuVox |
+| `Cargo.toml` | name = "vocript" |
+| `package.json`, `index.html` | nombre y título VoCript |
 | `src/App.css`, `src/overlay/RecordingOverlay.css` | paleta azul |
-| `src/components/icons/HandyTextLogo.tsx` | logo de texto "MuVox" |
+| `src/components/icons/HandyTextLogo.tsx` | logo de texto "VoCript" |
 | `src-tauri/src/managers/audio.rs` | parámetros del VAD ajustados |
 | `src-tauri/src/settings.rs` | idioma por defecto "es" |
-| `src-tauri/src/` (varios) | strings "Handy" → "MuVox" |
+| `src-tauri/src/` (varios) | strings "Handy" → "VoCript" |
 
 (Lista completa de cambios por fase en [../PLAN.md](../PLAN.md).)
 
@@ -61,6 +61,6 @@ porque contienen cambios propios de MuVox:
 
 ## Actualizar el modelo de transcripción
 
-El modelo Whisper (Turbo u otro) se descarga desde la propia UI de MuVox, no por
+El modelo Whisper (Turbo u otro) se descarga desde la propia UI de VoCript, no por
 el updater de la app. Cambiar de modelo o actualizarlo es independiente del código:
 se hace desde la pantalla de selección de modelo dentro de la aplicación.

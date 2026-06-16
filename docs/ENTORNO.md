@@ -1,6 +1,6 @@
-# Entorno de compilación — MuVox
+# Entorno de compilación — VoCript
 
-Todo lo necesario para compilar MuVox en Windows. Este documento recoge el
+Todo lo necesario para compilar VoCript en Windows. Este documento recoge el
 conocimiento ganado a base de prueba y error (ver troubleshooting al final).
 
 ---
@@ -66,7 +66,7 @@ $env:CARGO_TARGET_DIR = "C:\ct"
 
 ## Comandos
 
-Desde `C:\proyectos\MuVox\handy-src`:
+Desde `C:\proyectos\VoCript\handy-src`:
 
 | Acción | Comando | Notas |
 |--------|---------|-------|
@@ -93,5 +93,5 @@ Estos errores aparecieron al montar el entorno. Si reaparecen, esta es la causa:
 | `vulkan-shaders-gen ... no se pueden compilar en paralelo` | Bug de MSBuild como generador | `CMAKE_GENERATOR=Ninja` |
 
 > Nota: estos son prerequisitos de **Handy** para compilar en Windows, no
-> problemas introducidos por MuVox. La doc oficial de Handy solo menciona
+> problemas introducidos por VoCript. La doc oficial de Handy solo menciona
 > "Rust + Bun" y asume el resto del toolchain ya instalado.
