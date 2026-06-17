@@ -143,6 +143,11 @@ fn initialize_core_logic(app_handle: &AppHandle) {
     // after onboarding completes. This avoids triggering permission dialogs
     // on macOS before the user is ready.
 
+    // Migra los datos de la versión antigua (com.muvox.app) si es la primera vez
+    // que se abre la versión renombrada. Debe correr ANTES de inicializar los
+    // managers, que leen/escriben en la carpeta de datos.
+    portable::migrate_legacy_identifier_data(app_handle);
+
     // Initialize the managers
     let recording_manager = Arc::new(
         AudioRecordingManager::new(app_handle).expect("Failed to initialize recording manager"),

@@ -91,6 +91,106 @@ pub fn store_path(relative: &str) -> PathBuf {
     }
 }
 
+/// Identificador antiguo (antes del rebrand a VoCript). Las versiones <= 2.2.4
+/// guardaban los datos del usuario en `%APPDATA%\com.muvox.app`.
+const LEGACY_IDENTIFIER: &str = "com.muvox.app";
+
+/// Migra los datos de usuario de una instalación antigua (`com.muvox.app`) a la
+/// carpeta actual (`com.vocript.app`) la primera vez que se abre la versión
+/// renombrada. Así nadie pierde su modelo descargado, historial ni ajustes al
+/// actualizar. Solo aplica en instalaciones normales (no portable) y solo se
+/// ejecuta si la carpeta nueva aún no tiene un modelo descargado.
+pub fn migrate_legacy_identifier_data(app: &tauri::AppHandle) {
+    // En modo portable los datos viven junto al .exe, no hay nada que migrar.
+    if is_portable() {
+        return;
+    }
+
+    let current = match app.path().app_data_dir() {
+        Ok(d) => d,
+        Err(_) => return,
+    };
+    let legacy = match current.parent() {
+        Some(p) => p.join(LEGACY_IDENTIFIER),
+        None => return,
+    };
+
+    // Nada que migrar si no hay carpeta antigua o si ya es la misma.
+    if !legacy.exists() || legacy == current {
+        return;
+    }
+
+    // Si la carpeta nueva ya tiene un modelo descargado, la migración ya se hizo
+    // (o el usuario ya usó la versión nueva) — no tocar nada.
+    if dir_has_files(&current.join("models")) {
+        return;
+    }
+
+    eprintln!(
+        "[migrate] migrando datos de usuario de {} a {}",
+        legacy.display(),
+        current.display()
+    );
+    let _ = std::fs::create_dir_all(&current);
+
+    // Mover cada entrada de la carpeta antigua a la nueva, EXCEPTO los logs
+    // (los gestiona el logger y podrían estar en uso).
+    if let Ok(entries) = std::fs::read_dir(&legacy) {
+        for entry in entries.flatten() {
+            let name = entry.file_name();
+            if name == "logs" {
+                continue;
+            }
+            let from = entry.path();
+            let to = current.join(&name);
+            // Sobrescribir lo que hubiera vacío en la carpeta nueva.
+            if to.exists() {
+                if to.is_dir() {
+                    let _ = std::fs::remove_dir_all(&to);
+                } else {
+                    let _ = std::fs::remove_file(&to);
+                }
+            }
+            if std::fs::rename(&from, &to).is_err() {
+                // rename puede fallar entre volúmenes distintos: copiar y borrar.
+                if copy_recursively(&from, &to).is_ok() {
+                    if from.is_dir() {
+                        let _ = std::fs::remove_dir_all(&from);
+                    } else {
+                        let _ = std::fs::remove_file(&from);
+                    }
+                }
+            }
+        }
+    }
+    eprintln!("[migrate] migración completada");
+}
+
+/// `true` si el directorio existe y contiene al menos una entrada.
+fn dir_has_files(dir: &std::path::Path) -> bool {
+    std::fs::read_dir(dir)
+        .map(|mut it| it.next().is_some())
+        .unwrap_or(false)
+}
+
+/// Copia recursivamente un fichero o directorio (usado como fallback cuando
+/// `rename` no puede cruzar volúmenes).
+fn copy_recursively(from: &std::path::Path, to: &std::path::Path) -> std::io::Result<()> {
+    if from.is_dir() {
+        std::fs::create_dir_all(to)?;
+        for entry in std::fs::read_dir(from)? {
+            let entry = entry?;
+            copy_recursively(&entry.path(), &to.join(entry.file_name()))?;
+        }
+    } else {
+        if let Some(parent) = to.parent() {
+            std::fs::create_dir_all(parent)?;
+        }
+        std::fs::copy(from, to)?;
+    }
+    Ok(())
+}
+
 /// Check if a marker file path contains the portable magic string.
 /// Extracted for testability.
 fn is_valid_portable_marker(path: &std::path::Path) -> bool {
