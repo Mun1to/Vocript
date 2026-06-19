@@ -473,6 +473,7 @@
     },
     "history": {
       "title": "Historial",
+      "audioLoadError": "No se pudo cargar el audio de la grabación",
       "openFolder": "Abrir Carpeta de Grabaciones",
       "loading": "Cargando historial...",
       "empty": "Aún no hay transcripciones. ¡Comienza a grabar para crear tu historial!",
@@ -566,28 +567,39 @@
       "title": "Acerca de",
       "version": {
         "title": "Versión",
-        "description": "Versión actual de Handy"
+        "description": "Versión actual de VoCript"
       },
       "appDataDirectory": {
         "title": "Directorio de Datos de la Aplicación",
-        "description": "Ubicación donde Handy almacena sus datos"
+        "description": "Ubicación donde VoCript almacena sus datos"
       },
       "sourceCode": {
         "title": "Código Fuente",
-        "description": "Ver código fuente y contribuir",
+        "description": "Ver el código fuente de VoCript y contribuir",
         "button": "Ver en GitHub"
       },
       "supportDevelopment": {
-        "title": "Apoyar el Desarrollo",
-        "description": "Ayúdanos a continuar construyendo Handy",
-        "button": "Donar"
+        "title": "Apoyar el proyecto",
+        "description": "Si VoCript te resulta útil, invítame a un café. ¡Gracias por el apoyo!",
+        "coffee": "Invítame a un café",
+        "handy": "Apoyar Handy"
+      },
+      "contact": {
+        "title": "Contacto",
+        "description": "Sobre mí y el resto de mis proyectos",
+        "button": "Ver portfolio"
       },
       "acknowledgments": {
         "title": "Reconocimientos",
         "whisper": {
           "title": "Whisper.cpp",
           "description": "Inferencia de alto rendimiento del modelo de reconocimiento automático de voz Whisper de OpenAI",
-          "details": "Handy usa Whisper.cpp para procesamiento de voz a texto rápido y local. Gracias al increíble trabajo de Georgi Gerganov y colaboradores."
+          "details": "VoCript usa Whisper.cpp para procesamiento de voz a texto rápido y local. Gracias al increíble trabajo de Georgi Gerganov y colaboradores."
+        },
+        "handy": {
+          "title": "Handy",
+          "description": "VoCript es un fork del proyecto de código abierto Handy, creado por cjpais.",
+          "button": "Ver Handy"
         }
       }
     }

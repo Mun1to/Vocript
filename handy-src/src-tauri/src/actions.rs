@@ -529,8 +529,17 @@ impl ShortcutAction for TranscribeAction {
                     samples.len()
                 );
 
-                if samples.is_empty() {
-                    debug!("Recording produced no audio samples; skipping persistence");
+                // Discard very short recordings. Whisper hallucinates random
+                // text on near-empty audio, so require at least ~1.5s of audio
+                // (24k samples at 16 kHz) or cancel silently (this also covers
+                // the empty case).
+                const MIN_TRANSCRIPTION_SAMPLES: usize = 24_000;
+                if samples.len() < MIN_TRANSCRIPTION_SAMPLES {
+                    debug!(
+                        "Recording too short ({} samples < {}); discarding to avoid hallucinated transcription",
+                        samples.len(),
+                        MIN_TRANSCRIPTION_SAMPLES
+                    );
                     utils::hide_recording_overlay(&ah);
                     change_tray_icon(&ah, TrayIconState::Idle);
                 } else {

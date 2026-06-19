@@ -3,6 +3,7 @@ use crate::managers::{
     history::{HistoryManager, PaginatedHistory},
     transcription::TranscriptionManager,
 };
+use base64::{engine::general_purpose::STANDARD, Engine as _};
 use std::sync::Arc;
 use tauri::{AppHandle, State};
 
@@ -44,6 +45,25 @@ pub async fn get_audio_file_path(
     path.to_str()
         .ok_or_else(|| "Invalid file path".to_string())
         .map(|s| s.to_string())
+}
+
+/// Read a recording's WAV bytes and return them base64-encoded.
+///
+/// The recordings live under the app data dir, which the frontend `fs` scope
+/// does not reliably grant access to on Windows (`readFile` returns "forbidden
+/// path"). Reading the file on the backend — which has full disk access — and
+/// handing the bytes to the webview as base64 sidesteps both the `fs` scope and
+/// the `asset://` protocol, which have both been unreliable for this path.
+#[tauri::command]
+#[specta::specta]
+pub async fn get_audio_file_data(
+    _app: AppHandle,
+    history_manager: State<'_, Arc<HistoryManager>>,
+    file_name: String,
+) -> Result<String, String> {
+    let path = history_manager.get_audio_file_path(&file_name);
+    let bytes = std::fs::read(&path).map_err(|e| format!("Failed to read audio file: {}", e))?;
+    Ok(STANDARD.encode(bytes))
 }
 
 #[tauri::command]

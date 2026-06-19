@@ -845,6 +845,23 @@ async getAudioFilePath(fileName: string) : Promise<Result<string, string>> {
     else return { status: "error", error: e  as any };
 }
 },
+/**
+ * Read a recording's WAV bytes and return them base64-encoded.
+ * 
+ * The recordings live under the app data dir, which the frontend `fs` scope
+ * does not reliably grant access to on Windows (`readFile` returns "forbidden
+ * path"). Reading the file on the backend — which has full disk access — and
+ * handing the bytes to the webview as base64 sidesteps both the `fs` scope and
+ * the `asset://` protocol, which have both been unreliable for this path.
+ */
+async getAudioFileData(fileName: string) : Promise<Result<string, string>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("get_audio_file_data", { fileName }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
 async deleteHistoryEntry(id: number) : Promise<Result<null, string>> {
     try {
     return { status: "ok", data: await TAURI_INVOKE("delete_history_entry", { id }) };

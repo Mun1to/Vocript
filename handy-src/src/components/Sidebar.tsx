@@ -108,34 +108,45 @@ export const Sidebar: React.FC<SidebarProps> = ({
     .map(([id, config]) => ({ id: id as SidebarSection, ...config }));
 
   return (
-    <div className="flex flex-col w-40 h-full border-e border-mid-gray/20 items-center px-2">
-      <HandyTextLogo width={120} className="m-4" />
-      <div className="flex flex-col w-full items-center gap-1 pt-2 border-t border-mid-gray/20">
+    <div className="flex flex-col w-48 h-full shrink-0 border-e border-mid-gray/15 bg-mid-gray/5">
+      <div className="flex flex-col items-center px-4 pt-5 pb-4">
+        <HandyTextLogo width={128} />
+      </div>
+      <div className="mx-3 mb-2 h-px bg-gradient-to-r from-transparent via-mid-gray/30 to-transparent" />
+      <nav className="flex flex-col gap-1 px-2.5 py-1 overflow-y-auto">
         {availableSections.map((section) => {
           const Icon = section.icon;
           const isActive = activeSection === section.id;
 
           return (
-            <div
+            <button
               key={section.id}
-              className={`flex gap-2 items-center p-2 w-full rounded-lg cursor-pointer transition-colors ${
-                isActive
-                  ? "bg-logo-primary/80"
-                  : "hover:bg-mid-gray/20 hover:opacity-100 opacity-85"
-              }`}
+              type="button"
               onClick={() => onSectionChange(section.id)}
+              title={t(section.labelKey)}
+              className={`group relative flex items-center gap-2.5 w-full rounded-lg ps-3 pe-2 py-2 text-start transition-all ${
+                isActive
+                  ? "bg-background-ui text-white shadow-sm shadow-background-ui/30"
+                  : "text-text/70 hover:bg-mid-gray/15 hover:text-text"
+              }`}
             >
-              <Icon width={24} height={24} className="shrink-0" />
-              <p
-                className="text-sm font-medium truncate"
-                title={t(section.labelKey)}
-              >
+              {isActive && (
+                <span className="absolute start-0 top-1.5 bottom-1.5 w-1 rounded-full bg-white/80" />
+              )}
+              <Icon
+                width={20}
+                height={20}
+                className={`shrink-0 ${
+                  isActive ? "" : "text-logo-primary group-hover:text-text"
+                }`}
+              />
+              <span className="text-sm font-medium truncate">
                 {t(section.labelKey)}
-              </p>
-            </div>
+              </span>
+            </button>
           );
         })}
-      </div>
+      </nav>
     </div>
   );
 };

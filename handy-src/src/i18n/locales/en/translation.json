@@ -473,6 +473,7 @@
     },
     "history": {
       "title": "History",
+      "audioLoadError": "Could not load the recording audio",
       "openFolder": "Open Recordings Folder",
       "loading": "Loading history...",
       "empty": "No transcriptions yet. Start recording to build your history!",
@@ -566,28 +567,39 @@
       "title": "About",
       "version": {
         "title": "Version",
-        "description": "Current version of Handy"
+        "description": "Current version of VoCript"
       },
       "appDataDirectory": {
         "title": "App Data Directory",
-        "description": "Location where Handy stores its data"
+        "description": "Location where VoCript stores its data"
       },
       "sourceCode": {
         "title": "Source Code",
-        "description": "View source code and contribute",
+        "description": "View VoCript's source code and contribute",
         "button": "View on GitHub"
       },
       "supportDevelopment": {
-        "title": "Support Development",
-        "description": "Help us continue building Handy",
-        "button": "Donate"
+        "title": "Support the project",
+        "description": "If VoCript is useful to you, buy me a coffee. Thanks for the support!",
+        "coffee": "Buy me a coffee",
+        "handy": "Support Handy"
+      },
+      "contact": {
+        "title": "Contact",
+        "description": "About me and my other projects",
+        "button": "View portfolio"
       },
       "acknowledgments": {
         "title": "Acknowledgments",
         "whisper": {
           "title": "Whisper.cpp",
           "description": "High-performance inference of OpenAI's Whisper automatic speech recognition model",
-          "details": "Handy uses Whisper.cpp for fast, local speech-to-text processing. Thanks to the amazing work by Georgi Gerganov and contributors."
+          "details": "VoCript uses Whisper.cpp for fast, local speech-to-text processing. Thanks to the amazing work by Georgi Gerganov and contributors."
+        },
+        "handy": {
+          "title": "Handy",
+          "description": "VoCript is a fork of the open-source project Handy, created by cjpais.",
+          "button": "View Handy"
         }
       }
     }

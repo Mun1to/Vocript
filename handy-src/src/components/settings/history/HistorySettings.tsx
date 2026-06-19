@@ -1,6 +1,4 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { convertFileSrc } from "@tauri-apps/api/core";
-import { readFile } from "@tauri-apps/plugin-fs";
 import { Check, Copy, FolderOpen, RotateCcw, Star, Trash2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
@@ -10,7 +8,6 @@ import {
   type HistoryEntry,
   type HistoryUpdatePayload,
 } from "@/bindings";
-import { useOsType } from "@/hooks/useOsType";
 import { formatDateTime } from "@/utils/dateFormat";
 import { AudioPlayer } from "../../ui/AudioPlayer";
 import { Button } from "../../ui/Button";
@@ -61,7 +58,6 @@ const OpenRecordingsButton: React.FC<OpenRecordingsButtonProps> = ({
 
 export const HistorySettings: React.FC = () => {
   const { t } = useTranslation();
-  const osType = useOsType();
   const [entries, setEntries] = useState<HistoryEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [hasMore, setHasMore] = useState(true);
@@ -182,23 +178,31 @@ export const HistorySettings: React.FC = () => {
 
   const getAudioUrl = useCallback(
     async (fileName: string) => {
-      try {
-        const result = await commands.getAudioFilePath(fileName);
-        if (result.status === "ok") {
-          if (osType === "linux") {
-            const fileData = await readFile(result.data);
-            const blob = new Blob([fileData], { type: "audio/wav" });
-            return URL.createObjectURL(blob);
-          }
-          return convertFileSrc(result.data, "asset");
-        }
+      // The recording bytes are read on the backend (full disk access) and
+      // returned as base64, which we turn into a Blob URL. This avoids the
+      // frontend `fs` scope (which denies the recordings path on Windows) and
+      // the `asset://` protocol (intermittent 403s) — both proved unreliable.
+      const result = await commands.getAudioFileData(fileName);
+      if (result.status !== "ok") {
+        console.error("Failed to load audio:", result.error);
+        toast.error(t("settings.history.audioLoadError"));
         return null;
+      }
+      try {
+        const binary = atob(result.data);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) {
+          bytes[i] = binary.charCodeAt(i);
+        }
+        const blob = new Blob([bytes], { type: "audio/wav" });
+        return URL.createObjectURL(blob);
       } catch (error) {
-        console.error("Failed to get audio file path:", error);
+        console.error("Failed to decode audio:", error);
+        toast.error(t("settings.history.audioLoadError"));
         return null;
       }
     },
-    [osType],
+    [t],
   );
 
   const deleteAudioEntry = async (id: number) => {
