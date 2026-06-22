@@ -272,6 +272,14 @@ async updateCustomWords(words: string[]) : Promise<Result<null, string>> {
     else return { status: "error", error: e  as any };
 }
 },
+async updateWordReplacements(replacements: WordReplacement[]) : Promise<Result<null, string>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("update_word_replacements", { replacements }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
 /**
  * Temporarily unregister a binding while the user is editing it in the UI.
  * This avoids firing the action while keys are being recorded.
@@ -829,6 +837,20 @@ async saveTextFile(path: string, content: string) : Promise<Result<null, string>
     else return { status: "error", error: e  as any };
 }
 },
+/**
+ * Read a UTF-8 text file chosen by the user via the open dialog (e.g. a CSV to
+ * import into the personal dictionary). Done on the backend to avoid widening
+ * the frontend filesystem scope beyond `$APPDATA`. Tolerates invalid bytes and
+ * strips a leading UTF-8 BOM (Excel often adds one).
+ */
+async readTextFile(path: string) : Promise<Result<string, string>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("read_text_file", { path }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
 async getHistoryEntries(cursor: number | null, limit: number | null) : Promise<Result<PaginatedHistory, string>> {
     try {
     return { status: "ok", data: await TAURI_INVOKE("get_history_entries", { cursor, limit }) };
@@ -936,7 +958,11 @@ export type AppSettings = { bindings: Partial<{ [key in string]: ShortcutBinding
  * Executable name of the app to capture for system-audio transcription
  * (e.g. "Spotify.exe"). `None` = capture the whole system mix.
  */
-system_audio_app?: string | null; translate_to_english?: boolean; selected_language?: string; overlay_position?: OverlayPosition; debug_mode?: boolean; log_level?: LogLevel; custom_words?: string[]; model_unload_timeout?: ModelUnloadTimeout; word_correction_threshold?: number; history_limit?: number; recording_retention_period?: RecordingRetentionPeriod; paste_method?: PasteMethod; clipboard_handling?: ClipboardHandling; clipboard_only?: boolean; 
+system_audio_app?: string | null; translate_to_english?: boolean; selected_language?: string; overlay_position?: OverlayPosition; debug_mode?: boolean; log_level?: LogLevel; custom_words?: string[]; 
+/**
+ * Personal dictionary: deterministic exact replacements (from -> to).
+ */
+word_replacements?: WordReplacement[]; model_unload_timeout?: ModelUnloadTimeout; word_correction_threshold?: number; history_limit?: number; recording_retention_period?: RecordingRetentionPeriod; paste_method?: PasteMethod; clipboard_handling?: ClipboardHandling; clipboard_only?: boolean; 
 /**
  * Live transcription: when true, the final text is pasted into the active
  * app automatically when the live session stops (like normal dictation).
@@ -1015,6 +1041,11 @@ export type SoundTheme = "marimba" | "pop" | "custom"
 export type TypingTool = "auto" | "wtype" | "kwtype" | "dotool" | "ydotool" | "xdotool"
 export type WhisperAcceleratorSetting = "auto" | "cpu" | "gpu"
 export type WindowsMicrophonePermissionStatus = { supported: boolean; overall_access: PermissionAccess; device_access: PermissionAccess; app_access: PermissionAccess; desktop_app_access: PermissionAccess }
+/**
+ * A personal-dictionary entry: replace exact occurrences of `from` with `to`
+ * in the transcribed text. Deterministic (unlike the fuzzy `custom_words`).
+ */
+export type WordReplacement = { from: string; to: string }
 
 /** tauri-specta globals **/
 

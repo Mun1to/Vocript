@@ -1,4 +1,6 @@
-use crate::audio_toolkit::{apply_custom_words, filter_transcription_output};
+use crate::audio_toolkit::{
+    apply_custom_words, apply_word_replacements, filter_transcription_output,
+};
 use crate::managers::audio::AudioRecordingManager;
 use crate::managers::model::{EngineType, ModelManager};
 use crate::settings::{
@@ -490,6 +492,11 @@ impl TranscriptionManager {
             &settings.custom_filler_words,
         );
 
+        // Personal dictionary: deterministic exact replacements. Applied to every
+        // engine (including Whisper) as the last touch on the raw transcription.
+        let replaced_result =
+            apply_word_replacements(&filtered_result, &settings.word_replacements);
+
         let et = std::time::Instant::now();
         let translation_note = if settings.translate_to_english {
             " (translated)"
@@ -502,7 +509,7 @@ impl TranscriptionManager {
             translation_note
         );
 
-        let final_result = filtered_result;
+        let final_result = replaced_result;
 
         if final_result.is_empty() {
             info!("Transcription result is empty");

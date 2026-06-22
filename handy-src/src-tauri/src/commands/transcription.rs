@@ -102,6 +102,21 @@ pub fn save_text_file(path: String, content: String) -> Result<(), String> {
     std::fs::write(&path, content).map_err(|e| format!("Failed to save file: {}", e))
 }
 
+/// Read a UTF-8 text file chosen by the user via the open dialog (e.g. a CSV to
+/// import into the personal dictionary). Done on the backend to avoid widening
+/// the frontend filesystem scope beyond `$APPDATA`. Tolerates invalid bytes and
+/// strips a leading UTF-8 BOM (Excel often adds one).
+#[tauri::command]
+#[specta::specta]
+pub fn read_text_file(path: String) -> Result<String, String> {
+    let bytes = std::fs::read(&path).map_err(|e| format!("Failed to read file: {}", e))?;
+    let content = String::from_utf8_lossy(&bytes);
+    Ok(content
+        .strip_prefix('\u{feff}')
+        .unwrap_or(&content)
+        .to_string())
+}
+
 /// Build an SRT subtitle string from transcription segments. Falls back to a
 /// single cue spanning the whole file when the engine produced no segments.
 fn segments_to_srt(

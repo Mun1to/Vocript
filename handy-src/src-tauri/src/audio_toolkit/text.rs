@@ -1,3 +1,4 @@
+use crate::settings::WordReplacement;
 use natural::phonetics::soundex;
 use once_cell::sync::Lazy;
 use regex::Regex;
@@ -153,6 +154,47 @@ pub fn apply_custom_words(text: &str, custom_words: &[String], threshold: f64) -
     }
 
     result.join(" ")
+}
+
+/// Applies the personal-dictionary exact replacements to the text.
+///
+/// Unlike `apply_custom_words` (fuzzy, phonetic), this is deterministic: each
+/// `from` is replaced by its `to` verbatim. Matching is case-insensitive and
+/// bounded to whole words/phrases (so "ola" doesn't change "gaviota"). Longer
+/// `from` patterns are applied first, so multi-word entries win over single
+/// words.
+pub fn apply_word_replacements(text: &str, replacements: &[WordReplacement]) -> String {
+    if replacements.is_empty() {
+        return text.to_string();
+    }
+
+    // Apply longer `from` patterns first (e.g. "mac book pro" before "mac").
+    let mut sorted: Vec<&WordReplacement> = replacements
+        .iter()
+        .filter(|r| !r.from.trim().is_empty())
+        .collect();
+    sorted.sort_by(|a, b| {
+        b.from
+            .trim()
+            .chars()
+            .count()
+            .cmp(&a.from.trim().chars().count())
+    });
+
+    let mut result = text.to_string();
+    for r in sorted {
+        let from = r.from.trim();
+        // Case-insensitive, whole-word/phrase match. `to` is inserted verbatim
+        // (NoExpand) so characters like `$` are not treated as capture refs.
+        let pattern = format!(r"(?i)\b{}\b", regex::escape(from));
+        if let Ok(re) = Regex::new(&pattern) {
+            result = re
+                .replace_all(&result, regex::NoExpand(r.to.as_str()))
+                .to_string();
+        }
+    }
+
+    result
 }
 
 /// Preserves the case pattern of the original word when applying a replacement
@@ -359,6 +401,57 @@ mod tests {
         let custom_words = vec![];
         let result = apply_custom_words(text, &custom_words, 0.5);
         assert_eq!(result, "hello world");
+    }
+
+    fn wr(from: &str, to: &str) -> WordReplacement {
+        WordReplacement {
+            from: from.to_string(),
+            to: to.to_string(),
+        }
+    }
+
+    #[test]
+    fn test_word_replacements_case_insensitive() {
+        let reps = vec![wr("vocrip", "VoCript")];
+        assert_eq!(
+            apply_word_replacements("uso Vocrip y vocrip a diario", &reps),
+            "uso VoCript y VoCript a diario"
+        );
+    }
+
+    #[test]
+    fn test_word_replacements_whole_word_only() {
+        // "ola" must not change "cola"
+        let reps = vec![wr("ola", "hola")];
+        assert_eq!(
+            apply_word_replacements("una cola y ola", &reps),
+            "una cola y hola"
+        );
+    }
+
+    #[test]
+    fn test_word_replacements_longer_phrase_wins() {
+        let reps = vec![wr("mac", "Mac"), wr("mac book", "MacBook")];
+        assert_eq!(
+            apply_word_replacements("mi mac book nuevo", &reps),
+            "mi MacBook nuevo"
+        );
+    }
+
+    #[test]
+    fn test_word_replacements_verbatim_to() {
+        // `$` in the replacement must not be treated as a capture reference
+        let reps = vec![wr("dolar", "$5")];
+        assert_eq!(
+            apply_word_replacements("cuesta un dolar", &reps),
+            "cuesta un $5"
+        );
+    }
+
+    #[test]
+    fn test_word_replacements_empty() {
+        let reps: Vec<WordReplacement> = vec![];
+        assert_eq!(apply_word_replacements("hello world", &reps), "hello world");
     }
 
     #[test]

@@ -93,6 +93,14 @@ pub struct LLMPrompt {
     pub prompt: String,
 }
 
+/// A personal-dictionary entry: replace exact occurrences of `from` with `to`
+/// in the transcribed text. Deterministic (unlike the fuzzy `custom_words`).
+#[derive(Serialize, Deserialize, Debug, Clone, Type)]
+pub struct WordReplacement {
+    pub from: String,
+    pub to: String,
+}
+
 #[derive(Serialize, Deserialize, Debug, Clone, Type)]
 pub struct PostProcessProvider {
     pub id: String,
@@ -387,6 +395,9 @@ pub struct AppSettings {
     pub log_level: LogLevel,
     #[serde(default)]
     pub custom_words: Vec<String>,
+    /// Personal dictionary: deterministic exact replacements (from -> to).
+    #[serde(default)]
+    pub word_replacements: Vec<WordReplacement>,
     #[serde(default)]
     pub model_unload_timeout: ModelUnloadTimeout,
     #[serde(default = "default_word_correction_threshold")]
@@ -849,6 +860,7 @@ pub fn get_default_settings() -> AppSettings {
         debug_mode: false,
         log_level: default_log_level(),
         custom_words: Vec::new(),
+        word_replacements: Vec::new(),
         model_unload_timeout: ModelUnloadTimeout::default(),
         word_correction_threshold: default_word_correction_threshold(),
         history_limit: default_history_limit(),

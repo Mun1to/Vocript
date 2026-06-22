@@ -417,6 +417,33 @@
         "add": "Add",
         "remove": "Remove {{word}}",
         "duplicate": "\"{{word}}\" already exists"
+      },
+      "wordReplacements": {
+        "title": "Personal dictionary",
+        "description": "Replaces exact words or phrases when transcribing. Ideal for proper names, jargon or abbreviations. Case-insensitive.",
+        "fromPlaceholder": "When you hear…",
+        "toPlaceholder": "Replace with…",
+        "add": "Add",
+        "remove": "Remove {{word}}",
+        "duplicate": "There's already a replacement for \"{{word}}\"",
+        "hint": "Only the exact, whole word is changed. Add each variant (singular, plural, etc.) separately.",
+        "import": "Import CSV",
+        "export": "Export CSV",
+        "csvHelp": {
+          "title": "What should the CSV look like?",
+          "cols": "Two comma-separated columns: the original word and what to replace it with. One row per replacement.",
+          "header": "The header row (de,a) is optional — include it or not.",
+          "exampleLabel": "Example:",
+          "quotes": "If a value contains commas, wrap it in double quotes: \"hello, there\",greeting",
+          "encoding": "Save it as UTF-8. From Excel or Google Sheets: two columns and \"Save as → CSV\".",
+          "tip": "Tip: click \"Export CSV\" to get a file with the exact format ready to edit."
+        },
+        "imported": "{{count}} replacements imported",
+        "importError": "Couldn't import the file",
+        "importEmpty": "The file has no valid replacements",
+        "exportEmpty": "No replacements to export",
+        "exportError": "Couldn't export the file",
+        "exported": "Dictionary exported"
       }
     },
     "postProcessing": {

@@ -417,6 +417,33 @@
         "add": "Agregar",
         "remove": "Eliminar {{word}}",
         "duplicate": "\"{{word}}\" ya existe"
+      },
+      "wordReplacements": {
+        "title": "Diccionario personal",
+        "description": "Reemplaza palabras o frases exactas al transcribir. Ideal para nombres propios, jerga o abreviaturas. No distingue mayúsculas.",
+        "fromPlaceholder": "Cuando salga…",
+        "toPlaceholder": "Cámbialo por…",
+        "add": "Añadir",
+        "remove": "Eliminar {{word}}",
+        "duplicate": "Ya hay un reemplazo para \"{{word}}\"",
+        "hint": "Solo cambia la palabra exacta y completa. Añade cada variante (singular, plural, etc.) por separado.",
+        "import": "Importar CSV",
+        "export": "Exportar CSV",
+        "csvHelp": {
+          "title": "¿Cómo debe ser el CSV?",
+          "cols": "Dos columnas separadas por coma: la palabra original y por la que se cambia. Una fila por cada reemplazo.",
+          "header": "La fila de cabecera (de,a) es opcional; puedes ponerla o no.",
+          "exampleLabel": "Ejemplo:",
+          "quotes": "Si un valor lleva comas, ponlo entre comillas dobles: \"hola, qué tal\",saludo",
+          "encoding": "Guárdalo en UTF-8. Desde Excel o Google Sheets: dos columnas y «Guardar como → CSV».",
+          "tip": "Truco: pulsa «Exportar CSV» para obtener un archivo con el formato exacto ya hecho y editarlo."
+        },
+        "imported": "{{count}} reemplazos importados",
+        "importError": "No se pudo importar el archivo",
+        "importEmpty": "El archivo no tiene reemplazos válidos",
+        "exportEmpty": "No hay reemplazos que exportar",
+        "exportError": "No se pudo exportar el archivo",
+        "exported": "Diccionario exportado"
       }
     },
     "postProcessing": {

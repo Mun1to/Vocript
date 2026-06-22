@@ -11,6 +11,6 @@ pub use audio::{
 };
 #[cfg(windows)]
 pub use audio::{find_pid_by_name, list_audio_apps, AudioApp};
-pub use text::{apply_custom_words, filter_transcription_output};
+pub use text::{apply_custom_words, apply_word_replacements, filter_transcription_output};
 pub use utils::get_cpal_host;
 pub use vad::{SileroVad, VoiceActivityDetector};
