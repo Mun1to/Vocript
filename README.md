@@ -1,17 +1,42 @@
-# VoCript
+<div align="center">
 
-> Transcriptor de audio a texto personalizado, 100% offline.
-> Fork de [Handy](https://github.com/cjpais/handy) v0.8.3 · Modelo Whisper Turbo.
+# 🎙️ VoCript
+
+**Dicta y se escribe. Transcripción de voz a texto para Windows, 100 % offline.**
+
+🌍 Español · [English](README.en.md)
+
+<p>
+  <a href="https://github.com/Mun1to/Vocript/releases/latest">
+    <img src="https://img.shields.io/github/v/release/Mun1to/Vocript?label=descargar&style=for-the-badge&color=3b82f6" alt="Última versión" />
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/licencia-MIT-3b82f6?style=for-the-badge" alt="Licencia MIT" />
+  </a>
+</p>
 
 <p align="center">
-  <a href="https://github.com/Mun1to/Vocript/releases/latest/download/VoCript-Setup.exe">
+  <a href="https://github.com/Mun1to/Vocript/releases/latest">
     <img src="brand/download-button.svg" alt="Descargar VoCript" width="320" height="72" />
   </a>
 </p>
-<p align="center">
-  <sub>El botón descarga el instalador directamente. ¿Problemas? Entra en
-  <a href="https://github.com/Mun1to/Vocript/releases/latest">Releases</a>.</sub>
-</p>
+
+</div>
+
+---
+
+## ✨ Qué hace
+
+VoCript convierte tu voz en texto al instante, **donde tengas el cursor**. Todo
+el reconocimiento ocurre **en tu equipo**: tu audio nunca sale de tu ordenador.
+
+- 🎤 **Dictado por voz** — pulsa un atajo, habla y el texto se escribe en cualquier app.
+- 🖥️ **Audio del sistema** — transcribe lo que suena en el PC (un vídeo, una llamada) o una app concreta.
+- 📁 **Transcribir archivos** — convierte audio o vídeo a texto o subtítulos `.srt`.
+- ⚡ **Transcripción en vivo** — ve el texto en una cápsula flotante mientras hablas (push-to-talk).
+- 📒 **Diccionario personal** — reemplazos exactos para nombres, jerga o abreviaturas, con importar/exportar CSV.
+- 🕑 **Historial** — guarda tus transcripciones y reproduce el audio original.
+- 🇪🇸 **Optimizado para español** (acentos y puntuación), con el soporte multi-idioma de Whisper.
 
 ---
 
@@ -21,95 +46,55 @@
 2. Descarga el instalador `VoCript_x.y.z_x64-setup.exe`.
 3. Ejecútalo y sigue los pasos. ¡Listo!
 
-> Windows puede mostrar un aviso de "editor desconocido" (la app no está firmada
-> con certificado de pago). Pulsa **Más información → Ejecutar de todas formas**.
+> Windows puede mostrar un aviso de "editor desconocido" (la app aún no está
+> firmada con un certificado de pago). Pulsa **Más información → Ejecutar de
+> todas formas**.
 
-## 🔄 Actualizaciones
+## 🔄 Actualizaciones automáticas
 
 VoCript se actualiza **solo**: al abrirlo comprueba si hay una versión nueva y,
-si la hay, te ofrece instalarla con un clic (no hay que volver a descargar nada
-a mano). Las versiones se publican automáticamente desde GitHub Actions cada vez
-que se sube una etiqueta de versión.
+si la hay, te la instala con un clic. No tienes que volver a descargar nada a
+mano.
 
 ---
 
-## ¿Qué es VoCript?
+## ⌨️ Cómo se usa
 
-Aplicación de dictado por voz para Windows. Pulsas un atajo, hablas, y el texto
-se escribe donde tengas el cursor. Todo el reconocimiento ocurre en local (sin
-enviar audio a ningún servidor). Es un fork personalizado de Handy con:
+1. Abre VoCript (se queda en la bandeja del sistema, junto al reloj).
+2. La primera vez, descarga un modelo de transcripción (Whisper).
+3. Coloca el cursor donde quieras escribir, pulsa el **atajo de dictado**, habla y suéltalo.
+4. El texto aparece donde tenías el cursor.
 
-- Identidad propia (nombre, logo y colores azules)
-- Captura de audio desde el primer milisegundo (VAD ajustado)
-- Español como idioma por defecto, optimizado para acentos y puntuación
+Todos los atajos se configuran en **Ajustes → General**.
 
----
+## 🔒 Privacidad
 
-## Estado del proyecto
-
-| Fase | Descripción | Estado |
-|------|-------------|--------|
-| 0 | Entorno de desarrollo | ✅ Completada |
-| 1 | Identidad (renombrar a MuVox) | ✅ Completada |
-| 2 | Visual (rosa → azul) | ✅ Completada |
-| 3 | Audio (VAD pre-buffer) | ✅ Completada |
-| 4 | Español por defecto | ✅ Completada |
-| 5 | Extras (Claude API, etc.) | 📋 Backlog |
-
-**Próximo paso:** generar el instalador de producción con `bun tauri build`.
-Ver detalle en [PLAN.md](PLAN.md).
+VoCript funciona **100 % en local**. No hay cuentas, ni nube, ni telemetría: tu
+voz y tus transcripciones **no salen de tu ordenador**. El post-procesado con IA
+en la nube es opcional y está desactivado por defecto.
 
 ---
 
-## 🚀 Cómo arrancar una sesión nueva de Claude
+## 🛠️ Para desarrolladores
 
-Para no gastar tokens releyendo chats largos, al abrir una sesión nueva basta con
-que Claude lea **estos 3 archivos** (en este orden):
+VoCript está hecho con **Tauri 2** (Rust + React/TypeScript) y **Whisper.cpp**
+con aceleración por GPU (Vulkan). El código fuente está en
+[`handy-src/`](handy-src/).
 
-1. **`README.md`** (este archivo) — visión general y estado
-2. **`sesiones/`** — la última sesión registrada (continúa desde ahí)
-3. **`PLAN.md`** — el plan maestro por fases
-
-> La memoria automática de Claude ya carga un resumen del proyecto. Estos archivos
-> aportan el detalle. **No hace falta releer sesiones antiguas completas.**
-
-Prompt sugerido para abrir sesión:
-
-```
-Continuamos con MuVox (C:\proyectos\MuVox). Lee README.md, la última sesión
-en sesiones\ y PLAN.md para retomar el contexto. ¿Por dónde vamos?
+```bash
+cd handy-src
+bun install
+bun run tauri dev      # desarrollo (hot-reload)
+bun run tauri build    # instalador de producción
 ```
 
-Al **cerrar** una sesión: pídele a Claude que registre lo hecho en
-`sesiones/sesion-NN.md` (ver [sesiones/README.md](sesiones/README.md)).
+## 📄 Licencia y créditos
 
----
+VoCript es software libre bajo licencia [MIT](LICENSE).
 
-## Mapa del proyecto
+Es un **fork de [Handy](https://github.com/cjpais/Handy)**, creado por
+[CJ Pais](https://github.com/cjpais) (también MIT) — gracias por el excelente
+trabajo base. El motor de transcripción es
+[Whisper.cpp](https://github.com/ggerganov/whisper.cpp), de Georgi Gerganov.
 
-```
-C:\proyectos\MuVox\
-├── README.md                 ← estás aquí
-├── PLAN.md                   ← plan maestro por fases
-├── docs\
-│   ├── ENTORNO.md            ← cómo compilar (deps, variables, comandos, errores)
-│   └── ACTUALIZACIONES.md    ← estrategia para mejoras de Handy upstream
-├── sesiones\
-│   ├── README.md             ← índice + protocolo de sesión
-│   └── sesion-NN.md          ← registro de cada sesión de trabajo
-├── handy-src\                ← código fuente (fork de Handy)
-└── releases\                 ← instaladores compilados
-```
-
----
-
-## Comandos rápidos
-
-Desde `C:\proyectos\MuVox\handy-src` (con las variables de entorno cargadas — ver
-[docs/ENTORNO.md](docs/ENTORNO.md)):
-
-| Acción | Comando |
-|--------|---------|
-| Desarrollo (hot-reload) | `bun tauri dev` |
-| Build de producción (MSI) | `bun tauri build` |
-| Verificar que compila | `cd src-tauri && cargo check` |
+¿Encuentras un fallo de seguridad? Consulta la [política de seguridad](SECURITY.md).
