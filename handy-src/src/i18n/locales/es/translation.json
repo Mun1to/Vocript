@@ -12,7 +12,7 @@
     "general": "General",
     "models": "Modelos",
     "fileTranscription": "Transcribir",
-    "advanced": "Avanzado",
+    "advanced": "Ajustes avanzados",
     "postProcessing": "Post Proceso",
     "history": "Historial",
     "debug": "Depuración",
@@ -153,6 +153,13 @@
     "cancelDownload": "Cancelar descarga"
   },
   "settings": {
+    "theme": {
+      "title": "Tema",
+      "description": "Elige la apariencia de VoCript: seguir el sistema, claro u oscuro.",
+      "system": "Sistema",
+      "light": "Claro",
+      "dark": "Oscuro"
+    },
     "modelSettings": {
       "title": "Configuración de {{model}}",
       "noSettingsNeeded": "Este modelo funciona automáticamente sin necesidad de configuración."
@@ -300,8 +307,9 @@
       }
     },
     "advanced": {
-      "title": "Avanzado",
+      "title": "Ajustes avanzados",
       "groups": {
+        "appearance": "Apariencia",
         "app": "Aplicación",
         "output": "Salida",
         "transcription": "Transcripción",

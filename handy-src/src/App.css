@@ -52,14 +52,29 @@
   text-align: center;
 }
 
+/*
+ * Theme resolution:
+ * - No `data-theme` (or "system") → follow the OS preference below.
+ * - `data-theme="light"` → keep the light tokens from :root (OS dark is ignored).
+ * - `data-theme="dark"` → force the dark tokens regardless of OS.
+ * The attribute is set on <html> from the `theme` setting (see App.tsx).
+ */
 @media (prefers-color-scheme: dark) {
-  :root {
-    /* Colors - Dark Theme */
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    /* Colors - Dark Theme (system) */
     --color-text: #fbfbfb;
     --color-background: #2c2b29;
     --color-logo-primary: #60a5fa;
     --color-logo-stroke: #bfdbfe;
   }
+}
+
+:root[data-theme="dark"] {
+  /* Colors - Dark Theme (forced) */
+  --color-text: #fbfbfb;
+  --color-background: #2c2b29;
+  --color-logo-primary: #60a5fa;
+  --color-logo-stroke: #bfdbfe;
 }
 
 /* macOS - tint native overlay scrollbar thumb */

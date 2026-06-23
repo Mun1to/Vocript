@@ -12,7 +12,7 @@
     "general": "General",
     "models": "Models",
     "fileTranscription": "Transcribe",
-    "advanced": "Advanced",
+    "advanced": "Advanced settings",
     "postProcessing": "Post Process",
     "history": "History",
     "debug": "Debug",
@@ -153,6 +153,13 @@
     }
   },
   "settings": {
+    "theme": {
+      "title": "Theme",
+      "description": "Choose VoCript's appearance: follow the system, light, or dark.",
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
     "modelSettings": {
       "title": "{{model}} Settings",
       "noSettingsNeeded": "This model works automatically with no configuration needed."
@@ -300,8 +307,9 @@
       }
     },
     "advanced": {
-      "title": "Advanced",
+      "title": "Advanced settings",
       "groups": {
+        "appearance": "Appearance",
         "app": "App",
         "output": "Output",
         "transcription": "Transcription",

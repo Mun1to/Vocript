@@ -3,6 +3,7 @@ import { subscribeWithSelector } from "zustand/middleware";
 import { listen } from "@tauri-apps/api/event";
 import type {
   AppSettings as Settings,
+  AppTheme,
   AudioDevice,
   WhisperAcceleratorSetting,
   OrtAcceleratorSetting,
@@ -148,6 +149,7 @@ const settingUpdaters: {
     commands.changeAppendTrailingSpaceSetting(value as boolean),
   log_level: (value) => commands.setLogLevel(value as any),
   app_language: (value) => commands.changeAppLanguageSetting(value as string),
+  theme: (value) => commands.changeThemeSetting(value as AppTheme),
   experimental_enabled: (value) =>
     commands.changeExperimentalEnabledSetting(value as boolean),
   lazy_stream_close: (value) =>

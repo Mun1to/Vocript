@@ -21,6 +21,7 @@ import { useSettings } from "../../../hooks/useSettings";
 import { KeyboardImplementationSelector } from "../debug/KeyboardImplementationSelector";
 import { AccelerationSelector } from "../AccelerationSelector";
 import { LazyStreamClose } from "../LazyStreamClose";
+import { ThemeSelector } from "../ThemeSelector";
 
 export const AdvancedSettings: React.FC = () => {
   const { t } = useTranslation();
@@ -29,6 +30,10 @@ export const AdvancedSettings: React.FC = () => {
 
   return (
     <div className="max-w-3xl w-full mx-auto space-y-6">
+      <SettingsGroup title={t("settings.advanced.groups.appearance")}>
+        <ThemeSelector descriptionMode="tooltip" grouped={true} />
+      </SettingsGroup>
+
       <SettingsGroup title={t("settings.advanced.groups.app")}>
         <StartHidden descriptionMode="tooltip" grouped={true} />
         <AutostartToggle descriptionMode="tooltip" grouped={true} />

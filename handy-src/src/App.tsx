@@ -55,6 +55,18 @@ function App() {
     initializeRTL(i18n.language);
   }, [i18n.language]);
 
+  // Apply the selected theme to <html>. "system" follows the OS preference
+  // (no attribute), "light"/"dark" force the chosen theme (see App.css).
+  useEffect(() => {
+    const theme = settings?.theme ?? "system";
+    const root = document.documentElement;
+    if (theme === "system") {
+      root.removeAttribute("data-theme");
+    } else {
+      root.setAttribute("data-theme", theme);
+    }
+  }, [settings?.theme]);
+
   // Initialize Enigo, shortcuts, and refresh audio devices when main app loads
   useEffect(() => {
     if (onboardingStep === "done" && !hasCompletedPostOnboardingInit.current) {

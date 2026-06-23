@@ -122,6 +122,17 @@ pub enum OverlayPosition {
     Bottom,
 }
 
+/// Apariencia de la interfaz. `System` sigue la preferencia del sistema
+/// operativo (claro/oscuro); `Light` y `Dark` fuerzan el tema elegido.
+#[derive(Serialize, Deserialize, Debug, Clone, Copy, PartialEq, Eq, Type, Default)]
+#[serde(rename_all = "lowercase")]
+pub enum AppTheme {
+    #[default]
+    System,
+    Light,
+    Dark,
+}
+
 /// De dónde se toma el audio a transcribir.
 /// `System` captura lo que suena en el ordenador (loopback) en vez del
 /// micrófono — útil para transcribir un vídeo, una llamada, etc. En Windows
@@ -442,6 +453,9 @@ pub struct AppSettings {
     pub append_trailing_space: bool,
     #[serde(default = "default_app_language")]
     pub app_language: String,
+    /// Apariencia de la interfaz: seguir el sistema, claro u oscuro.
+    #[serde(default)]
+    pub theme: AppTheme,
     #[serde(default)]
     pub experimental_enabled: bool,
     #[serde(default)]
@@ -881,6 +895,7 @@ pub fn get_default_settings() -> AppSettings {
         mute_while_recording: false,
         append_trailing_space: false,
         app_language: default_app_language(),
+        theme: AppTheme::System,
         experimental_enabled: false,
         lazy_stream_close: false,
         keyboard_implementation: KeyboardImplementation::default(),
