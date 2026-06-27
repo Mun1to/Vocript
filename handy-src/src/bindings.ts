@@ -374,6 +374,30 @@ async changeThemeSetting(theme: AppTheme) : Promise<Result<null, string>> {
     else return { status: "error", error: e  as any };
 }
 },
+async changeSourceAttributionSetting(enabled: boolean) : Promise<Result<null, string>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("change_source_attribution_setting", { enabled }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
+async changeLiveModeSetting(enabled: boolean) : Promise<Result<null, string>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("change_live_mode_setting", { enabled }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
+async changeLiveModeSystemSetting(enabled: boolean) : Promise<Result<null, string>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("change_live_mode_system_setting", { enabled }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
 async changeTourCompletedSetting(completed: boolean) : Promise<Result<null, string>> {
     try {
     return { status: "ok", data: await TAURI_INVOKE("change_tour_completed_setting", { completed }) };
@@ -998,6 +1022,21 @@ live_auto_paste?: boolean; auto_submit?: boolean; auto_submit_key?: AutoSubmitKe
  * Apariencia de la interfaz: seguir el sistema, claro u oscuro.
  */
 theme?: AppTheme; 
+/**
+ * Al transcribir audio del sistema, añade al final una línea de «Fuente»
+ * con lo que sonaba (título, artista/canal, app y minuto), vía SMTC.
+ */
+source_attribution?: boolean; 
+/**
+ * «Modo en vivo» (voz): cuando está activo, el atajo de dictado normal
+ * (`transcribe`) muestra la cápsula en vivo en vez de pegar al final.
+ */
+live_mode?: boolean; 
+/**
+ * «Modo en vivo» (audio del sistema): cuando está activo, el atajo de
+ * audio del sistema (`transcribe_system`) muestra la cápsula en vivo.
+ */
+live_mode_system?: boolean; 
 /**
  * True una vez que el usuario ha completado (o saltado) el tour guiado de
  * bienvenida. Evita que vuelva a aparecer solo; el botón «Guía» lo relanza.

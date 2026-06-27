@@ -3,6 +3,8 @@
     "settings": "Configuración...",
     "checkUpdates": "Buscar actualizaciones...",
     "copyLastTranscript": "Copiar la última transcripción",
+    "liveTranscriptionVoice": "En vivo: voz",
+    "liveTranscriptionSystem": "En vivo: audio del sistema",
     "unloadModel": "Descargar modelo",
     "model": "Modelo",
     "quit": "Salir",
@@ -71,7 +73,7 @@
       },
       "live": {
         "title": "Transcripción en vivo",
-        "body": "Con este atajo el texto aparece en una cápsula flotante mientras hablas. Perfecto para dictados largos: al soltar, se pega solo o lo copias tú."
+        "body": "Activa el «Modo en vivo» y el texto aparece en una cápsula flotante mientras hablas (o mientras suena el audio del sistema). Hay un interruptor para la voz y otro para el audio del sistema; no necesitas un atajo aparte."
       },
       "file": {
         "title": "Transcribir archivos",
@@ -354,6 +356,20 @@
       "clipboardOnly": {
         "label": "Copiar al portapapeles",
         "description": "Al terminar la transcripción, copia el texto al portapapeles y muestra un aviso en vez de pegarlo en la app activa. Recomendado al capturar audio del sistema, para que el texto no caiga encima del vídeo o la llamada."
+      },
+      "sourceAttribution": {
+        "label": "Añadir la fuente del audio",
+        "description": "Al transcribir audio del sistema, añade al final una línea de «Fuente» con lo que sonaba (título, artista o canal, app y el minuto exacto), detectado de Spotify, YouTube en el navegador, etc. Solo en Windows."
+      },
+      "liveMode": {
+        "voice": {
+          "label": "Modo en vivo — voz",
+          "description": "Cuando está activo, tu atajo de dictado muestra la cápsula en vivo (el texto aparece mientras hablas) en vez de pegarlo al final. No hace falta un atajo aparte; también puedes arrancarlo desde la bandeja."
+        },
+        "system": {
+          "label": "Modo en vivo — audio del sistema",
+          "description": "Cuando está activo, tu atajo de audio del sistema transcribe en vivo lo que suena (YouTube, Spotify…) en la cápsula flotante. Independiente del modo en vivo de voz; también desde la bandeja."
+        }
       },
       "liveCopy": {
         "label": "Pegar en vivo automáticamente",

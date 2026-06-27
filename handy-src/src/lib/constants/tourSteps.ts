@@ -32,8 +32,8 @@ export const TOUR_STEPS: TourStep[] = [
   { id: "dictation", section: "general", practice: "dictation" },
   // 4. System audio (transcribe what's playing on the PC).
   { id: "systemAudio", section: "general", target: "shortcut-system" },
-  // 5. Live transcription (floating capsule).
-  { id: "live", section: "general", target: "shortcut-live" },
+  // 5. Live transcription (floating capsule), controlled by a toggle.
+  { id: "live", section: "general", target: "live-mode" },
   // 6. Transcribe audio/video files.
   { id: "file", section: "file" },
   // 7. Personal dictionary (exact replacements).

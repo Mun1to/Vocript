@@ -150,6 +150,11 @@ const settingUpdaters: {
   log_level: (value) => commands.setLogLevel(value as any),
   app_language: (value) => commands.changeAppLanguageSetting(value as string),
   theme: (value) => commands.changeThemeSetting(value as AppTheme),
+  source_attribution: (value) =>
+    commands.changeSourceAttributionSetting(value as boolean),
+  live_mode: (value) => commands.changeLiveModeSetting(value as boolean),
+  live_mode_system: (value) =>
+    commands.changeLiveModeSystemSetting(value as boolean),
   tour_completed: (value) =>
     commands.changeTourCompletedSetting(value as boolean),
   work_profile: (value) =>

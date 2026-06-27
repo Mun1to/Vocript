@@ -7,7 +7,9 @@ import { SettingsGroup } from "../../ui/SettingsGroup";
 import { OutputDeviceSelector } from "../OutputDeviceSelector";
 import { PushToTalk } from "../PushToTalk";
 import { ClipboardOnlyToggle } from "../ClipboardOnlyToggle";
+import { LiveModeToggle } from "../LiveModeToggle";
 import { LiveCopyToggle } from "../LiveCopyToggle";
+import { SourceAttribution } from "../SourceAttribution";
 import { SystemAudioAppSelector } from "../SystemAudioAppSelector";
 import { AudioFeedback } from "../AudioFeedback";
 import { useSettings } from "../../../hooks/useSettings";
@@ -30,14 +32,28 @@ export const GeneralSettings: React.FC = () => {
         <div data-tour="shortcut-system">
           <ShortcutInput shortcutId="transcribe_system" grouped={true} />
         </div>
-        <div data-tour="shortcut-live">
-          <ShortcutInput shortcutId="transcribe_live" grouped={true} />
-        </div>
         {isWindows && (
           <SystemAudioAppSelector descriptionMode="tooltip" grouped={true} />
         )}
+        {isWindows && (
+          <SourceAttribution descriptionMode="tooltip" grouped={true} />
+        )}
         <PushToTalk descriptionMode="tooltip" grouped={true} />
         <ClipboardOnlyToggle descriptionMode="tooltip" grouped={true} />
+        <div data-tour="live-mode">
+          <LiveModeToggle
+            variant="voice"
+            descriptionMode="tooltip"
+            grouped={true}
+          />
+        </div>
+        {isWindows && (
+          <LiveModeToggle
+            variant="system"
+            descriptionMode="tooltip"
+            grouped={true}
+          />
+        )}
         <LiveCopyToggle descriptionMode="tooltip" grouped={true} />
         {/* Cancel shortcut is hidden with push-to-talk (release key cancels) and on Linux (dynamic shortcut instability) */}
         {!isLinux && !pushToTalk && (

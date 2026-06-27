@@ -3,6 +3,8 @@
     "settings": "Settings...",
     "checkUpdates": "Check for Updates...",
     "copyLastTranscript": "Copy Last Transcript",
+    "liveTranscriptionVoice": "Live: Voice",
+    "liveTranscriptionSystem": "Live: System Audio",
     "unloadModel": "Unload Model",
     "model": "Model",
     "quit": "Quit",
@@ -71,7 +73,7 @@
       },
       "live": {
         "title": "Live transcription",
-        "body": "With this shortcut the text appears in a floating capsule as you speak. Perfect for long dictations: on release it pastes itself or you copy it."
+        "body": "Turn on \"Live mode\" and the text appears in a floating capsule as you speak (or as system audio plays). There's a switch for voice and another for system audio — no separate shortcut needed."
       },
       "file": {
         "title": "Transcribe files",
@@ -323,6 +325,20 @@
       "clipboardOnly": {
         "label": "Copy to clipboard",
         "description": "When transcription finishes, copy the text to the clipboard and show a confirmation instead of pasting it into the active app. Recommended when capturing system audio, so the text doesn't land on top of the video or call."
+      },
+      "sourceAttribution": {
+        "label": "Add the audio source",
+        "description": "When transcribing system audio, append a \"Source\" line with what was playing (title, artist or channel, app and the exact minute), detected from Spotify, YouTube in the browser, etc. Windows only."
+      },
+      "liveMode": {
+        "voice": {
+          "label": "Live mode — voice",
+          "description": "When on, your dictation shortcut shows the live capsule (text appears as you speak) instead of pasting at the end. No separate shortcut needed; you can also start it from the tray."
+        },
+        "system": {
+          "label": "Live mode — system audio",
+          "description": "When on, your system-audio shortcut transcribes what's playing (YouTube, Spotify…) live in the floating capsule. Independent from voice live mode; also available from the tray."
+        }
       },
       "liveCopy": {
         "label": "Auto-paste live",

@@ -42,6 +42,7 @@ pub fn is_transcribe_binding(id: &str) -> bool {
         || id == "transcribe_with_post_process"
         || id == "transcribe_system"
         || id == "transcribe_live"
+        || id == "transcribe_system_live"
 }
 
 impl TranscriptionCoordinator {

@@ -1153,6 +1153,33 @@ pub fn change_theme_setting(app: AppHandle, theme: settings::AppTheme) -> Result
 
 #[tauri::command]
 #[specta::specta]
+pub fn change_source_attribution_setting(app: AppHandle, enabled: bool) -> Result<(), String> {
+    let mut settings = settings::get_settings(&app);
+    settings.source_attribution = enabled;
+    settings::write_settings(&app, settings);
+    Ok(())
+}
+
+#[tauri::command]
+#[specta::specta]
+pub fn change_live_mode_setting(app: AppHandle, enabled: bool) -> Result<(), String> {
+    let mut settings = settings::get_settings(&app);
+    settings.live_mode = enabled;
+    settings::write_settings(&app, settings);
+    Ok(())
+}
+
+#[tauri::command]
+#[specta::specta]
+pub fn change_live_mode_system_setting(app: AppHandle, enabled: bool) -> Result<(), String> {
+    let mut settings = settings::get_settings(&app);
+    settings.live_mode_system = enabled;
+    settings::write_settings(&app, settings);
+    Ok(())
+}
+
+#[tauri::command]
+#[specta::specta]
 pub fn change_tour_completed_setting(app: AppHandle, completed: bool) -> Result<(), String> {
     let mut settings = settings::get_settings(&app);
     settings.tour_completed = completed;

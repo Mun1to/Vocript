@@ -456,6 +456,18 @@ pub struct AppSettings {
     /// Apariencia de la interfaz: seguir el sistema, claro u oscuro.
     #[serde(default)]
     pub theme: AppTheme,
+    /// Al transcribir audio del sistema, añade al final una línea de «Fuente»
+    /// con lo que sonaba (título, artista/canal, app y minuto), vía SMTC.
+    #[serde(default)]
+    pub source_attribution: bool,
+    /// «Modo en vivo» (voz): cuando está activo, el atajo de dictado normal
+    /// (`transcribe`) muestra la cápsula en vivo en vez de pegar al final.
+    #[serde(default)]
+    pub live_mode: bool,
+    /// «Modo en vivo» (audio del sistema): cuando está activo, el atajo de
+    /// audio del sistema (`transcribe_system`) muestra la cápsula en vivo.
+    #[serde(default)]
+    pub live_mode_system: bool,
     /// True una vez que el usuario ha completado (o saltado) el tour guiado de
     /// bienvenida. Evita que vuelva a aparecer solo; el botón «Guía» lo relanza.
     #[serde(default)]
@@ -845,21 +857,10 @@ pub fn get_default_settings() -> AppSettings {
         },
     );
 
-    #[cfg(target_os = "macos")]
-    let default_live_shortcut = "shift+ctrl+space";
-    #[cfg(not(target_os = "macos"))]
-    let default_live_shortcut = "ctrl+shift+space";
-
-    bindings.insert(
-        "transcribe_live".to_string(),
-        ShortcutBinding {
-            id: "transcribe_live".to_string(),
-            name: "Live Transcription".to_string(),
-            description: "Shows the text live in a floating bubble as you speak. The text stays in the bubble (it is not pasted).".to_string(),
-            default_binding: default_live_shortcut.to_string(),
-            current_binding: default_live_shortcut.to_string(),
-        },
-    );
+    // NOTE: live transcription no longer has its own keyboard shortcut. It is
+    // controlled by the `live_mode` / `live_mode_system` toggles (which reuse
+    // the dictation / system-audio shortcuts) and the tray buttons. Removing it
+    // from the defaults means it's never registered as a global hotkey.
 
     AppSettings {
         bindings,
@@ -904,6 +905,9 @@ pub fn get_default_settings() -> AppSettings {
         append_trailing_space: false,
         app_language: default_app_language(),
         theme: AppTheme::System,
+        source_attribution: false,
+        live_mode: false,
+        live_mode_system: false,
         tour_completed: false,
         work_profile: None,
         experimental_enabled: false,

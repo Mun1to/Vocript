@@ -1,6 +1,6 @@
 [package]
 name = "vocript"
-version = "3.0.0"
+version = "3.1.0"
 description = "VoCript"
 authors = ["cjpais"]
 edition = "2021"
@@ -104,6 +104,9 @@ windows = { version = "0.61.3", features = [
   "Win32_System_Threading",
   "Win32_Foundation",
   "Win32_UI_WindowsAndMessaging",
+  "Win32_UI_Accessibility",
+  "Media_Control",
+  "Foundation",
 ] }
 winreg = "0.55"
 

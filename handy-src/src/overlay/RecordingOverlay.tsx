@@ -44,6 +44,10 @@ const RecordingOverlay: React.FC = () => {
   const copyTimerRef = useRef<number | null>(null);
   // Mirror of liveFinished for use inside event listeners (avoids stale closure).
   const liveFinishedRef = useRef(false);
+  // Latest full partial from the backend. The displayed `liveText` catches up to
+  // this one word at a time so the bubble reads smoothly instead of jumping
+  // phrase by phrase.
+  const liveTargetRef = useRef("");
   const direction = getLanguageDirection(i18n.language);
 
   useEffect(() => {
@@ -60,6 +64,7 @@ const RecordingOverlay: React.FC = () => {
         // Starting a fresh live session: clear any previous text/state.
         if (overlayState === "live") {
           setLiveText("");
+          liveTargetRef.current = "";
           setLiveFinished(false);
           setCopyFeedback(false);
         }
@@ -75,6 +80,7 @@ const RecordingOverlay: React.FC = () => {
         smoothedLevelsRef.current = Array(BAR_COUNT).fill(0);
         setLevels(ZERO_LEVELS);
         setLiveText("");
+        liveTargetRef.current = "";
         setLiveFinished(false);
         setCopyFeedback(false);
       });
@@ -101,7 +107,8 @@ const RecordingOverlay: React.FC = () => {
       // overwrite the final/edited text in the bubble.
       const unlistenLive = await listen<string>("live-text", (event) => {
         if (liveFinishedRef.current) return;
-        setLiveText(event.payload as string);
+        // Just update the target; the reveal loop reveals it word by word.
+        liveTargetRef.current = event.payload as string;
       });
 
       // Live session finished: deliver final text + whether it was auto-copied,
@@ -110,6 +117,9 @@ const RecordingOverlay: React.FC = () => {
         "live-finished",
         (event) => {
           const payload = event.payload as LiveFinishedPayload;
+          // Show the final text in full immediately (no gradual reveal) so it
+          // can be edited/copied right away.
+          liveTargetRef.current = payload.text;
           setLiveText(payload.text);
           setLiveFinished(true);
           if (payload.copied) {
@@ -135,6 +145,27 @@ const RecordingOverlay: React.FC = () => {
 
     setupEventListeners();
   }, []);
+
+  // Reveal the live partial one word at a time, so the bubble reads smoothly
+  // instead of jumping a whole phrase every time a new partial arrives.
+  useEffect(() => {
+    if (state !== "live" || liveFinished) return;
+    const id = window.setInterval(() => {
+      setLiveText((shown) => {
+        const target = liveTargetRef.current;
+        if (shown === target) return shown;
+        // Append case: reveal the next word of the (longer) target.
+        if (target.startsWith(shown)) {
+          const rest = target.slice(shown.length);
+          const next = rest.match(/^\s*\S+/);
+          return next ? shown + next[0] : target;
+        }
+        // Whisper corrected an earlier word — snap to the new text.
+        return target;
+      });
+    }, 70);
+    return () => window.clearInterval(id);
+  }, [state, liveFinished]);
 
   // While recording live, keep the read-only bubble scrolled to the latest text.
   useEffect(() => {

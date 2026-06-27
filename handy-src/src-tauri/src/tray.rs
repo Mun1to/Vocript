@@ -133,6 +133,22 @@ pub fn update_tray_menu(app: &AppHandle, state: &TrayIconState, locale: Option<&
         None::<&str>,
     )
     .expect("failed to create copy last transcript item");
+    let live_voice_i = MenuItem::with_id(
+        app,
+        "live_transcription_voice",
+        &strings.live_transcription_voice,
+        true,
+        None::<&str>,
+    )
+    .expect("failed to create live voice item");
+    let live_system_i = MenuItem::with_id(
+        app,
+        "live_transcription_system",
+        &strings.live_transcription_system,
+        true,
+        None::<&str>,
+    )
+    .expect("failed to create live system item");
     let model_loaded = app.state::<Arc<TranscriptionManager>>().is_model_loaded();
     let quit_i = MenuItem::with_id(app, "quit", &strings.quit, true, quit_accelerator)
         .expect("failed to create quit item");
@@ -187,6 +203,8 @@ pub fn update_tray_menu(app: &AppHandle, state: &TrayIconState, locale: Option<&
                     &version_i,
                     &separator(),
                     &cancel_i,
+                    &live_voice_i,
+                    &live_system_i,
                     &separator(),
                     &copy_last_transcript_i,
                     &separator(),
@@ -203,6 +221,8 @@ pub fn update_tray_menu(app: &AppHandle, state: &TrayIconState, locale: Option<&
             &[
                 &version_i,
                 &separator(),
+                &live_voice_i,
+                &live_system_i,
                 &copy_last_transcript_i,
                 &separator(),
                 &model_submenu,

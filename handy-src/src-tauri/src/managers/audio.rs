@@ -177,6 +177,9 @@ pub struct AudioRecordingManager {
     /// Fuente con la que está abierto el stream actual (None si está cerrado).
     /// Permite reabrir el stream cuando cambia la fuente entre grabaciones.
     open_source: Arc<Mutex<Option<AudioSource>>>,
+    /// Snapshot de «lo que sonaba» (SMTC) al empezar una grabación de sistema,
+    /// para añadir la línea de «Fuente» a la transcripción. Ver media_source.
+    system_source_snapshot: Arc<Mutex<Option<crate::media_source::MediaSnapshot>>>,
 }
 
 impl AudioRecordingManager {
@@ -203,6 +206,7 @@ impl AudioRecordingManager {
 
             current_source: Arc::new(Mutex::new(AudioSource::Microphone)),
             open_source: Arc::new(Mutex::new(None)),
+            system_source_snapshot: Arc::new(Mutex::new(None)),
         };
 
         // Always-on?  Open immediately.
@@ -484,12 +488,30 @@ impl AudioRecordingManager {
             // Determine the audio source for this recording: the dedicated
             // system-audio binding captures the system (loopback); every other
             // binding always uses the microphone.
-            let desired_source = if binding_id == "transcribe_system" {
-                AudioSource::System
-            } else {
-                AudioSource::Microphone
-            };
+            // Both the normal system-audio binding and its live variant capture
+            // the system (loopback); every other binding uses the microphone.
+            let desired_source =
+                if binding_id == "transcribe_system" || binding_id == "transcribe_system_live" {
+                    AudioSource::System
+                } else {
+                    AudioSource::Microphone
+                };
             *self.current_source.lock().unwrap() = desired_source;
+
+            // For system-audio captures (normal or live), snapshot what's
+            // playing now (title, artist, app, position) so the transcription
+            // can be attributed to its source. Only when the user enabled it.
+            {
+                let is_system_capture =
+                    binding_id == "transcribe_system" || binding_id == "transcribe_system_live";
+                let snapshot =
+                    if is_system_capture && get_settings(&self.app_handle).source_attribution {
+                        crate::media_source::capture()
+                    } else {
+                        None
+                    };
+                *self.system_source_snapshot.lock().unwrap() = snapshot;
+            }
 
             // (Re)open the stream when it is closed, or when it is open with a
             // different source than the one we need now. Otherwise (on-demand,
@@ -525,6 +547,13 @@ impl AudioRecordingManager {
         } else {
             Err("Already recording".to_string())
         }
+    }
+
+    /// Take (consume) the media-source snapshot captured when the current
+    /// system-audio recording started. Returns `None` for microphone captures
+    /// or when source attribution is disabled.
+    pub fn take_system_source_snapshot(&self) -> Option<crate::media_source::MediaSnapshot> {
+        self.system_source_snapshot.lock().unwrap().take()
     }
 
     pub fn update_selected_device(&self) -> Result<(), anyhow::Error> {

@@ -610,6 +610,25 @@ impl ShortcutAction for TranscribeAction {
                                 transcription
                             );
 
+                            // System-audio captures: append a "Fuente: …" line
+                            // with what was playing (title · artist · app · minute).
+                            let transcription = if binding_id == "transcribe_system"
+                                && !transcription.trim().is_empty()
+                            {
+                                if let Some(src) = rm.take_system_source_snapshot() {
+                                    let lang = get_settings(&ah).app_language;
+                                    format!(
+                                        "{}\n\n{}",
+                                        transcription,
+                                        src.format_source_line(&lang)
+                                    )
+                                } else {
+                                    transcription
+                                }
+                            } else {
+                                transcription
+                            };
+
                             if post_process {
                                 show_processing_overlay(&ah);
                             }
@@ -762,6 +781,20 @@ fn stop_live(app: &AppHandle, binding_id: &str) {
 
         match transcription_result {
             Ok(text) => {
+                // For live system-audio captures, append the "Fuente: …" line
+                // (title · artist · app · minute · link) so it ends up in the
+                // editable bubble, the pasted text and the history alike.
+                let text = if binding_id == "transcribe_system_live" && !text.trim().is_empty() {
+                    if let Some(src) = rm.take_system_source_snapshot() {
+                        let lang = get_settings(&ah).app_language;
+                        format!("{}\n\n{}", text, src.format_source_line(&lang))
+                    } else {
+                        text
+                    }
+                } else {
+                    text
+                };
+
                 if wav_saved {
                     if let Err(err) = hm.save_entry(file_name, text.clone(), false, None, None) {
                         error!("Failed to save live history entry: {}", err);
@@ -867,6 +900,15 @@ pub static ACTION_MAP: Lazy<HashMap<String, Arc<dyn ShortcutAction>>> = Lazy::ne
     );
     map.insert(
         "transcribe_live".to_string(),
+        Arc::new(TranscribeAction {
+            post_process: false,
+            live: true,
+        }) as Arc<dyn ShortcutAction>,
+    );
+    // Live transcription of system audio (the source is selected by
+    // try_start_recording based on this binding id).
+    map.insert(
+        "transcribe_system_live".to_string(),
         Arc::new(TranscribeAction {
             post_process: false,
             live: true,

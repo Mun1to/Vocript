@@ -11,6 +11,7 @@ mod input;
 mod live;
 mod llm_client;
 mod managers;
+mod media_source;
 mod overlay;
 pub mod portable;
 mod settings;
@@ -225,6 +226,19 @@ fn initialize_core_logic(app_handle: &AppHandle) {
             "copy_last_transcript" => {
                 tray::copy_last_transcript(app);
             }
+            "live_transcription_voice" => {
+                // Toggle a voice (mic) live session from the tray: click to
+                // start, click again to finish (the coordinator handles both).
+                if let Some(coordinator) = app.try_state::<TranscriptionCoordinator>() {
+                    coordinator.send_input("transcribe_live", "", true, false);
+                }
+            }
+            "live_transcription_system" => {
+                // Toggle a live session of the system audio from the tray.
+                if let Some(coordinator) = app.try_state::<TranscriptionCoordinator>() {
+                    coordinator.send_input("transcribe_system_live", "", true, false);
+                }
+            }
             "unload_model" => {
                 let transcription_manager = app.state::<Arc<TranscriptionManager>>();
                 if !transcription_manager.is_model_loaded() {
@@ -377,6 +391,9 @@ pub fn run(cli_args: CliArgs) {
             shortcut::change_lazy_stream_close_setting,
             shortcut::change_app_language_setting,
             shortcut::change_theme_setting,
+            shortcut::change_source_attribution_setting,
+            shortcut::change_live_mode_setting,
+            shortcut::change_live_mode_system_setting,
             shortcut::change_tour_completed_setting,
             shortcut::change_work_profile_setting,
             shortcut::change_update_checks_setting,
