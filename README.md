@@ -98,3 +98,13 @@ trabajo base. El motor de transcripción es
 [Whisper.cpp](https://github.com/ggerganov/whisper.cpp), de Georgi Gerganov.
 
 ¿Encuentras un fallo de seguridad? Consulta la [política de seguridad](SECURITY.md).
+
+---
+
+<div align="center">
+
+🌸 Parte de la **Fundación Orquio** · *Easy Tech*
+
+<sub>Tecnología esencial orquestada de forma optimizada, positiva y transparente.</sub>
+
+</div>

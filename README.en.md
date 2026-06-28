@@ -95,3 +95,13 @@ foundation. The transcription engine is
 [Whisper.cpp](https://github.com/ggerganov/whisper.cpp) by Georgi Gerganov.
 
 Found a security issue? See the [security policy](SECURITY.md).
+
+---
+
+<div align="center">
+
+🌸 Part of the **Orquio Foundation** · *Easy Tech*
+
+<sub>Essential technology, orchestrated to be optimized, positive and transparent.</sub>
+
+</div>
