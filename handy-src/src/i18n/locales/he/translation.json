@@ -852,6 +852,16 @@
       "system": "מערכת",
       "normal": "רגיל",
       "live": "חי"
+    },
+    "output": {
+      "label": "פלט",
+      "paste": "הדבק",
+      "clipboard": "העתק"
+    },
+    "activation": {
+      "label": "הפעלה",
+      "toggle": "החלפה",
+      "hold": "החזקה"
     }
   }
 }

@@ -852,6 +852,16 @@
       "system": "Sistem",
       "normal": "Normal",
       "live": "Canlı"
+    },
+    "output": {
+      "label": "Çıkış",
+      "paste": "Yapıştır",
+      "clipboard": "Kopyala"
+    },
+    "activation": {
+      "label": "Etkinleştirme",
+      "toggle": "Değiştir",
+      "hold": "Basılı tut"
     }
   }
 }

@@ -852,6 +852,16 @@
       "system": "시스템",
       "normal": "일반",
       "live": "실시간"
+    },
+    "output": {
+      "label": "출력",
+      "paste": "붙여넣기",
+      "clipboard": "복사"
+    },
+    "activation": {
+      "label": "활성화",
+      "toggle": "전환",
+      "hold": "누르기"
     }
   }
 }

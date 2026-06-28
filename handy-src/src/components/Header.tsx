@@ -41,9 +41,14 @@ export const Header: React.FC<HeaderProps> = ({ currentSection }) => {
       </div>
 
       {/* Persistent Header Toolbar - Clean Frameless */}
-      <div className="flex items-center gap-4">
-        {/* Transcription mode switch (voice / system × normal / live) */}
+      <div className="flex items-center gap-3">
+        {/* Quick-control bar: modes, output and activation as uniform pills */}
         <TranscriptionModeSwitch />
+
+        {/* Divider before the theme toggle */}
+        <span
+          className={`h-5 w-px ${isLight ? "bg-slate-200" : "bg-white/10"}`}
+        />
 
         {/* Light / Dark Mode Toggle Button */}
         <button
@@ -68,16 +73,6 @@ export const Header: React.FC<HeaderProps> = ({ currentSection }) => {
             </>
           )}
         </button>
-
-        {/* Microphone Status Indicator */}
-        <div
-          className={`hidden sm:flex items-center gap-2 px-2 py-1 text-xs font-semibold ${
-            isLight ? "text-blue-700" : "text-blue-400"
-          }`}
-        >
-          <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse shadow-[0_0_8px_#3b82f6]" />
-          <span>{t("header.micReady")}</span>
-        </div>
       </div>
     </header>
   );

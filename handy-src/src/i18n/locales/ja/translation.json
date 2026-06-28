@@ -852,6 +852,16 @@
       "system": "システム",
       "normal": "通常",
       "live": "ライブ"
+    },
+    "output": {
+      "label": "出力",
+      "paste": "貼り付け",
+      "clipboard": "コピー"
+    },
+    "activation": {
+      "label": "起動方法",
+      "toggle": "切り替え",
+      "hold": "長押し"
     }
   }
 }

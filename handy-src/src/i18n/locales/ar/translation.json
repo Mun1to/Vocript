@@ -852,6 +852,16 @@
       "system": "النظام",
       "normal": "عادي",
       "live": "مباشر"
+    },
+    "output": {
+      "label": "الإخراج",
+      "paste": "لصق",
+      "clipboard": "نسخ"
+    },
+    "activation": {
+      "label": "التفعيل",
+      "toggle": "تبديل",
+      "hold": "استمرار"
     }
   }
 }

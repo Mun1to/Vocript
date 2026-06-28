@@ -852,6 +852,16 @@
       "system": "系統",
       "normal": "一般",
       "live": "即時"
+    },
+    "output": {
+      "label": "輸出",
+      "paste": "貼上",
+      "clipboard": "複製"
+    },
+    "activation": {
+      "label": "啟動方式",
+      "toggle": "切換",
+      "hold": "按住"
     }
   }
 }

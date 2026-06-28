@@ -852,6 +852,16 @@
       "system": "Hệ thống",
       "normal": "Thường",
       "live": "Trực tiếp"
+    },
+    "output": {
+      "label": "Đầu ra",
+      "paste": "Dán",
+      "clipboard": "Sao chép"
+    },
+    "activation": {
+      "label": "Kích hoạt",
+      "toggle": "Chuyển",
+      "hold": "Giữ"
     }
   }
 }

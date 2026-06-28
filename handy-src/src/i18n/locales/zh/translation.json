@@ -856,6 +856,16 @@
       "system": "系统",
       "normal": "普通",
       "live": "实时"
+    },
+    "output": {
+      "label": "输出",
+      "paste": "粘贴",
+      "clipboard": "复制"
+    },
+    "activation": {
+      "label": "激活方式",
+      "toggle": "切换",
+      "hold": "按住"
     }
   }
 }

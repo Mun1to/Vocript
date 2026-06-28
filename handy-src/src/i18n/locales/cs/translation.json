@@ -852,6 +852,16 @@
       "system": "Systém",
       "normal": "Normální",
       "live": "Živě"
+    },
+    "output": {
+      "label": "Výstup",
+      "paste": "Vložit",
+      "clipboard": "Kopírovat"
+    },
+    "activation": {
+      "label": "Aktivace",
+      "toggle": "Přepnout",
+      "hold": "Držet"
     }
   }
 }

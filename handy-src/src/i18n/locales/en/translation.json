@@ -20,6 +20,16 @@
       "system": "System",
       "normal": "Normal",
       "live": "Live"
+    },
+    "output": {
+      "label": "Output",
+      "paste": "Paste",
+      "clipboard": "Copy"
+    },
+    "activation": {
+      "label": "Activation",
+      "toggle": "Toggle",
+      "hold": "Hold"
     }
   },
   "sidebar": {

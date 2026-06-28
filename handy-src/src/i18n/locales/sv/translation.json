@@ -852,6 +852,16 @@
       "system": "System",
       "normal": "Normal",
       "live": "Live"
+    },
+    "output": {
+      "label": "Utdata",
+      "paste": "Klistra",
+      "clipboard": "Kopiera"
+    },
+    "activation": {
+      "label": "Aktivering",
+      "toggle": "Växla",
+      "hold": "Håll"
     }
   }
 }

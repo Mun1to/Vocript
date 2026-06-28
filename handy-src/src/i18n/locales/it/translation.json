@@ -852,6 +852,16 @@
       "system": "Sistema",
       "normal": "Normale",
       "live": "Live"
+    },
+    "output": {
+      "label": "Uscita",
+      "paste": "Incolla",
+      "clipboard": "Copia"
+    },
+    "activation": {
+      "label": "Attivazione",
+      "toggle": "Alterna",
+      "hold": "Tieni"
     }
   }
 }
