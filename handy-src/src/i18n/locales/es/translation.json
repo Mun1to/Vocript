@@ -35,6 +35,9 @@
       "label": "Activación",
       "toggle": "Alternar",
       "hold": "Mantener"
+    },
+    "language": {
+      "label": "Idioma"
     }
   },
   "sidebar": {

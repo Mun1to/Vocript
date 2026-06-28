@@ -872,6 +872,9 @@
       "label": "Activation",
       "toggle": "Bascule",
       "hold": "Maintenir"
+    },
+    "language": {
+      "label": "Langue"
     }
   }
 }

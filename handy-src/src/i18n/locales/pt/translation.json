@@ -872,6 +872,9 @@
       "label": "Ativação",
       "toggle": "Alternar",
       "hold": "Manter"
+    },
+    "language": {
+      "label": "Idioma"
     }
   }
 }

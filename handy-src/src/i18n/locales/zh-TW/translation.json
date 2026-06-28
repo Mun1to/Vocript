@@ -872,6 +872,9 @@
       "label": "啟動方式",
       "toggle": "切換",
       "hold": "按住"
+    },
+    "language": {
+      "label": "語言"
     }
   }
 }

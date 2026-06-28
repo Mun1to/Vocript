@@ -4,6 +4,7 @@ import { Sun, Moon } from "lucide-react";
 import { useSettings } from "../hooks/useSettings";
 import { TranscriptionModeSwitch } from "./TranscriptionModeSwitch";
 import { ProfileSelect } from "./ProfileSelect";
+import { LanguageQuickSwitch } from "./LanguageQuickSwitch";
 import type { SidebarSection } from "./Sidebar";
 import type { AppTheme } from "@/bindings";
 
@@ -25,39 +26,32 @@ export const Header: React.FC<HeaderProps> = ({ currentSection }) => {
 
   return (
     <header
-      className={`h-14 border-b px-6 flex items-center justify-between shrink-0 select-none transition-colors duration-200 ${
+      className={`h-14 border-b px-6 flex items-center gap-4 shrink-0 select-none transition-colors duration-200 ${
         isLight ? "bg-white border-slate-200" : "bg-[#0c0d12] border-white/10"
       }`}
     >
-      {/* Active section title + professional profile selector */}
-      <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2.5">
-          <span className="w-1.5 h-4 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
-          <span
-            className={`text-xs font-bold uppercase tracking-wider ${
-              isLight ? "text-slate-900" : "text-slate-200"
-            }`}
-          >
-            {t(`sidebar.${currentSection}`)}
-          </span>
-        </div>
+      {/* Left: active section title (flex-1 so the center pills stay centered) */}
+      <div className="flex-1 min-w-0 flex items-center gap-2.5">
+        <span className="w-1.5 h-4 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
         <span
-          className={`h-5 w-px ${isLight ? "bg-slate-200" : "bg-white/10"}`}
-        />
-        <ProfileSelect />
+          className={`text-xs font-bold uppercase tracking-wider truncate ${
+            isLight ? "text-slate-900" : "text-slate-200"
+          }`}
+        >
+          {t(`sidebar.${currentSection}`)}
+        </span>
       </div>
 
-      {/* Persistent Header Toolbar - Clean Frameless */}
-      <div className="flex items-center gap-3">
-        {/* Quick-control bar: modes, output and activation as uniform pills */}
-        <TranscriptionModeSwitch />
+      {/* Center: quick-control pills (modes, output, activation) */}
+      <TranscriptionModeSwitch />
 
-        {/* Divider before the theme toggle */}
+      {/* Right: profile + language + theme (flex-1, pushed to the end) */}
+      <div className="flex-1 min-w-0 flex items-center justify-end gap-3">
+        <ProfileSelect />
+        <LanguageQuickSwitch />
         <span
           className={`h-5 w-px ${isLight ? "bg-slate-200" : "bg-white/10"}`}
         />
-
-        {/* Light / Dark Mode Toggle Button */}
         <button
           type="button"
           onClick={toggleTheme}

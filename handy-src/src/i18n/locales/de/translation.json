@@ -872,6 +872,9 @@
       "label": "Aktivierung",
       "toggle": "Umschalten",
       "hold": "Halten"
+    },
+    "language": {
+      "label": "Sprache"
     }
   }
 }

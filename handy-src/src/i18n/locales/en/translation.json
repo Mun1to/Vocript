@@ -35,6 +35,9 @@
       "label": "Activation",
       "toggle": "Toggle",
       "hold": "Hold"
+    },
+    "language": {
+      "label": "Language"
     }
   },
   "sidebar": {

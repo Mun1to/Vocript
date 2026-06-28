@@ -872,6 +872,9 @@
       "label": "Aktywacja",
       "toggle": "Przełącz",
       "hold": "Przytrzymaj"
+    },
+    "language": {
+      "label": "Język"
     }
   }
 }

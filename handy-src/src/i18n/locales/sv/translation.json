@@ -872,6 +872,9 @@
       "label": "Aktivering",
       "toggle": "Växla",
       "hold": "Håll"
+    },
+    "language": {
+      "label": "Språk"
     }
   }
 }

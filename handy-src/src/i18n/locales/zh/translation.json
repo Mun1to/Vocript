@@ -876,6 +876,9 @@
       "label": "激活方式",
       "toggle": "切换",
       "hold": "按住"
+    },
+    "language": {
+      "label": "语言"
     }
   }
 }

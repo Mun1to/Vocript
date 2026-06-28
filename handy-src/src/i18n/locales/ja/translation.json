@@ -872,6 +872,9 @@
       "label": "起動方法",
       "toggle": "切り替え",
       "hold": "長押し"
+    },
+    "language": {
+      "label": "言語"
     }
   }
 }

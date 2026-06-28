@@ -872,6 +872,9 @@
       "label": "Aktivace",
       "toggle": "Přepnout",
       "hold": "Držet"
+    },
+    "language": {
+      "label": "Jazyk"
     }
   }
 }

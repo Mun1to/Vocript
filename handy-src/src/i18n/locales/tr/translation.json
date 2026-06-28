@@ -872,6 +872,9 @@
       "label": "Etkinleştirme",
       "toggle": "Değiştir",
       "hold": "Basılı tut"
+    },
+    "language": {
+      "label": "Dil"
     }
   }
 }

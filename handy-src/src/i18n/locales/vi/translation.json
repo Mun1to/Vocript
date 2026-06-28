@@ -872,6 +872,9 @@
       "label": "Kích hoạt",
       "toggle": "Chuyển",
       "hold": "Giữ"
+    },
+    "language": {
+      "label": "Ngôn ngữ"
     }
   }
 }
