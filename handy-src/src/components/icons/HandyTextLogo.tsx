@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string -- SVG del logotipo (nombre de marca) */
 import React from "react";
 
 /**

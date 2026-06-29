@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string -- solo muestra el número de versión y elementos decorativos */
 import React, { useState, useEffect } from "react";
 import { getVersion } from "@tauri-apps/api/app";
 import { useTranslation } from "react-i18next";
@@ -66,7 +67,7 @@ const Footer: React.FC = () => {
                 : "bg-black/40 border-white/5 text-slate-400"
             }`}
           >
-            v{version || "3.1.0"}
+            v{version || "—"}
           </span>
         </div>
       </div>
