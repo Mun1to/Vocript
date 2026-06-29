@@ -1,0 +1,15 @@
+# ===== GitHub Linguist — qué cuenta como "lenguaje" del repo =====
+# VoCript es una app Rust (backend) + TypeScript (frontend). Lo de abajo es
+# infraestructura heredada del proyecto base o configuración del entorno, no
+# código de producto: lo marcamos para que NO infle el % de lenguajes en GitHub.
+# (No borra nada ni afecta a la compilación; solo a cómo se muestra el repo.)
+
+# Entorno de desarrollo Nix (heredado de Handy; el desarrollo real es en Windows)
+*.nix linguist-vendored
+handy-src/.nix/** linguist-vendored
+
+# Andamiaje específico de Apple / macOS (Swift)
+*.swift linguist-vendored
+
+# Configuración de herramientas del frontend (no es código del producto)
+*.config.js linguist-vendored
