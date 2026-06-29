@@ -7,8 +7,8 @@
     "model": "Model",
     "quit": "Çıkış",
     "cancel": "İptal",
-    "liveTranscriptionVoice": "Live: Voice",
-    "liveTranscriptionSystem": "Live: System Audio"
+    "liveTranscriptionVoice": "Canlı: ses",
+    "liveTranscriptionSystem": "Canlı: sistem sesi"
   },
   "sidebar": {
     "general": "Genel",
@@ -18,7 +18,7 @@
     "history": "Geçmiş",
     "debug": "Hata Ayıklama",
     "about": "Hakkında",
-    "fileTranscription": "Transcribe",
+    "fileTranscription": "Yazıya dök",
     "feedback": "Geri bildirim"
   },
   "onboarding": {
@@ -125,74 +125,74 @@
     "profiles": {
       "writing": {
         "label": "Yazma ve notlar",
-        "description": "Emails, notes and documents. Dictation with an automatic space between phrases."
+        "description": "E-postalar, notlar ve belgeler. Cümleler arasında otomatik boşlukla dikte."
       },
       "coding": {
         "label": "Kodlama",
-        "description": "Code and comments. The personal dictionary shines with technical terms."
+        "description": "Kod ve yorumlar. Kişisel sözlük teknik terimlerde parlar."
       },
       "meetings": {
         "label": "Toplantılar ve videolar",
-        "description": "Transcribe calls, meetings and videos via system audio and files."
+        "description": "Sistem sesi ve dosyalar üzerinden aramaları, toplantıları ve videoları yazıya dökün."
       },
       "study": {
         "label": "Dersler ve çalışma",
-        "description": "Take notes by dictating and transcribe your recorded lectures to text."
+        "description": "Dikte ederek not alın ve kaydettiğiniz dersleri metne dökün."
       },
       "accessibility": {
         "label": "Eller serbest",
-        "description": "Voice control without holding keys: press once to start, once to stop."
+        "description": "Tuşları basılı tutmadan sesli kontrol: başlamak için bir kez, durdurmak için bir kez daha basın."
       },
       "multilingual": {
         "label": "Çok dilli",
-        "description": "Dictate in several languages with automatic detection."
+        "description": "Otomatik algılamayla birden çok dilde dikte edin."
       },
       "custom": {
         "label": "Özel"
       },
-      "title": "What will you use VoCript for?",
-      "subtitle": "Pick a profile and we'll set it up for you. You can change everything later in the settings."
+      "title": "VoCript'i ne için kullanacaksınız?",
+      "subtitle": "Bir profil seçin, sizin için ayarlayalım. Daha sonra her şeyi ayarlardan değiştirebilirsiniz."
     },
     "tour": {
-      "guide": "Guide",
-      "replay": "Replay the welcome tour",
-      "next": "Next",
-      "back": "Back",
-      "skip": "Skip",
-      "finish": "Done",
+      "guide": "Kılavuz",
+      "replay": "Karşılama turunu yeniden izle",
+      "next": "İleri",
+      "back": "Geri",
+      "skip": "Atla",
+      "finish": "Bitti",
       "welcome": {
-        "title": "Welcome to VoCript! 🎙️",
-        "body": "Let me show you the basics in under a minute. After each feature you'll get to try it yourself. You can skip the tour anytime."
+        "title": "VoCript'e hoş geldiniz! 🎙️",
+        "body": "Temel özellikleri bir dakikadan kısa sürede göstereceğim. Her özellikten sonra kendiniz deneyebilirsiniz. Turu istediğiniz zaman atlayabilirsiniz."
       },
       "shortcut": {
-        "title": "Set up your dictation shortcut",
-        "body": "First things first: make the shortcut yours. The recommended one is Ctrl + Space.\n\nChange it right here: click the shortcut below and press the combo you want. You can change it again later in Settings → General."
+        "title": "Dikte kısayolunuzu ayarlayın",
+        "body": "Önce: kısayolu istediğiniz gibi ayarlayın. Önerilen Ctrl + Boşluk'tur.\n\nHemen burada değiştirin: aşağıdaki kısayola tıklayın ve istediğiniz kombinasyona basın. Daha sonra Ayarlar → Genel'den tekrar değiştirebilirsiniz."
       },
       "systemAudio": {
-        "title": "System audio",
-        "body": "Want to transcribe what's playing on your PC (a video, a call) instead of your voice? Use this shortcut to capture system audio. You can also target a specific app."
+        "title": "Sistem sesi",
+        "body": "Kendi sesiniz yerine bilgisayarda çalanı (bir video, bir arama) yazıya dökmek mi istiyorsunuz? Bu kısayolu kullanın: sistem sesini yakalar. Belirli bir uygulamayı da seçebilirsiniz."
       },
       "file": {
-        "title": "Transcribe files",
-        "body": "Here you turn an audio or video file into text or .srt subtitles. Just drag and drop it and pick the output format."
+        "title": "Dosyaları yazıya dök",
+        "body": "Burada bir ses veya video dosyasını metne ya da .srt altyazılarına dönüştürürsünüz. Yalnızca sürükleyip bırakın ve çıktı biçimini seçin."
       },
       "dictionary": {
-        "title": "Personal dictionary",
-        "body": "Does VoCript mistype a name or a technical term? Add exact replacements (from → to) and it'll always apply them. You can even import and export your list as CSV."
+        "title": "Kişisel sözlük",
+        "body": "VoCript bir adı veya teknik terimi yanlış mı yazıyor? Tam değiştirmeler ekleyin (şundan → şuna), her zaman uygulasın. Listenizi CSV olarak içe ve dışa bile aktarabilirsiniz."
       },
       "history": {
-        "title": "History",
-        "body": "All your transcriptions are saved here. You can replay the original audio and copy the text whenever you need it."
+        "title": "Geçmiş",
+        "body": "Tüm yazıya dökümleriniz burada kaydedilir. Orijinal sesi yeniden oynatabilir ve metni ihtiyaç duyduğunuzda kopyalayabilirsiniz."
       },
       "dictation": {
-        "title": "Voice dictation",
-        "body": "Place your cursor where you want to type, press your dictation shortcut, speak and release — the text appears on its own.\n\nTry it right here: click the box below and dictate something with your shortcut.",
-        "placeholder": "Click here and dictate with your shortcut…",
-        "success": "✓ It works! That easy."
+        "title": "Sesli dikte",
+        "body": "İmleci yazmak istediğiniz yere getirin, dikte kısayolunuza basın, konuşun ve bırakın: metin kendiliğinden görünür.\n\nHemen burada deneyin: aşağıdaki kutuya tıklayın ve kısayolunuzla bir şeyler söyleyin.",
+        "placeholder": "Buraya tıklayın ve kısayolunuzla konuşun…",
+        "success": "✓ Çalışıyor! İşte bu kadar kolay."
       },
       "donate": {
-        "title": "That's it! 🎉",
-        "body": "You now know the essentials. VoCript is free and runs 100% on your device.\n\nIf you find it useful and have something to spare, I'd really appreciate a donation to keep improving it. Thanks! 🙂",
+        "title": "Hepsi bu kadar! 🎉",
+        "body": "Artık temel bilgileri biliyorsunuz. VoCript ücretsizdir ve %100 cihazınızda çalışır.\n\nİşinize yararsa ve ayıracak bir şeyiniz varsa, geliştirmeye devam edebilmem için bir bağış yapmanız beni çok mutlu eder. Teşekkürler! 🙂",
         "button": "Kahve ısmarla"
       },
       "customWords": {
@@ -236,7 +236,7 @@
         "body": "Ve son dokunuş: açık ve koyu tema arasında geçiş yap. İşte tüm başlık bu kadar! 🎨"
       }
     },
-    "chooseLanguage": "What language will you dictate in?"
+    "chooseLanguage": "Hangi dilde dikte edeceksiniz?"
   },
   "modelSelector": {
     "custom": "Özel",
@@ -292,18 +292,18 @@
       "yourModels": "İndirilen modeller",
       "availableModels": "İndirilebilir",
       "import": {
-        "title": "Reuse existing models",
-        "description": "Already have a model on this computer (e.g. from a previous install)? Reuse it instead of downloading again.",
-        "scan": "Scan computer",
-        "file": "Import file (.bin)",
-        "folder": "Import folder",
-        "use": "Use",
-        "already": "Already added",
-        "imported": "Model imported",
-        "failed": "Could not import the model",
-        "noneFound": "No reusable models found on this computer."
+        "title": "Mevcut modelleri yeniden kullan",
+        "description": "Bu bilgisayarda zaten bir modeliniz var mı (örneğin önceki bir kurulumdan)? Tekrar indirmek yerine yeniden kullanın.",
+        "scan": "Bilgisayarda ara",
+        "file": "Dosya içe aktar (.bin)",
+        "folder": "Klasör içe aktar",
+        "use": "Kullan",
+        "already": "Zaten eklendi",
+        "imported": "Model içe aktarıldı",
+        "failed": "Model içe aktarılamadı",
+        "noneFound": "Bu cihazda yeniden kullanılabilir model bulunamadı."
       },
-      "recommendedForLanguage": "Recommended for {{language}}"
+      "recommendedForLanguage": "{{language}} için önerilir"
     },
     "general": {
       "title": "Genel",
@@ -328,12 +328,12 @@
             "description": "İsteğe bağlı: Transkripsiyonunuza her zaman AI son işleme uygulayan özel bir kısayol tuşu."
           },
           "transcribe_system": {
-            "name": "System Audio Hotkey",
-            "description": "The keyboard shortcut to transcribe the audio playing on your computer (e.g. a video) instead of the microphone."
+            "name": "Sistem sesi kısayolu",
+            "description": "Mikrofon yerine bilgisayarda çalan sesi (örneğin bir video) yazıya dökmek için klavye kısayolu."
           },
           "transcribe_live": {
-            "name": "Live Transcription Hotkey",
-            "description": "Shows the text live in a floating bubble as you speak. The text stays in the bubble (it is not pasted)."
+            "name": "Canlı yazıya döküm kısayolu",
+            "description": "Siz konuşurken metni yüzen bir balonda canlı olarak gösterir. Metin balonda kalır (yapıştırılmaz)."
           }
         },
         "errors": {
@@ -355,31 +355,31 @@
         "description": "Kaydetmek için basılı tutun, durdurmak için bırakın"
       },
       "clipboardOnly": {
-        "label": "Copy to clipboard",
-        "description": "When transcription finishes, copy the text to the clipboard and show a confirmation instead of pasting it into the active app. Recommended when capturing system audio, so the text doesn't land on top of the video or call."
+        "label": "Panoya kopyala",
+        "description": "Yazıya döküm bittiğinde, metni etkin uygulamaya yapıştırmak yerine panoya kopyalar ve bir bildirim gösterir. Sistem sesini yakalarken önerilir; böylece metin videonun veya aramanın üzerine düşmez."
       },
       "sourceAttribution": {
-        "label": "Add the audio source",
-        "description": "When transcribing system audio, append a \"Source\" line with what was playing (title, artist or channel, app and the exact minute), detected from Spotify, YouTube in the browser, etc. Windows only."
+        "label": "Ses kaynağını ekle",
+        "description": "Sistem sesini yazıya dökerken, sonuna çalmakta olanı (başlık, sanatçı veya kanal, uygulama ve tam dakika) içeren bir «Kaynak» satırı ekler; Spotify, tarayıcıdaki YouTube vb. üzerinden algılanır. Yalnızca Windows."
       },
       "liveMode": {
         "voice": {
-          "label": "Live mode — voice",
-          "description": "When on, your dictation shortcut shows the live capsule (text appears as you speak) instead of pasting at the end. No separate shortcut needed; you can also start it from the tray."
+          "label": "Canlı mod — ses",
+          "description": "Açıkken, dikte kısayolunuz sonunda yapıştırmak yerine canlı kapsülü gösterir (siz konuştukça metin belirir). Ayrı bir kısayol gerekmez; sistem tepsisinden de başlatabilirsiniz."
         },
         "system": {
-          "label": "Live mode — system audio",
-          "description": "When on, your system-audio shortcut transcribes what's playing (YouTube, Spotify…) live in the floating capsule. Independent from voice live mode; also available from the tray."
+          "label": "Canlı mod — sistem sesi",
+          "description": "Açıkken, sistem sesi kısayolunuz çalmakta olanı (YouTube, Spotify…) yüzen kapsülde canlı olarak yazıya döker. Ses canlı modundan bağımsızdır; sistem tepsisinden de kullanılabilir."
         }
       },
       "liveCopy": {
-        "label": "Auto-paste live",
-        "description": "When the live transcription stops, automatically paste the final text into the active app (like normal dictation). When off, the text stays in an editable bubble and you copy it with the copy button."
+        "label": "Canlıda otomatik yapıştır",
+        "description": "Canlı yazıya dökümü durdurduğunuzda, son metni etkin uygulamaya yapıştırır (normal dikte gibi). Kapalıyken metin düzenlenebilir bir kapsülde kalır ve kopyala düğmesiyle kopyalarsınız."
       },
       "systemAudioApp": {
-        "title": "System audio app",
-        "description": "Choose what the system-audio shortcut captures: the whole computer, or just one specific app (e.g. Spotify). The app must be playing audio to appear in the list; use the refresh button.",
-        "wholeSystem": "Whole system"
+        "title": "Sistem sesi uygulaması",
+        "description": "Sistem sesi kısayolunun neyi yakalayacağını seçin: bilgisayarın tamamı veya yalnızca belirli bir uygulama (örn. Spotify). Uygulamanın listede görünmesi için ses çalıyor olması gerekir; yenile düğmesini kullanın.",
+        "wholeSystem": "Tüm sistem"
       }
     },
     "sound": {
@@ -413,7 +413,7 @@
         "transcription": "Transkripsiyon",
         "history": "Geçmiş",
         "experimental": "Deneysel",
-        "appearance": "Appearance"
+        "appearance": "Görünüm"
       },
       "experimentalToggle": {
         "label": "Deneysel Özellikler",
@@ -526,31 +526,31 @@
         "duplicate": "\"{{word}}\" zaten mevcut"
       },
       "wordReplacements": {
-        "title": "Personal dictionary",
-        "description": "Replaces exact words or phrases when transcribing. Ideal for proper names, jargon or abbreviations. Case-insensitive.",
-        "fromPlaceholder": "When you hear…",
-        "toPlaceholder": "Replace with…",
-        "add": "Add",
-        "remove": "Remove {{word}}",
-        "duplicate": "There's already a replacement for \"{{word}}\"",
-        "hint": "Only the exact, whole word is changed. Add each variant (singular, plural, etc.) separately.",
-        "import": "Import CSV",
-        "export": "Export CSV",
+        "title": "Kişisel sözlük",
+        "description": "Yazıya dökerken tam sözcükleri veya ifadeleri değiştirir. Özel adlar, jargon veya kısaltmalar için idealdir. Büyük/küçük harfe duyarlı değildir.",
+        "fromPlaceholder": "Şu duyulduğunda…",
+        "toPlaceholder": "Şununla değiştir…",
+        "add": "Ekle",
+        "remove": "{{word}} öğesini kaldır",
+        "duplicate": "\"{{word}}\" için zaten bir değiştirme var",
+        "hint": "Yalnızca tam ve eksiksiz sözcük değiştirilir. Her biçimi (tekil, çoğul vb.) ayrı ayrı ekleyin.",
+        "import": "CSV içe aktar",
+        "export": "CSV dışa aktar",
         "csvHelp": {
-          "title": "What should the CSV look like?",
-          "cols": "Two comma-separated columns: the original word and what to replace it with. One row per replacement.",
-          "header": "The header row (de,a) is optional — include it or not.",
-          "exampleLabel": "Example:",
-          "quotes": "If a value contains commas, wrap it in double quotes: \"hello, there\",greeting",
-          "encoding": "Save it as UTF-8. From Excel or Google Sheets: two columns and \"Save as → CSV\".",
-          "tip": "Tip: click \"Export CSV\" to get a file with the exact format ready to edit."
+          "title": "CSV nasıl olmalı?",
+          "cols": "Virgülle ayrılmış iki sütun: özgün sözcük ve onun yerine geçecek olan. Her değiştirme için bir satır.",
+          "header": "Başlık satırı (şundan,şuna) isteğe bağlıdır; ekleyebilir veya eklemeyebilirsiniz.",
+          "exampleLabel": "Örnek:",
+          "quotes": "Bir değer virgül içeriyorsa, çift tırnak içine alın: \"merhaba, nasılsın\",selamlama",
+          "encoding": "UTF-8 olarak kaydedin. Excel veya Google E-Tablolar'dan: iki sütun ve «Farklı kaydet → CSV».",
+          "tip": "İpucu: tam biçimde, düzenlemeye hazır bir dosya almak için «CSV dışa aktar»'a tıklayın."
         },
-        "imported": "{{count}} replacements imported",
-        "importError": "Couldn't import the file",
-        "importEmpty": "The file has no valid replacements",
-        "exportEmpty": "No replacements to export",
-        "exportError": "Couldn't export the file",
-        "exported": "Dictionary exported"
+        "imported": "{{count}} değiştirme içe aktarıldı",
+        "importError": "Dosya içe aktarılamadı",
+        "importEmpty": "Dosyada geçerli değiştirme yok",
+        "exportEmpty": "Dışa aktarılacak değiştirme yok",
+        "exportError": "Dosya dışa aktarılamadı",
+        "exported": "Sözlük dışa aktarıldı"
       },
       "customCommands": {
         "group": "Özel profil",
@@ -632,7 +632,7 @@
       "retranscribeError": "Yeniden yazıya dökme başarısız oldu. Lütfen tekrar deneyin.",
       "transcribing": "Yazıya döküyor...",
       "transcriptionFailed": "Transkripsiyon başarısız oldu. Yeniden deneme simgesini kullanarak tekrar yazıya dökebilirsiniz.",
-      "audioLoadError": "Could not load the recording audio"
+      "audioLoadError": "Kaydın sesi yüklenemedi"
     },
     "debug": {
       "title": "Hata Ayıklama",
@@ -740,46 +740,46 @@
         },
         "handy": {
           "title": "Handy",
-          "description": "VoCript is a fork of the open-source project Handy, created by cjpais.",
-          "button": "View Handy"
+          "description": "VoCript, cjpais tarafından oluşturulan açık kaynak proje Handy'nin bir fork'udur.",
+          "button": "Handy'yi gör"
         }
       },
       "contact": {
-        "title": "Contact",
-        "description": "About me and my other projects",
-        "button": "View portfolio"
+        "title": "İletişim",
+        "description": "Hakkımda ve diğer projelerim",
+        "button": "Portföyü gör"
       }
     },
     "theme": {
-      "title": "Theme",
-      "description": "Choose VoCript's appearance: follow the system, light, or dark.",
-      "system": "System",
-      "light": "Light",
-      "dark": "Dark"
+      "title": "Tema",
+      "description": "VoCript'in görünümünü seçin: sistemi izle, açık veya koyu.",
+      "system": "Sistem",
+      "light": "Açık",
+      "dark": "Koyu"
     },
     "fileTranscription": {
-      "title": "Transcribe file",
-      "description": "Transcribe an audio or video file to text or subtitles (.srt). Everything is processed on your device, offline.",
-      "dropzone": "Drag an audio or video file here",
-      "selectFile": "or click to choose one",
-      "changeFile": "Click to change the file",
-      "supportedFormats": "Supported formats: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus not supported).",
-      "fileFilter": "Audio or video",
-      "format": "Format:",
-      "formatText": "Text",
-      "formatSrt": "Subtitles (SRT)",
-      "transcribe": "Transcribe",
-      "transcribing": "Transcribing… (this may take a while)",
-      "duration": "Duration: {{duration}}",
-      "copy": "Copy",
-      "copied": "Copied",
-      "save": "Save…",
-      "saved": "File saved",
+      "title": "Dosyayı yazıya dök",
+      "description": "Bir ses veya video dosyasını metne ya da altyazılara (.srt) dökün. Her şey cihazınızda, çevrimdışı işlenir.",
+      "dropzone": "Bir ses veya video dosyasını buraya sürükleyin",
+      "selectFile": "veya seçmek için tıklayın",
+      "changeFile": "Dosyayı değiştirmek için tıklayın",
+      "supportedFormats": "Desteklenen biçimler: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus desteklenmiyor).",
+      "fileFilter": "Ses veya video",
+      "format": "Biçim:",
+      "formatText": "Metin",
+      "formatSrt": "Altyazılar (SRT)",
+      "transcribe": "Yazıya dök",
+      "transcribing": "Yazıya dökülüyor… (biraz sürebilir)",
+      "duration": "Süre: {{duration}}",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı",
+      "save": "Kaydet…",
+      "saved": "Dosya kaydedildi",
       "errors": {
-        "failed": "Could not transcribe the file",
-        "unsupported": "Unsupported file format",
-        "copy": "Could not copy to clipboard",
-        "save": "Could not save the file"
+        "failed": "Dosya yazıya dökülemedi",
+        "unsupported": "Desteklenmeyen dosya biçimi",
+        "copy": "Panoya kopyalanamadı",
+        "save": "Dosya kaydedilemedi"
       }
     },
     "feedback": {
@@ -816,9 +816,9 @@
     "portableUpdateTitle": "Manual update required",
     "portableUpdateMessage": "Portable installs cannot be updated automatically. To update: download the latest NSIS installer from GitHub Releases, install it to the same folder, then copy your Data/ folder (settings, models, recordings) from the old version to the new one.",
     "portableUpdateButton": "Open GitHub Releases",
-    "updateNow": "Update",
-    "later": "Later",
-    "updateAvailableDescription": "It will install and the app will restart itself."
+    "updateNow": "Güncelle",
+    "later": "Daha sonra",
+    "updateAvailableDescription": "Yüklenecek ve uygulama kendi kendine yeniden başlayacak."
   },
   "common": {
     "loading": "Yükleniyor...",
@@ -872,11 +872,11 @@
   "overlay": {
     "transcribing": "Transkribe ediliyor...",
     "processing": "İşleniyor...",
-    "copied": "✓ Copied",
-    "listening": "Listening…",
-    "cancel": "Cancel",
-    "copyToClipboard": "Copy to clipboard",
-    "editTranscription": "Edit transcription"
+    "copied": "✓ Kopyalandı",
+    "listening": "Dinleniyor…",
+    "cancel": "İptal",
+    "copyToClipboard": "Panoya kopyala",
+    "editTranscription": "Yazıya dökümü düzenle"
   },
   "header": {
     "profile": {

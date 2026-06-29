@@ -7,8 +7,8 @@
     "model": "模型",
     "quit": "結束",
     "cancel": "取消",
-    "liveTranscriptionVoice": "Live: Voice",
-    "liveTranscriptionSystem": "Live: System Audio"
+    "liveTranscriptionVoice": "即時：語音",
+    "liveTranscriptionSystem": "即時：系統音訊"
   },
   "sidebar": {
     "general": "一般",
@@ -18,7 +18,7 @@
     "history": "歷史紀錄",
     "debug": "偵錯",
     "about": "關於",
-    "fileTranscription": "Transcribe",
+    "fileTranscription": "轉寫",
     "feedback": "意見回饋"
   },
   "onboarding": {
@@ -125,74 +125,74 @@
     "profiles": {
       "writing": {
         "label": "寫作與筆記",
-        "description": "Emails, notes and documents. Dictation with an automatic space between phrases."
+        "description": "郵件、筆記和文件。聽寫時自動在句子之間加入空格。"
       },
       "coding": {
         "label": "程式開發",
-        "description": "Code and comments. The personal dictionary shines with technical terms."
+        "description": "程式碼與註解。個人字典在技術術語上大顯身手。"
       },
       "meetings": {
         "label": "會議與影片",
-        "description": "Transcribe calls, meetings and videos via system audio and files."
+        "description": "透過系統音訊和檔案轉寫通話、會議和影片。"
       },
       "study": {
         "label": "學習與課程",
-        "description": "Take notes by dictating and transcribe your recorded lectures to text."
+        "description": "透過聽寫做筆記，並將錄製的課程轉寫為文字。"
       },
       "accessibility": {
         "label": "免提操作",
-        "description": "Voice control without holding keys: press once to start, once to stop."
+        "description": "無需按住按鍵的語音操作：按一次開始，再按一次停止。"
       },
       "multilingual": {
         "label": "多語言",
-        "description": "Dictate in several languages with automatic detection."
+        "description": "自動偵測，聽寫多種語言。"
       },
       "custom": {
         "label": "自訂"
       },
-      "title": "What will you use VoCript for?",
-      "subtitle": "Pick a profile and we'll set it up for you. You can change everything later in the settings."
+      "title": "您打算用 VoCript 做什麼？",
+      "subtitle": "選擇一個設定檔，我們會為您設定好。之後可在設定中隨時變更。"
     },
     "tour": {
-      "guide": "Guide",
-      "replay": "Replay the welcome tour",
-      "next": "Next",
-      "back": "Back",
-      "skip": "Skip",
-      "finish": "Done",
+      "guide": "指南",
+      "replay": "重新觀看歡迎導覽",
+      "next": "下一步",
+      "back": "上一步",
+      "skip": "略過",
+      "finish": "完成",
       "welcome": {
-        "title": "Welcome to VoCript! 🎙️",
-        "body": "Let me show you the basics in under a minute. After each feature you'll get to try it yourself. You can skip the tour anytime."
+        "title": "歡迎使用 VoCript！🎙️",
+        "body": "我用不到一分鐘為您介紹基本功能。每介紹一項功能後，您都可以親自試用。您可以隨時略過導覽。"
       },
       "shortcut": {
-        "title": "Set up your dictation shortcut",
-        "body": "First things first: make the shortcut yours. The recommended one is Ctrl + Space.\n\nChange it right here: click the shortcut below and press the combo you want. You can change it again later in Settings → General."
+        "title": "設定您的聽寫快速鍵",
+        "body": "首先：把快速鍵設成您喜歡的樣子。建議使用 Ctrl + 空白鍵。\n\n現在就變更：點按下方的快速鍵，按下您想要的組合。之後可在「設定 → 一般」中再次變更。"
       },
       "systemAudio": {
-        "title": "System audio",
-        "body": "Want to transcribe what's playing on your PC (a video, a call) instead of your voice? Use this shortcut to capture system audio. You can also target a specific app."
+        "title": "系統音訊",
+        "body": "想轉寫電腦上正在播放的聲音（影片、通話）而不是您的聲音嗎？使用這個快速鍵來擷取系統音訊。您也可以指定某個特定的應用程式。"
       },
       "file": {
-        "title": "Transcribe files",
-        "body": "Here you turn an audio or video file into text or .srt subtitles. Just drag and drop it and pick the output format."
+        "title": "轉寫檔案",
+        "body": "在這裡，您可以將音訊或影片檔案轉換為文字或 .srt 字幕。只要拖放檔案並選擇輸出格式即可。"
       },
       "dictionary": {
-        "title": "Personal dictionary",
-        "body": "Does VoCript mistype a name or a technical term? Add exact replacements (from → to) and it'll always apply them. You can even import and export your list as CSV."
+        "title": "個人字典",
+        "body": "VoCript 把某個名稱或技術術語寫錯了？加入精確替換（從 → 到），它就會一律套用。您甚至可以用 CSV 匯入和匯出清單。"
       },
       "history": {
-        "title": "History",
-        "body": "All your transcriptions are saved here. You can replay the original audio and copy the text whenever you need it."
+        "title": "歷史記錄",
+        "body": "您所有的轉寫都會儲存在這裡。您可以重新播放原始音訊，並隨時複製文字。"
       },
       "dictation": {
-        "title": "Voice dictation",
-        "body": "Place your cursor where you want to type, press your dictation shortcut, speak and release — the text appears on its own.\n\nTry it right here: click the box below and dictate something with your shortcut.",
-        "placeholder": "Click here and dictate with your shortcut…",
-        "success": "✓ It works! That easy."
+        "title": "語音聽寫",
+        "body": "將游標放在想要輸入的位置，按下聽寫快速鍵，說話後放開：文字會自動出現。\n\n現在就試試：點按下方的方框，用快速鍵說點什麼。",
+        "placeholder": "點按這裡，用快速鍵說話…",
+        "success": "✓ 成功了！就這麼簡單。"
       },
       "donate": {
-        "title": "That's it! 🎉",
-        "body": "You now know the essentials. VoCript is free and runs 100% on your device.\n\nIf you find it useful and have something to spare, I'd really appreciate a donation to keep improving it. Thanks! 🙂",
+        "title": "大功告成！🎉",
+        "body": "您已經掌握了基礎。VoCript 完全免費，並 100% 在您的裝置上執行。\n\n如果它對您有用，而且您行有餘力，我會非常感謝您的捐款，讓我能持續改進它。謝謝！🙂",
         "button": "請我喝杯咖啡"
       },
       "customWords": {
@@ -236,7 +236,7 @@
         "body": "最後的點綴：在淺色與深色主題間切換。頂列就這些啦！🎨"
       }
     },
-    "chooseLanguage": "What language will you dictate in?"
+    "chooseLanguage": "您要用哪種語言來聽寫？"
   },
   "modelSelector": {
     "custom": "自訂",
@@ -297,12 +297,12 @@
             "description": "可選：專用快捷鍵，使用時一律對轉錄結果套用 AI 後處理"
           },
           "transcribe_system": {
-            "name": "System Audio Hotkey",
-            "description": "The keyboard shortcut to transcribe the audio playing on your computer (e.g. a video) instead of the microphone."
+            "name": "系統音訊快速鍵",
+            "description": "用來轉寫電腦上正在播放的音訊（例如影片）而非麥克風的鍵盤快速鍵。"
           },
           "transcribe_live": {
-            "name": "Live Transcription Hotkey",
-            "description": "Shows the text live in a floating bubble as you speak. The text stays in the bubble (it is not pasted)."
+            "name": "即時轉寫快速鍵",
+            "description": "在您說話時，將文字即時顯示在浮動泡泡中。文字會留在泡泡裡（不會貼上）。"
           }
         },
         "errors": {
@@ -324,31 +324,31 @@
         "description": "按住錄製，放開停止"
       },
       "clipboardOnly": {
-        "label": "Copy to clipboard",
-        "description": "When transcription finishes, copy the text to the clipboard and show a confirmation instead of pasting it into the active app. Recommended when capturing system audio, so the text doesn't land on top of the video or call."
+        "label": "複製到剪貼簿",
+        "description": "轉寫完成後，會將文字複製到剪貼簿並顯示通知，而不是貼到使用中的應用程式。擷取系統音訊時建議使用，以免文字落在影片或通話上方。"
       },
       "sourceAttribution": {
-        "label": "Add the audio source",
-        "description": "When transcribing system audio, append a \"Source\" line with what was playing (title, artist or channel, app and the exact minute), detected from Spotify, YouTube in the browser, etc. Windows only."
+        "label": "加入音訊來源",
+        "description": "轉寫系統音訊時，會在結尾加上一行「來源」，記載當時播放的內容（標題、演出者或頻道、應用程式和確切的時間點），從 Spotify、瀏覽器中的 YouTube 等偵測。僅限 Windows。"
       },
       "liveMode": {
         "voice": {
-          "label": "Live mode — voice",
-          "description": "When on, your dictation shortcut shows the live capsule (text appears as you speak) instead of pasting at the end. No separate shortcut needed; you can also start it from the tray."
+          "label": "即時模式 — 語音",
+          "description": "開啟時，您的聽寫快速鍵會顯示即時膠囊（說話時文字隨即出現），而不是在最後貼上。不需要另外的快速鍵；也可從系統匣啟動。"
         },
         "system": {
-          "label": "Live mode — system audio",
-          "description": "When on, your system-audio shortcut transcribes what's playing (YouTube, Spotify…) live in the floating capsule. Independent from voice live mode; also available from the tray."
+          "label": "即時模式 — 系統音訊",
+          "description": "開啟時，您的系統音訊快速鍵會將正在播放的聲音（YouTube、Spotify…）即時轉寫到浮動膠囊中。與語音即時模式各自獨立；也可從系統匣使用。"
         }
       },
       "liveCopy": {
-        "label": "Auto-paste live",
-        "description": "When the live transcription stops, automatically paste the final text into the active app (like normal dictation). When off, the text stays in an editable bubble and you copy it with the copy button."
+        "label": "即時自動貼上",
+        "description": "當您停止即時轉寫時，會將最終文字貼到使用中的應用程式（與一般聽寫相同）。關閉時，文字會留在可編輯的膠囊中，您可用複製按鈕複製。"
       },
       "systemAudioApp": {
-        "title": "System audio app",
-        "description": "Choose what the system-audio shortcut captures: the whole computer, or just one specific app (e.g. Spotify). The app must be playing audio to appear in the list; use the refresh button.",
-        "wholeSystem": "Whole system"
+        "title": "系統音訊應用程式",
+        "description": "選擇系統音訊快速鍵要擷取的內容：整台電腦，或只擷取某個特定的應用程式（例如 Spotify）。應用程式必須正在播放音訊才會出現在清單中；請使用重新整理按鈕。",
+        "wholeSystem": "整個系統"
       }
     },
     "models": {
@@ -369,18 +369,18 @@
       },
       "noModelsMatch": "沒有符合此篩選條件的模型",
       "import": {
-        "title": "Reuse existing models",
-        "description": "Already have a model on this computer (e.g. from a previous install)? Reuse it instead of downloading again.",
-        "scan": "Scan computer",
-        "file": "Import file (.bin)",
-        "folder": "Import folder",
-        "use": "Use",
-        "already": "Already added",
-        "imported": "Model imported",
-        "failed": "Could not import the model",
-        "noneFound": "No reusable models found on this computer."
+        "title": "重複使用現有模型",
+        "description": "您的電腦上已經有模型了嗎（例如來自先前的安裝）？無需再次下載，可直接重複使用。",
+        "scan": "掃描電腦",
+        "file": "匯入檔案（.bin）",
+        "folder": "匯入資料夾",
+        "use": "使用",
+        "already": "已新增",
+        "imported": "模型已匯入",
+        "failed": "無法匯入模型",
+        "noneFound": "在此裝置上找不到可重複使用的模型。"
       },
-      "recommendedForLanguage": "Recommended for {{language}}"
+      "recommendedForLanguage": "建議用於 {{language}}"
     },
     "sound": {
       "title": "聲音",
@@ -413,7 +413,7 @@
         "transcription": "轉錄",
         "history": "歷史",
         "experimental": "實驗性",
-        "appearance": "Appearance"
+        "appearance": "外觀"
       },
       "experimentalToggle": {
         "label": "實驗性功能",
@@ -526,31 +526,31 @@
         "duplicate": "「{{word}}」已存在"
       },
       "wordReplacements": {
-        "title": "Personal dictionary",
-        "description": "Replaces exact words or phrases when transcribing. Ideal for proper names, jargon or abbreviations. Case-insensitive.",
-        "fromPlaceholder": "When you hear…",
-        "toPlaceholder": "Replace with…",
-        "add": "Add",
-        "remove": "Remove {{word}}",
-        "duplicate": "There's already a replacement for \"{{word}}\"",
-        "hint": "Only the exact, whole word is changed. Add each variant (singular, plural, etc.) separately.",
-        "import": "Import CSV",
-        "export": "Export CSV",
+        "title": "個人字典",
+        "description": "在轉寫時替換精確的單字或詞組。非常適合專有名詞、行話或縮寫。不分大小寫。",
+        "fromPlaceholder": "當出現…",
+        "toPlaceholder": "替換為…",
+        "add": "新增",
+        "remove": "刪除 {{word}}",
+        "duplicate": "已存在針對 \"{{word}}\" 的替換",
+        "hint": "只會更改完全相符的整個單字。請分別新增每種變化形（單數、複數等）。",
+        "import": "匯入 CSV",
+        "export": "匯出 CSV",
         "csvHelp": {
-          "title": "What should the CSV look like?",
-          "cols": "Two comma-separated columns: the original word and what to replace it with. One row per replacement.",
-          "header": "The header row (de,a) is optional — include it or not.",
-          "exampleLabel": "Example:",
-          "quotes": "If a value contains commas, wrap it in double quotes: \"hello, there\",greeting",
-          "encoding": "Save it as UTF-8. From Excel or Google Sheets: two columns and \"Save as → CSV\".",
-          "tip": "Tip: click \"Export CSV\" to get a file with the exact format ready to edit."
+          "title": "CSV 應該長什麼樣子？",
+          "cols": "以逗號分隔的兩欄：原始單字和要替換成的內容。每個替換佔一列。",
+          "header": "標題列（從,到）是選用的，可加可不加。",
+          "exampleLabel": "範例：",
+          "quotes": "如果某個值包含逗號，請用雙引號括起來：\"你好，最近好嗎\",問候",
+          "encoding": "請以 UTF-8 儲存。在 Excel 或 Google 試算表中：使用兩欄，然後「另存新檔 → CSV」。",
+          "tip": "提示：點按「匯出 CSV」即可取得一個格式正確、可直接編輯的檔案。"
         },
-        "imported": "{{count}} replacements imported",
-        "importError": "Couldn't import the file",
-        "importEmpty": "The file has no valid replacements",
-        "exportEmpty": "No replacements to export",
-        "exportError": "Couldn't export the file",
-        "exported": "Dictionary exported"
+        "imported": "已匯入 {{count}} 筆替換",
+        "importError": "無法匯入檔案",
+        "importEmpty": "檔案中沒有有效的替換",
+        "exportEmpty": "沒有可匯出的替換",
+        "exportError": "無法匯出檔案",
+        "exported": "字典已匯出"
       },
       "customCommands": {
         "group": "自訂設定檔",
@@ -632,7 +632,7 @@
       "retranscribeError": "重新轉錄失敗，請重試。",
       "transcribing": "轉錄中...",
       "transcriptionFailed": "轉錄失敗。您可以使用重試圖示重新轉錄。",
-      "audioLoadError": "Could not load the recording audio"
+      "audioLoadError": "無法載入錄音的音訊"
     },
     "debug": {
       "title": "偵錯",
@@ -740,46 +740,46 @@
         },
         "handy": {
           "title": "Handy",
-          "description": "VoCript is a fork of the open-source project Handy, created by cjpais.",
-          "button": "View Handy"
+          "description": "VoCript 是基於由 cjpais 建立的開源專案 Handy 的分支。",
+          "button": "查看 Handy"
         }
       },
       "contact": {
-        "title": "Contact",
-        "description": "About me and my other projects",
-        "button": "View portfolio"
+        "title": "聯絡方式",
+        "description": "關於我以及我的其他專案",
+        "button": "查看作品集"
       }
     },
     "theme": {
-      "title": "Theme",
-      "description": "Choose VoCript's appearance: follow the system, light, or dark.",
-      "system": "System",
-      "light": "Light",
-      "dark": "Dark"
+      "title": "佈景主題",
+      "description": "選擇 VoCript 的外觀：跟隨系統、淺色或深色。",
+      "system": "系統",
+      "light": "淺色",
+      "dark": "深色"
     },
     "fileTranscription": {
-      "title": "Transcribe file",
-      "description": "Transcribe an audio or video file to text or subtitles (.srt). Everything is processed on your device, offline.",
-      "dropzone": "Drag an audio or video file here",
-      "selectFile": "or click to choose one",
-      "changeFile": "Click to change the file",
-      "supportedFormats": "Supported formats: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus not supported).",
-      "fileFilter": "Audio or video",
-      "format": "Format:",
-      "formatText": "Text",
-      "formatSrt": "Subtitles (SRT)",
-      "transcribe": "Transcribe",
-      "transcribing": "Transcribing… (this may take a while)",
-      "duration": "Duration: {{duration}}",
-      "copy": "Copy",
-      "copied": "Copied",
-      "save": "Save…",
-      "saved": "File saved",
+      "title": "轉寫檔案",
+      "description": "將音訊或影片檔案轉寫為文字或字幕（.srt）。所有處理都離線在您的裝置上完成。",
+      "dropzone": "將音訊或影片檔案拖到這裡",
+      "selectFile": "或點按以選擇",
+      "changeFile": "點按以更換檔案",
+      "supportedFormats": "支援的格式：MP3、WAV、FLAC、OGG、M4A、MP4、AAC、MKV…（不支援 Opus）。",
+      "fileFilter": "音訊或影片",
+      "format": "格式：",
+      "formatText": "文字",
+      "formatSrt": "字幕（SRT）",
+      "transcribe": "轉寫",
+      "transcribing": "正在轉寫…（可能需要一些時間）",
+      "duration": "長度：{{duration}}",
+      "copy": "複製",
+      "copied": "已複製",
+      "save": "儲存…",
+      "saved": "檔案已儲存",
       "errors": {
-        "failed": "Could not transcribe the file",
-        "unsupported": "Unsupported file format",
-        "copy": "Could not copy to clipboard",
-        "save": "Could not save the file"
+        "failed": "無法轉寫該檔案",
+        "unsupported": "不支援的檔案格式",
+        "copy": "無法複製到剪貼簿",
+        "save": "無法儲存檔案"
       }
     },
     "feedback": {
@@ -816,9 +816,9 @@
     "portableUpdateTitle": "Manual update required",
     "portableUpdateMessage": "Portable installs cannot be updated automatically. To update: download the latest NSIS installer from GitHub Releases, install it to the same folder, then copy your Data/ folder (settings, models, recordings) from the old version to the new one.",
     "portableUpdateButton": "Open GitHub Releases",
-    "updateNow": "Update",
-    "later": "Later",
-    "updateAvailableDescription": "It will install and the app will restart itself."
+    "updateNow": "更新",
+    "later": "稍後",
+    "updateAvailableDescription": "將自動安裝，應用程式會自行重新啟動。"
   },
   "common": {
     "loading": "載入中...",
@@ -872,11 +872,11 @@
   "overlay": {
     "transcribing": "正在轉錄...",
     "processing": "處理中...",
-    "copied": "✓ Copied",
-    "listening": "Listening…",
-    "cancel": "Cancel",
-    "copyToClipboard": "Copy to clipboard",
-    "editTranscription": "Edit transcription"
+    "copied": "✓ 已複製",
+    "listening": "正在聆聽…",
+    "cancel": "取消",
+    "copyToClipboard": "複製到剪貼簿",
+    "editTranscription": "編輯轉寫"
   },
   "header": {
     "profile": {

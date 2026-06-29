@@ -7,8 +7,8 @@
     "model": "מודל",
     "quit": "יציאה",
     "cancel": "ביטול",
-    "liveTranscriptionVoice": "Live: Voice",
-    "liveTranscriptionSystem": "Live: System Audio"
+    "liveTranscriptionVoice": "חי: קול",
+    "liveTranscriptionSystem": "חי: אודיו המערכת"
   },
   "sidebar": {
     "general": "כללי",
@@ -18,7 +18,7 @@
     "history": "היסטוריה",
     "debug": "ניפוי שגיאות",
     "about": "אודות",
-    "fileTranscription": "Transcribe",
+    "fileTranscription": "תמלל",
     "feedback": "משוב"
   },
   "onboarding": {
@@ -125,74 +125,74 @@
     "profiles": {
       "writing": {
         "label": "כתיבה והערות",
-        "description": "Emails, notes and documents. Dictation with an automatic space between phrases."
+        "description": "אימיילים, הערות ומסמכים. הכתבה עם רווח אוטומטי בין המשפטים."
       },
       "coding": {
         "label": "תכנות",
-        "description": "Code and comments. The personal dictionary shines with technical terms."
+        "description": "קוד והערות. המילון האישי זורח עם מונחים טכניים."
       },
       "meetings": {
         "label": "פגישות ווידאו",
-        "description": "Transcribe calls, meetings and videos via system audio and files."
+        "description": "תמלל שיחות, פגישות וסרטונים מאודיו המערכת ומקבצים."
       },
       "study": {
         "label": "לימודים ושיעורים",
-        "description": "Take notes by dictating and transcribe your recorded lectures to text."
+        "description": "רשום הערות בהכתבה ותמלל את ההרצאות המוקלטות שלך לטקסט."
       },
       "accessibility": {
         "label": "ללא ידיים",
-        "description": "Voice control without holding keys: press once to start, once to stop."
+        "description": "שליטה קולית בלי להחזיק מקשים: לחיצה אחת כדי להתחיל, ועוד אחת כדי לעצור."
       },
       "multilingual": {
         "label": "רב-לשוני",
-        "description": "Dictate in several languages with automatic detection."
+        "description": "הכתב במספר שפות עם זיהוי אוטומטי."
       },
       "custom": {
         "label": "מותאם אישית"
       },
-      "title": "What will you use VoCript for?",
-      "subtitle": "Pick a profile and we'll set it up for you. You can change everything later in the settings."
+      "title": "למה תשתמש ב‑VoCript?",
+      "subtitle": "בחר פרופיל ואנחנו נגדיר עבורך הכול. תוכל לשנות הכול מאוחר יותר בהגדרות."
     },
     "tour": {
-      "guide": "Guide",
-      "replay": "Replay the welcome tour",
-      "next": "Next",
-      "back": "Back",
-      "skip": "Skip",
-      "finish": "Done",
+      "guide": "מדריך",
+      "replay": "צפה שוב בסיור הפתיחה",
+      "next": "הבא",
+      "back": "חזרה",
+      "skip": "דלג",
+      "finish": "סיום",
       "welcome": {
-        "title": "Welcome to VoCript! 🎙️",
-        "body": "Let me show you the basics in under a minute. After each feature you'll get to try it yourself. You can skip the tour anytime."
+        "title": "ברוך הבא ל‑VoCript! 🎙️",
+        "body": "אראה לך את היסודות בפחות מדקה. אחרי כל תכונה תוכל לנסות אותה בעצמך. אפשר לדלג על הסיור בכל רגע."
       },
       "shortcut": {
-        "title": "Set up your dictation shortcut",
-        "body": "First things first: make the shortcut yours. The recommended one is Ctrl + Space.\n\nChange it right here: click the shortcut below and press the combo you want. You can change it again later in Settings → General."
+        "title": "הגדר את קיצור ההכתבה שלך",
+        "body": "קודם כול: הגדר את הקיצור לטעמך. המומלץ הוא Ctrl + רווח.\n\nשנה אותו כאן ממש: לחץ על הקיצור למטה ולחץ על הצירוף הרצוי. תוכל לשנות אותו שוב מאוחר יותר בהגדרות → כללי."
       },
       "systemAudio": {
-        "title": "System audio",
-        "body": "Want to transcribe what's playing on your PC (a video, a call) instead of your voice? Use this shortcut to capture system audio. You can also target a specific app."
+        "title": "אודיו המערכת",
+        "body": "רוצה לתמלל את מה שמתנגן במחשב (סרטון, שיחה) במקום את קולך? השתמש בקיצור הזה: הוא לוכד את אודיו המערכת. אפשר גם לבחור אפליקציה מסוימת."
       },
       "file": {
-        "title": "Transcribe files",
-        "body": "Here you turn an audio or video file into text or .srt subtitles. Just drag and drop it and pick the output format."
+        "title": "תמלול קבצים",
+        "body": "כאן אתה ממיר קובץ אודיו או וידאו לטקסט או לכתוביות .srt. פשוט גרור ושחרר אותו ובחר את פורמט הפלט."
       },
       "dictionary": {
-        "title": "Personal dictionary",
-        "body": "Does VoCript mistype a name or a technical term? Add exact replacements (from → to) and it'll always apply them. You can even import and export your list as CSV."
+        "title": "מילון אישי",
+        "body": "VoCript כותב שם או מונח טכני באופן שגוי? הוסף החלפות מדויקות (מ־ → ל־) והוא תמיד יחיל אותן. אפשר אפילו לייבא ולייצא את הרשימה שלך בפורמט CSV."
       },
       "history": {
-        "title": "History",
-        "body": "All your transcriptions are saved here. You can replay the original audio and copy the text whenever you need it."
+        "title": "היסטוריה",
+        "body": "כל התמלולים שלך נשמרים כאן. תוכל להשמיע שוב את האודיו המקורי ולהעתיק את הטקסט בכל עת שתצטרך."
       },
       "dictation": {
-        "title": "Voice dictation",
-        "body": "Place your cursor where you want to type, press your dictation shortcut, speak and release — the text appears on its own.\n\nTry it right here: click the box below and dictate something with your shortcut.",
-        "placeholder": "Click here and dictate with your shortcut…",
-        "success": "✓ It works! That easy."
+        "title": "הכתבה קולית",
+        "body": "מקם את הסמן במקום שבו תרצה לכתוב, לחץ על קיצור ההכתבה, דבר ושחרר: הטקסט מופיע מעצמו.\n\nנסה כאן ממש: לחץ על התיבה למטה והכתב משהו עם הקיצור שלך.",
+        "placeholder": "לחץ כאן והכתב עם הקיצור שלך…",
+        "success": "✓ זה עובד! פשוט ככה."
       },
       "donate": {
-        "title": "That's it! 🎉",
-        "body": "You now know the essentials. VoCript is free and runs 100% on your device.\n\nIf you find it useful and have something to spare, I'd really appreciate a donation to keep improving it. Thanks! 🙂",
+        "title": "זהו זה! 🎉",
+        "body": "עכשיו אתה מכיר את העיקר. VoCript חינמי ופועל ב‑100% במכשיר שלך.\n\nאם הוא שימושי עבורך ויש לך משהו לתרום, אודה מאוד על תרומה כדי שאמשיך לשפר אותו. תודה! 🙂",
         "button": "קנה לי קפה"
       },
       "customWords": {
@@ -236,7 +236,7 @@
         "body": "והנגיעה האחרונה: מעבר בין ערכת נושא בהירה לכהה. וזה כל הכותרת! 🎨"
       }
     },
-    "chooseLanguage": "What language will you dictate in?"
+    "chooseLanguage": "באיזו שפה תכתיב?"
   },
   "modelSelector": {
     "custom": "מותאם אישית",
@@ -297,12 +297,12 @@
             "description": "אופציונלי: קיצור מקשים ייעודי שתמיד מפעיל עיבוד AI על התמלול."
           },
           "transcribe_system": {
-            "name": "System Audio Hotkey",
-            "description": "The keyboard shortcut to transcribe the audio playing on your computer (e.g. a video) instead of the microphone."
+            "name": "קיצור לאודיו המערכת",
+            "description": "קיצור המקלדת לתמלול האודיו שמתנגן במחשב (למשל סרטון) במקום המיקרופון."
           },
           "transcribe_live": {
-            "name": "Live Transcription Hotkey",
-            "description": "Shows the text live in a floating bubble as you speak. The text stays in the bubble (it is not pasted)."
+            "name": "קיצור לתמלול חי",
+            "description": "מציג את הטקסט בזמן אמת בבועה צפה בזמן שאתה מדבר. הטקסט נשאר בבועה (אינו מודבק)."
           }
         },
         "errors": {
@@ -324,31 +324,31 @@
         "description": "החזק כדי להקליט, שחרר כדי לעצור"
       },
       "clipboardOnly": {
-        "label": "Copy to clipboard",
-        "description": "When transcription finishes, copy the text to the clipboard and show a confirmation instead of pasting it into the active app. Recommended when capturing system audio, so the text doesn't land on top of the video or call."
+        "label": "העתק ללוח",
+        "description": "בסיום התמלול, הטקסט מועתק ללוח ומוצגת הודעה במקום להדביק אותו באפליקציה הפעילה. מומלץ בעת לכידת אודיו המערכת, כדי שהטקסט לא ייפול על הווידאו או השיחה."
       },
       "sourceAttribution": {
-        "label": "Add the audio source",
-        "description": "When transcribing system audio, append a \"Source\" line with what was playing (title, artist or channel, app and the exact minute), detected from Spotify, YouTube in the browser, etc. Windows only."
+        "label": "הוסף את מקור האודיו",
+        "description": "בעת תמלול אודיו המערכת, מוסיף בסוף שורת «מקור» עם מה שהתנגן (כותרת, אמן או ערוץ, אפליקציה והדקה המדויקת), שזוהה מ‑Spotify, מ‑YouTube בדפדפן וכו'. ב‑Windows בלבד."
       },
       "liveMode": {
         "voice": {
-          "label": "Live mode — voice",
-          "description": "When on, your dictation shortcut shows the live capsule (text appears as you speak) instead of pasting at the end. No separate shortcut needed; you can also start it from the tray."
+          "label": "מצב חי — קול",
+          "description": "כשמופעל, קיצור ההכתבה מציג את הקפסולה החיה (הטקסט מופיע בזמן שאתה מדבר) במקום להדביק אותו בסוף. אין צורך בקיצור נפרד; אפשר גם להפעיל אותו ממגש המערכת."
         },
         "system": {
-          "label": "Live mode — system audio",
-          "description": "When on, your system-audio shortcut transcribes what's playing (YouTube, Spotify…) live in the floating capsule. Independent from voice live mode; also available from the tray."
+          "label": "מצב חי — אודיו המערכת",
+          "description": "כשמופעל, קיצור אודיו המערכת מתמלל בזמן אמת את מה שמתנגן (YouTube, Spotify…) בקפסולה הצפה. עצמאי ממצב החי הקולי; זמין גם ממגש המערכת."
         }
       },
       "liveCopy": {
-        "label": "Auto-paste live",
-        "description": "When the live transcription stops, automatically paste the final text into the active app (like normal dictation). When off, the text stays in an editable bubble and you copy it with the copy button."
+        "label": "הדבקה חיה אוטומטית",
+        "description": "כשעוצרים את התמלול החי, הטקסט הסופי מודבק באפליקציה הפעילה (כמו הכתבה רגילה). כשהאפשרות כבויה, הטקסט נשאר בקפסולה ניתנת לעריכה ואתה מעתיק אותו בלחצן ההעתקה."
       },
       "systemAudioApp": {
-        "title": "System audio app",
-        "description": "Choose what the system-audio shortcut captures: the whole computer, or just one specific app (e.g. Spotify). The app must be playing audio to appear in the list; use the refresh button.",
-        "wholeSystem": "Whole system"
+        "title": "אפליקציית אודיו המערכת",
+        "description": "בחר מה קיצור אודיו המערכת לוכד: את כל המחשב, או רק אפליקציה מסוימת אחת (למשל Spotify). האפליקציה חייבת להשמיע אודיו כדי להופיע ברשימה; השתמש בלחצן הרענון.",
+        "wholeSystem": "כל המערכת"
       }
     },
     "models": {
@@ -369,18 +369,18 @@
       },
       "noModelsMatch": "אין מודלים שמתאימים לסינון הזה.",
       "import": {
-        "title": "Reuse existing models",
-        "description": "Already have a model on this computer (e.g. from a previous install)? Reuse it instead of downloading again.",
-        "scan": "Scan computer",
-        "file": "Import file (.bin)",
-        "folder": "Import folder",
-        "use": "Use",
-        "already": "Already added",
-        "imported": "Model imported",
-        "failed": "Could not import the model",
-        "noneFound": "No reusable models found on this computer."
+        "title": "שימוש חוזר במודלים קיימים",
+        "description": "כבר יש לך מודל במחשב הזה (למשל מהתקנה קודמת)? השתמש בו מחדש במקום להוריד שוב.",
+        "scan": "סרוק את המחשב",
+        "file": "ייבוא קובץ (.bin)",
+        "folder": "ייבוא תיקייה",
+        "use": "השתמש",
+        "already": "כבר נוסף",
+        "imported": "המודל יובא",
+        "failed": "לא ניתן היה לייבא את המודל",
+        "noneFound": "לא נמצאו מודלים לשימוש חוזר במכשיר הזה."
       },
-      "recommendedForLanguage": "Recommended for {{language}}"
+      "recommendedForLanguage": "מומלץ עבור {{language}}"
     },
     "sound": {
       "title": "שמע",
@@ -413,7 +413,7 @@
         "transcription": "תמלול",
         "history": "היסטוריה",
         "experimental": "ניסיוני",
-        "appearance": "Appearance"
+        "appearance": "מראה"
       },
       "experimentalToggle": {
         "label": "תכונות ניסיוניות",
@@ -526,31 +526,31 @@
         "duplicate": "\"{{word}}\" כבר קיימת"
       },
       "wordReplacements": {
-        "title": "Personal dictionary",
-        "description": "Replaces exact words or phrases when transcribing. Ideal for proper names, jargon or abbreviations. Case-insensitive.",
-        "fromPlaceholder": "When you hear…",
-        "toPlaceholder": "Replace with…",
-        "add": "Add",
-        "remove": "Remove {{word}}",
-        "duplicate": "There's already a replacement for \"{{word}}\"",
-        "hint": "Only the exact, whole word is changed. Add each variant (singular, plural, etc.) separately.",
-        "import": "Import CSV",
-        "export": "Export CSV",
+        "title": "מילון אישי",
+        "description": "מחליף מילים או ביטויים מדויקים בעת התמלול. אידיאלי לשמות פרטיים, ז'רגון או ראשי תיבות. אינו מבחין בין אותיות גדולות לקטנות.",
+        "fromPlaceholder": "כאשר נשמע…",
+        "toPlaceholder": "החלף ב…",
+        "add": "הוסף",
+        "remove": "הסר {{word}}",
+        "duplicate": "כבר קיימת החלפה עבור \"{{word}}\"",
+        "hint": "רק המילה המדויקת והשלמה משתנה. הוסף כל צורה (יחיד, רבים וכו') בנפרד.",
+        "import": "ייבוא CSV",
+        "export": "ייצוא CSV",
         "csvHelp": {
-          "title": "What should the CSV look like?",
-          "cols": "Two comma-separated columns: the original word and what to replace it with. One row per replacement.",
-          "header": "The header row (de,a) is optional — include it or not.",
-          "exampleLabel": "Example:",
-          "quotes": "If a value contains commas, wrap it in double quotes: \"hello, there\",greeting",
-          "encoding": "Save it as UTF-8. From Excel or Google Sheets: two columns and \"Save as → CSV\".",
-          "tip": "Tip: click \"Export CSV\" to get a file with the exact format ready to edit."
+          "title": "איך צריך להיראות קובץ ה‑CSV?",
+          "cols": "שתי עמודות מופרדות בפסיק: המילה המקורית והמילה שתחליף אותה. שורה אחת לכל החלפה.",
+          "header": "שורת הכותרת (מ,ל) היא רשות — אפשר לכלול אותה או לא.",
+          "exampleLabel": "דוגמה:",
+          "quotes": "אם ערך מכיל פסיקים, עטוף אותו במירכאות כפולות: \"שלום, מה נשמע\",ברכה",
+          "encoding": "שמור אותו ב‑UTF-8. מ‑Excel או מ‑Google Sheets: שתי עמודות ו«שמירה בשם → CSV».",
+          "tip": "טיפ: לחץ «ייצוא CSV» כדי לקבל קובץ בפורמט המדויק, מוכן לעריכה."
         },
-        "imported": "{{count}} replacements imported",
-        "importError": "Couldn't import the file",
-        "importEmpty": "The file has no valid replacements",
-        "exportEmpty": "No replacements to export",
-        "exportError": "Couldn't export the file",
-        "exported": "Dictionary exported"
+        "imported": "יובאו {{count}} החלפות",
+        "importError": "לא ניתן היה לייבא את הקובץ",
+        "importEmpty": "הקובץ אינו מכיל החלפות תקפות",
+        "exportEmpty": "אין החלפות לייצוא",
+        "exportError": "לא ניתן היה לייצא את הקובץ",
+        "exported": "המילון יוצא"
       },
       "customCommands": {
         "group": "פרופיל מותאם",
@@ -576,7 +576,7 @@
           "unavailable": "Apple Intelligence לא זמין במכשיר הזה. נדרש Mac עם Apple Silicon שמריץ macOS Tahoe (26.0) ומעלה, עם Apple Intelligence מופעל בהגדרות המערכת."
         },
         "baseUrl": {
-          "title": "Base URL",
+          "title": "כתובת URL בסיסית",
           "description": "כתובת ה-API הבסיסית עבור הספק הנבחר. רק ספק מותאם אישית ניתן לעריכה.",
           "placeholder": "https://api.openai.com/v1"
         },
@@ -632,7 +632,7 @@
       "retranscribeError": "תמלול מחדש נכשל. נסה שוב.",
       "transcribing": "מתמלל...",
       "transcriptionFailed": "התמלול נכשל. אפשר לתמלל מחדש באמצעות אייקון הניסיון החוזר.",
-      "audioLoadError": "Could not load the recording audio"
+      "audioLoadError": "לא ניתן היה לטעון את האודיו של ההקלטה"
     },
     "debug": {
       "title": "ניפוי שגיאות",
@@ -740,46 +740,46 @@
         },
         "handy": {
           "title": "Handy",
-          "description": "VoCript is a fork of the open-source project Handy, created by cjpais.",
-          "button": "View Handy"
+          "description": "VoCript הוא fork של פרויקט הקוד הפתוח Handy, שנוצר על ידי cjpais.",
+          "button": "הצג את Handy"
         }
       },
       "contact": {
-        "title": "Contact",
-        "description": "About me and my other projects",
-        "button": "View portfolio"
+        "title": "צור קשר",
+        "description": "עליי ועל הפרויקטים האחרים שלי",
+        "button": "הצג תיק עבודות"
       }
     },
     "theme": {
-      "title": "Theme",
-      "description": "Choose VoCript's appearance: follow the system, light, or dark.",
-      "system": "System",
-      "light": "Light",
-      "dark": "Dark"
+      "title": "ערכת נושא",
+      "description": "בחר את המראה של VoCript: לפי המערכת, בהיר או כהה.",
+      "system": "מערכת",
+      "light": "בהיר",
+      "dark": "כהה"
     },
     "fileTranscription": {
-      "title": "Transcribe file",
-      "description": "Transcribe an audio or video file to text or subtitles (.srt). Everything is processed on your device, offline.",
-      "dropzone": "Drag an audio or video file here",
-      "selectFile": "or click to choose one",
-      "changeFile": "Click to change the file",
-      "supportedFormats": "Supported formats: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus not supported).",
-      "fileFilter": "Audio or video",
-      "format": "Format:",
-      "formatText": "Text",
-      "formatSrt": "Subtitles (SRT)",
-      "transcribe": "Transcribe",
-      "transcribing": "Transcribing… (this may take a while)",
-      "duration": "Duration: {{duration}}",
-      "copy": "Copy",
-      "copied": "Copied",
-      "save": "Save…",
-      "saved": "File saved",
+      "title": "תמלול קובץ",
+      "description": "תמלל קובץ אודיו או וידאו לטקסט או לכתוביות (.srt). הכול מעובד במכשיר שלך, ללא חיבור.",
+      "dropzone": "גרור לכאן קובץ אודיו או וידאו",
+      "selectFile": "או לחץ כדי לבחור אחד",
+      "changeFile": "לחץ כדי להחליף קובץ",
+      "supportedFormats": "פורמטים נתמכים: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus אינו נתמך).",
+      "fileFilter": "אודיו או וידאו",
+      "format": "פורמט:",
+      "formatText": "טקסט",
+      "formatSrt": "כתוביות (SRT)",
+      "transcribe": "תמלל",
+      "transcribing": "מתמלל… (עשוי להימשך זמן מה)",
+      "duration": "משך: {{duration}}",
+      "copy": "העתק",
+      "copied": "הועתק",
+      "save": "שמור…",
+      "saved": "הקובץ נשמר",
       "errors": {
-        "failed": "Could not transcribe the file",
-        "unsupported": "Unsupported file format",
-        "copy": "Could not copy to clipboard",
-        "save": "Could not save the file"
+        "failed": "לא ניתן היה לתמלל את הקובץ",
+        "unsupported": "פורמט קובץ שאינו נתמך",
+        "copy": "לא ניתן היה להעתיק ללוח",
+        "save": "לא ניתן היה לשמור את הקובץ"
       }
     },
     "feedback": {
@@ -816,9 +816,9 @@
     "portableUpdateTitle": "נדרש עדכון ידני",
     "portableUpdateMessage": "התקנות ניידות אינן מתעדכנות אוטומטית. כדי לעדכן, הורד את מתקין ה-NSIS האחרון מ-GitHub Releases, התקן לאותה תיקייה, ואז העתק את תיקיית Data/ (הגדרות, מודלים, הקלטות) מהגרסה הישנה לחדשה.",
     "portableUpdateButton": "פתח את GitHub Releases",
-    "updateNow": "Update",
-    "later": "Later",
-    "updateAvailableDescription": "It will install and the app will restart itself."
+    "updateNow": "עדכון",
+    "later": "מאוחר יותר",
+    "updateAvailableDescription": "ההתקנה תתבצע והאפליקציה תופעל מחדש מעצמה."
   },
   "common": {
     "loading": "טוען...",
@@ -872,11 +872,11 @@
   "overlay": {
     "transcribing": "מתמלל...",
     "processing": "מעבד...",
-    "copied": "✓ Copied",
-    "listening": "Listening…",
-    "cancel": "Cancel",
-    "copyToClipboard": "Copy to clipboard",
-    "editTranscription": "Edit transcription"
+    "copied": "✓ הועתק",
+    "listening": "מאזין…",
+    "cancel": "ביטול",
+    "copyToClipboard": "העתק ללוח",
+    "editTranscription": "ערוך תמלול"
   },
   "header": {
     "profile": {

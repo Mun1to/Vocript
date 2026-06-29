@@ -7,8 +7,8 @@
     "model": "Mô hình",
     "quit": "Thoát",
     "cancel": "Hủy",
-    "liveTranscriptionVoice": "Live: Voice",
-    "liveTranscriptionSystem": "Live: System Audio"
+    "liveTranscriptionVoice": "Trực tiếp: giọng nói",
+    "liveTranscriptionSystem": "Trực tiếp: âm thanh hệ thống"
   },
   "sidebar": {
     "general": "Chung",
@@ -18,7 +18,7 @@
     "history": "Lịch sử",
     "debug": "Gỡ lỗi",
     "about": "Giới thiệu",
-    "fileTranscription": "Transcribe",
+    "fileTranscription": "Chép lời",
     "feedback": "Phản hồi"
   },
   "onboarding": {
@@ -125,74 +125,74 @@
     "profiles": {
       "writing": {
         "label": "Viết & ghi chú",
-        "description": "Emails, notes and documents. Dictation with an automatic space between phrases."
+        "description": "Email, ghi chú và tài liệu. Đọc chính tả với khoảng trắng tự động giữa các câu."
       },
       "coding": {
         "label": "Lập trình",
-        "description": "Code and comments. The personal dictionary shines with technical terms."
+        "description": "Mã và chú thích. Từ điển cá nhân tỏa sáng với các thuật ngữ kỹ thuật."
       },
       "meetings": {
         "label": "Cuộc họp & video",
-        "description": "Transcribe calls, meetings and videos via system audio and files."
+        "description": "Chép lời cuộc gọi, cuộc họp và video qua âm thanh hệ thống và tệp."
       },
       "study": {
         "label": "Học tập & lớp học",
-        "description": "Take notes by dictating and transcribe your recorded lectures to text."
+        "description": "Ghi chú bằng cách đọc chính tả và chép các bài giảng đã ghi thành văn bản."
       },
       "accessibility": {
         "label": "Rảnh tay",
-        "description": "Voice control without holding keys: press once to start, once to stop."
+        "description": "Điều khiển bằng giọng nói không cần giữ phím: nhấn một lần để bắt đầu, nhấn lần nữa để dừng."
       },
       "multilingual": {
         "label": "Đa ngôn ngữ",
-        "description": "Dictate in several languages with automatic detection."
+        "description": "Đọc chính tả bằng nhiều ngôn ngữ với nhận diện tự động."
       },
       "custom": {
         "label": "Tùy chỉnh"
       },
-      "title": "What will you use VoCript for?",
-      "subtitle": "Pick a profile and we'll set it up for you. You can change everything later in the settings."
+      "title": "Bạn sẽ dùng VoCript để làm gì?",
+      "subtitle": "Chọn một hồ sơ và chúng tôi sẽ thiết lập mọi thứ cho bạn. Bạn có thể thay đổi mọi thứ sau này trong cài đặt."
     },
     "tour": {
-      "guide": "Guide",
-      "replay": "Replay the welcome tour",
-      "next": "Next",
-      "back": "Back",
-      "skip": "Skip",
-      "finish": "Done",
+      "guide": "Hướng dẫn",
+      "replay": "Xem lại phần giới thiệu chào mừng",
+      "next": "Tiếp",
+      "back": "Quay lại",
+      "skip": "Bỏ qua",
+      "finish": "Xong",
       "welcome": {
-        "title": "Welcome to VoCript! 🎙️",
-        "body": "Let me show you the basics in under a minute. After each feature you'll get to try it yourself. You can skip the tour anytime."
+        "title": "Chào mừng đến với VoCript! 🎙️",
+        "body": "Tôi sẽ giới thiệu những điều cơ bản trong chưa đầy một phút. Sau mỗi tính năng, bạn có thể tự thử. Bạn có thể bỏ qua phần giới thiệu bất cứ lúc nào."
       },
       "shortcut": {
-        "title": "Set up your dictation shortcut",
-        "body": "First things first: make the shortcut yours. The recommended one is Ctrl + Space.\n\nChange it right here: click the shortcut below and press the combo you want. You can change it again later in Settings → General."
+        "title": "Thiết lập phím tắt đọc chính tả của bạn",
+        "body": "Trước tiên: đặt phím tắt theo ý bạn. Phím tắt được khuyến nghị là Ctrl + Phím cách.\n\nThay đổi ngay tại đây: nhấp vào phím tắt bên dưới và nhấn tổ hợp bạn muốn. Sau này bạn có thể đổi lại trong Cài đặt → Chung."
       },
       "systemAudio": {
-        "title": "System audio",
-        "body": "Want to transcribe what's playing on your PC (a video, a call) instead of your voice? Use this shortcut to capture system audio. You can also target a specific app."
+        "title": "Âm thanh hệ thống",
+        "body": "Bạn muốn chép lời những gì đang phát trên máy tính (một video, một cuộc gọi) thay vì giọng của bạn? Dùng phím tắt này: nó thu âm thanh hệ thống. Bạn cũng có thể chọn một ứng dụng cụ thể."
       },
       "file": {
-        "title": "Transcribe files",
-        "body": "Here you turn an audio or video file into text or .srt subtitles. Just drag and drop it and pick the output format."
+        "title": "Chép lời tệp",
+        "body": "Tại đây, bạn chuyển một tệp âm thanh hoặc video thành văn bản hoặc phụ đề .srt. Chỉ cần kéo và thả rồi chọn định dạng đầu ra."
       },
       "dictionary": {
-        "title": "Personal dictionary",
-        "body": "Does VoCript mistype a name or a technical term? Add exact replacements (from → to) and it'll always apply them. You can even import and export your list as CSV."
+        "title": "Từ điển cá nhân",
+        "body": "VoCript viết sai một cái tên hay thuật ngữ kỹ thuật? Thêm các thay thế chính xác (từ → thành) và nó sẽ luôn áp dụng. Bạn thậm chí có thể nhập và xuất danh sách dưới dạng CSV."
       },
       "history": {
-        "title": "History",
-        "body": "All your transcriptions are saved here. You can replay the original audio and copy the text whenever you need it."
+        "title": "Lịch sử",
+        "body": "Tất cả bản chép lời của bạn được lưu tại đây. Bạn có thể phát lại âm thanh gốc và sao chép văn bản bất cứ khi nào cần."
       },
       "dictation": {
-        "title": "Voice dictation",
-        "body": "Place your cursor where you want to type, press your dictation shortcut, speak and release — the text appears on its own.\n\nTry it right here: click the box below and dictate something with your shortcut.",
-        "placeholder": "Click here and dictate with your shortcut…",
-        "success": "✓ It works! That easy."
+        "title": "Đọc chính tả bằng giọng nói",
+        "body": "Đặt con trỏ vào nơi bạn muốn nhập, nhấn phím tắt đọc chính tả, nói rồi thả ra: văn bản tự xuất hiện.\n\nHãy thử ngay tại đây: nhấp vào ô bên dưới và đọc gì đó bằng phím tắt của bạn.",
+        "placeholder": "Nhấp vào đây và đọc bằng phím tắt của bạn…",
+        "success": "✓ Hoạt động rồi! Đơn giản vậy thôi."
       },
       "donate": {
-        "title": "That's it! 🎉",
-        "body": "You now know the essentials. VoCript is free and runs 100% on your device.\n\nIf you find it useful and have something to spare, I'd really appreciate a donation to keep improving it. Thanks! 🙂",
+        "title": "Vậy là xong! 🎉",
+        "body": "Giờ bạn đã biết những điều cốt lõi. VoCript miễn phí và chạy 100% trên thiết bị của bạn.\n\nNếu thấy hữu ích và bạn có chút dư dả, tôi sẽ rất biết ơn nếu nhận được một khoản quyên góp để tiếp tục cải thiện nó. Cảm ơn bạn! 🙂",
         "button": "Mua cho tôi ly cà phê"
       },
       "customWords": {
@@ -236,7 +236,7 @@
         "body": "Và nét cuối: chuyển giữa giao diện sáng và tối. Vậy là hết thanh tiêu đề! 🎨"
       }
     },
-    "chooseLanguage": "What language will you dictate in?"
+    "chooseLanguage": "Bạn sẽ đọc chính tả bằng ngôn ngữ nào?"
   },
   "modelSelector": {
     "custom": "Tùy chỉnh",
@@ -292,18 +292,18 @@
       "yourModels": "Mô hình đã tải",
       "availableModels": "Có sẵn để tải xuống",
       "import": {
-        "title": "Reuse existing models",
-        "description": "Already have a model on this computer (e.g. from a previous install)? Reuse it instead of downloading again.",
-        "scan": "Scan computer",
-        "file": "Import file (.bin)",
-        "folder": "Import folder",
-        "use": "Use",
-        "already": "Already added",
-        "imported": "Model imported",
-        "failed": "Could not import the model",
-        "noneFound": "No reusable models found on this computer."
+        "title": "Dùng lại các mô hình hiện có",
+        "description": "Bạn đã có sẵn một mô hình trên máy tính này (ví dụ từ lần cài đặt trước)? Hãy dùng lại thay vì tải xuống lần nữa.",
+        "scan": "Quét máy tính",
+        "file": "Nhập tệp (.bin)",
+        "folder": "Nhập thư mục",
+        "use": "Dùng",
+        "already": "Đã thêm",
+        "imported": "Đã nhập mô hình",
+        "failed": "Không thể nhập mô hình",
+        "noneFound": "Không tìm thấy mô hình nào có thể dùng lại trên thiết bị này."
       },
-      "recommendedForLanguage": "Recommended for {{language}}"
+      "recommendedForLanguage": "Khuyến nghị cho {{language}}"
     },
     "general": {
       "title": "Chung",
@@ -328,12 +328,12 @@
             "description": "Tùy chọn: Phím tắt chuyên dụng luôn áp dụng xử lý sau bằng AI cho bản chuyển đổi của bạn."
           },
           "transcribe_system": {
-            "name": "System Audio Hotkey",
-            "description": "The keyboard shortcut to transcribe the audio playing on your computer (e.g. a video) instead of the microphone."
+            "name": "Phím tắt âm thanh hệ thống",
+            "description": "Phím tắt bàn phím để chép lời âm thanh đang phát trên máy tính (ví dụ một video) thay vì micrô."
           },
           "transcribe_live": {
-            "name": "Live Transcription Hotkey",
-            "description": "Shows the text live in a floating bubble as you speak. The text stays in the bubble (it is not pasted)."
+            "name": "Phím tắt chép lời trực tiếp",
+            "description": "Hiển thị văn bản trực tiếp trong một bong bóng nổi khi bạn nói. Văn bản ở lại trong bong bóng (không được dán)."
           }
         },
         "errors": {
@@ -355,31 +355,31 @@
         "description": "Giữ để ghi âm, thả để dừng"
       },
       "clipboardOnly": {
-        "label": "Copy to clipboard",
-        "description": "When transcription finishes, copy the text to the clipboard and show a confirmation instead of pasting it into the active app. Recommended when capturing system audio, so the text doesn't land on top of the video or call."
+        "label": "Sao chép vào bộ nhớ tạm",
+        "description": "Khi chép lời xong, sao chép văn bản vào bộ nhớ tạm và hiển thị thông báo thay vì dán vào ứng dụng đang hoạt động. Khuyến nghị khi thu âm thanh hệ thống, để văn bản không đè lên video hoặc cuộc gọi."
       },
       "sourceAttribution": {
-        "label": "Add the audio source",
-        "description": "When transcribing system audio, append a \"Source\" line with what was playing (title, artist or channel, app and the exact minute), detected from Spotify, YouTube in the browser, etc. Windows only."
+        "label": "Thêm nguồn âm thanh",
+        "description": "Khi chép lời âm thanh hệ thống, thêm vào cuối một dòng «Nguồn» với nội dung đang phát (tiêu đề, nghệ sĩ hoặc kênh, ứng dụng và phút chính xác), được phát hiện từ Spotify, YouTube trên trình duyệt, v.v. Chỉ trên Windows."
       },
       "liveMode": {
         "voice": {
-          "label": "Live mode — voice",
-          "description": "When on, your dictation shortcut shows the live capsule (text appears as you speak) instead of pasting at the end. No separate shortcut needed; you can also start it from the tray."
+          "label": "Chế độ trực tiếp — giọng nói",
+          "description": "Khi bật, phím tắt đọc chính tả của bạn hiển thị viên nang trực tiếp (văn bản xuất hiện khi bạn nói) thay vì dán ở cuối. Không cần phím tắt riêng; bạn cũng có thể khởi động từ khay hệ thống."
         },
         "system": {
-          "label": "Live mode — system audio",
-          "description": "When on, your system-audio shortcut transcribes what's playing (YouTube, Spotify…) live in the floating capsule. Independent from voice live mode; also available from the tray."
+          "label": "Chế độ trực tiếp — âm thanh hệ thống",
+          "description": "Khi bật, phím tắt âm thanh hệ thống của bạn chép lời trực tiếp những gì đang phát (YouTube, Spotify…) trong viên nang nổi. Độc lập với chế độ trực tiếp bằng giọng nói; cũng có sẵn từ khay hệ thống."
         }
       },
       "liveCopy": {
-        "label": "Auto-paste live",
-        "description": "When the live transcription stops, automatically paste the final text into the active app (like normal dictation). When off, the text stays in an editable bubble and you copy it with the copy button."
+        "label": "Tự động dán trực tiếp",
+        "description": "Khi bạn dừng chép lời trực tiếp, văn bản cuối cùng được dán vào ứng dụng đang hoạt động (như đọc chính tả thông thường). Khi tắt, văn bản ở lại trong một viên nang có thể chỉnh sửa và bạn sao chép bằng nút sao chép."
       },
       "systemAudioApp": {
-        "title": "System audio app",
-        "description": "Choose what the system-audio shortcut captures: the whole computer, or just one specific app (e.g. Spotify). The app must be playing audio to appear in the list; use the refresh button.",
-        "wholeSystem": "Whole system"
+        "title": "Ứng dụng âm thanh hệ thống",
+        "description": "Chọn những gì phím tắt âm thanh hệ thống thu: toàn bộ máy tính, hoặc chỉ một ứng dụng cụ thể (ví dụ Spotify). Ứng dụng phải đang phát âm thanh mới xuất hiện trong danh sách; hãy dùng nút làm mới.",
+        "wholeSystem": "Toàn bộ hệ thống"
       }
     },
     "sound": {
@@ -413,7 +413,7 @@
         "transcription": "Chuyển đổi",
         "history": "Lịch sử",
         "experimental": "Thử nghiệm",
-        "appearance": "Appearance"
+        "appearance": "Giao diện"
       },
       "experimentalToggle": {
         "label": "Tính năng thử nghiệm",
@@ -463,9 +463,9 @@
         "title": "Phương thức dán",
         "description": "Chọn cách chèn văn bản. Trực tiếp: mô phỏng gõ phím qua đầu vào hệ thống. Không có: bỏ qua dán, chỉ cập nhật lịch sử/clipboard.",
         "options": {
-          "clipboard": "Clipboard ({{modifier}}+V)",
-          "clipboardCtrlShiftV": "Clipboard (Ctrl+Shift+V)",
-          "clipboardShiftInsert": "Clipboard (Shift+Insert)",
+          "clipboard": "Bộ nhớ tạm ({{modifier}}+V)",
+          "clipboardCtrlShiftV": "Bộ nhớ tạm (Ctrl+Shift+V)",
+          "clipboardShiftInsert": "Bộ nhớ tạm (Shift+Insert)",
           "direct": "Trực tiếp",
           "none": "Không có",
           "externalScript": "Script bên ngoài"
@@ -526,31 +526,31 @@
         "duplicate": "\"{{word}}\" đã tồn tại"
       },
       "wordReplacements": {
-        "title": "Personal dictionary",
-        "description": "Replaces exact words or phrases when transcribing. Ideal for proper names, jargon or abbreviations. Case-insensitive.",
-        "fromPlaceholder": "When you hear…",
-        "toPlaceholder": "Replace with…",
-        "add": "Add",
-        "remove": "Remove {{word}}",
-        "duplicate": "There's already a replacement for \"{{word}}\"",
-        "hint": "Only the exact, whole word is changed. Add each variant (singular, plural, etc.) separately.",
-        "import": "Import CSV",
-        "export": "Export CSV",
+        "title": "Từ điển cá nhân",
+        "description": "Thay thế các từ hoặc cụm từ chính xác khi chép lời. Lý tưởng cho danh từ riêng, biệt ngữ hoặc từ viết tắt. Không phân biệt chữ hoa chữ thường.",
+        "fromPlaceholder": "Khi nghe thấy…",
+        "toPlaceholder": "Thay bằng…",
+        "add": "Thêm",
+        "remove": "Xóa {{word}}",
+        "duplicate": "Đã có một thay thế cho \"{{word}}\"",
+        "hint": "Chỉ từ chính xác và đầy đủ mới được thay đổi. Hãy thêm riêng từng dạng (số ít, số nhiều, v.v.).",
+        "import": "Nhập CSV",
+        "export": "Xuất CSV",
         "csvHelp": {
-          "title": "What should the CSV look like?",
-          "cols": "Two comma-separated columns: the original word and what to replace it with. One row per replacement.",
-          "header": "The header row (de,a) is optional — include it or not.",
-          "exampleLabel": "Example:",
-          "quotes": "If a value contains commas, wrap it in double quotes: \"hello, there\",greeting",
-          "encoding": "Save it as UTF-8. From Excel or Google Sheets: two columns and \"Save as → CSV\".",
-          "tip": "Tip: click \"Export CSV\" to get a file with the exact format ready to edit."
+          "title": "Tệp CSV phải trông như thế nào?",
+          "cols": "Hai cột phân tách bằng dấu phẩy: từ gốc và từ dùng để thay thế. Mỗi thay thế một dòng.",
+          "header": "Dòng tiêu đề (từ,thành) là tùy chọn — bạn có thể thêm hoặc không.",
+          "exampleLabel": "Ví dụ:",
+          "quotes": "Nếu một giá trị chứa dấu phẩy, hãy đặt nó trong dấu ngoặc kép: \"chào, khỏe không\",lời chào",
+          "encoding": "Lưu ở định dạng UTF-8. Từ Excel hoặc Google Trang tính: hai cột và «Lưu dưới dạng → CSV».",
+          "tip": "Mẹo: nhấp «Xuất CSV» để có một tệp đúng định dạng, sẵn sàng để chỉnh sửa."
         },
-        "imported": "{{count}} replacements imported",
-        "importError": "Couldn't import the file",
-        "importEmpty": "The file has no valid replacements",
-        "exportEmpty": "No replacements to export",
-        "exportError": "Couldn't export the file",
-        "exported": "Dictionary exported"
+        "imported": "Đã nhập {{count}} thay thế",
+        "importError": "Không thể nhập tệp",
+        "importEmpty": "Tệp không có thay thế hợp lệ",
+        "exportEmpty": "Không có thay thế nào để xuất",
+        "exportError": "Không thể xuất tệp",
+        "exported": "Đã xuất từ điển"
       },
       "customCommands": {
         "group": "Hồ sơ tùy chỉnh",
@@ -632,7 +632,7 @@
       "retranscribeError": "Không thể phiên âm lại. Vui lòng thử lại.",
       "transcribing": "Đang phiên âm...",
       "transcriptionFailed": "Phiên âm thất bại. Bạn có thể phiên âm lại bằng biểu tượng thử lại.",
-      "audioLoadError": "Could not load the recording audio"
+      "audioLoadError": "Không thể tải âm thanh của bản ghi"
     },
     "debug": {
       "title": "Gỡ lỗi",
@@ -740,46 +740,46 @@
         },
         "handy": {
           "title": "Handy",
-          "description": "VoCript is a fork of the open-source project Handy, created by cjpais.",
-          "button": "View Handy"
+          "description": "VoCript là một bản fork của dự án mã nguồn mở Handy, do cjpais tạo ra.",
+          "button": "Xem Handy"
         }
       },
       "contact": {
-        "title": "Contact",
-        "description": "About me and my other projects",
-        "button": "View portfolio"
+        "title": "Liên hệ",
+        "description": "Về tôi và các dự án khác của tôi",
+        "button": "Xem portfolio"
       }
     },
     "theme": {
-      "title": "Theme",
-      "description": "Choose VoCript's appearance: follow the system, light, or dark.",
-      "system": "System",
-      "light": "Light",
-      "dark": "Dark"
+      "title": "Chủ đề",
+      "description": "Chọn giao diện của VoCript: theo hệ thống, sáng hoặc tối.",
+      "system": "Hệ thống",
+      "light": "Sáng",
+      "dark": "Tối"
     },
     "fileTranscription": {
-      "title": "Transcribe file",
-      "description": "Transcribe an audio or video file to text or subtitles (.srt). Everything is processed on your device, offline.",
-      "dropzone": "Drag an audio or video file here",
-      "selectFile": "or click to choose one",
-      "changeFile": "Click to change the file",
-      "supportedFormats": "Supported formats: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus not supported).",
-      "fileFilter": "Audio or video",
-      "format": "Format:",
-      "formatText": "Text",
-      "formatSrt": "Subtitles (SRT)",
-      "transcribe": "Transcribe",
-      "transcribing": "Transcribing… (this may take a while)",
-      "duration": "Duration: {{duration}}",
-      "copy": "Copy",
-      "copied": "Copied",
-      "save": "Save…",
-      "saved": "File saved",
+      "title": "Chép lời tệp",
+      "description": "Chép một tệp âm thanh hoặc video thành văn bản hoặc phụ đề (.srt). Mọi thứ được xử lý trên thiết bị của bạn, ngoại tuyến.",
+      "dropzone": "Kéo tệp âm thanh hoặc video vào đây",
+      "selectFile": "hoặc nhấp để chọn",
+      "changeFile": "Nhấp để đổi tệp",
+      "supportedFormats": "Định dạng được hỗ trợ: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (không hỗ trợ Opus).",
+      "fileFilter": "Âm thanh hoặc video",
+      "format": "Định dạng:",
+      "formatText": "Văn bản",
+      "formatSrt": "Phụ đề (SRT)",
+      "transcribe": "Chép lời",
+      "transcribing": "Đang chép lời… (có thể mất một lúc)",
+      "duration": "Thời lượng: {{duration}}",
+      "copy": "Sao chép",
+      "copied": "Đã sao chép",
+      "save": "Lưu…",
+      "saved": "Đã lưu tệp",
       "errors": {
-        "failed": "Could not transcribe the file",
-        "unsupported": "Unsupported file format",
-        "copy": "Could not copy to clipboard",
-        "save": "Could not save the file"
+        "failed": "Không thể chép lời tệp",
+        "unsupported": "Định dạng tệp không được hỗ trợ",
+        "copy": "Không thể sao chép vào bộ nhớ tạm",
+        "save": "Không thể lưu tệp"
       }
     },
     "feedback": {
@@ -816,9 +816,9 @@
     "portableUpdateTitle": "Manual update required",
     "portableUpdateMessage": "Portable installs cannot be updated automatically. To update: download the latest NSIS installer from GitHub Releases, install it to the same folder, then copy your Data/ folder (settings, models, recordings) from the old version to the new one.",
     "portableUpdateButton": "Open GitHub Releases",
-    "updateNow": "Update",
-    "later": "Later",
-    "updateAvailableDescription": "It will install and the app will restart itself."
+    "updateNow": "Cập nhật",
+    "later": "Để sau",
+    "updateAvailableDescription": "Sẽ được cài đặt và ứng dụng tự khởi động lại."
   },
   "common": {
     "loading": "Đang tải...",
@@ -872,11 +872,11 @@
   "overlay": {
     "transcribing": "Đang chuyển đổi...",
     "processing": "Đang xử lý...",
-    "copied": "✓ Copied",
-    "listening": "Listening…",
-    "cancel": "Cancel",
-    "copyToClipboard": "Copy to clipboard",
-    "editTranscription": "Edit transcription"
+    "copied": "✓ Đã sao chép",
+    "listening": "Đang nghe…",
+    "cancel": "Hủy",
+    "copyToClipboard": "Sao chép vào bộ nhớ tạm",
+    "editTranscription": "Chỉnh sửa bản chép lời"
   },
   "header": {
     "profile": {

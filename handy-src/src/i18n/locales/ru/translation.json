@@ -7,8 +7,8 @@
     "model": "Модель",
     "quit": "Выход",
     "cancel": "Отмена",
-    "liveTranscriptionVoice": "Live: Voice",
-    "liveTranscriptionSystem": "Live: System Audio"
+    "liveTranscriptionVoice": "В реальном времени: голос",
+    "liveTranscriptionSystem": "В реальном времени: системный звук"
   },
   "sidebar": {
     "general": "Общие",
@@ -18,7 +18,7 @@
     "history": "История",
     "debug": "Отладка",
     "about": "О программе",
-    "fileTranscription": "Transcribe",
+    "fileTranscription": "Транскрибировать",
     "feedback": "Обратная связь"
   },
   "onboarding": {
@@ -125,74 +125,74 @@
     "profiles": {
       "writing": {
         "label": "Письмо и заметки",
-        "description": "Emails, notes and documents. Dictation with an automatic space between phrases."
+        "description": "Письма, заметки и документы. Диктовка с автоматическим пробелом между фразами."
       },
       "coding": {
         "label": "Программирование",
-        "description": "Code and comments. The personal dictionary shines with technical terms."
+        "description": "Код и комментарии. Персональный словарь раскрывается на технических терминах."
       },
       "meetings": {
         "label": "Встречи и видео",
-        "description": "Transcribe calls, meetings and videos via system audio and files."
+        "description": "Транскрибируйте звонки, встречи и видео через системный звук и файлы."
       },
       "study": {
         "label": "Учёба и занятия",
-        "description": "Take notes by dictating and transcribe your recorded lectures to text."
+        "description": "Делайте заметки диктовкой и переводите записанные лекции в текст."
       },
       "accessibility": {
         "label": "Громкая связь",
-        "description": "Voice control without holding keys: press once to start, once to stop."
+        "description": "Голосовое управление без удержания клавиш: нажмите один раз, чтобы начать, и ещё раз, чтобы остановить."
       },
       "multilingual": {
         "label": "Многоязычный",
-        "description": "Dictate in several languages with automatic detection."
+        "description": "Диктуйте на нескольких языках с автоматическим определением."
       },
       "custom": {
         "label": "Пользовательский"
       },
-      "title": "What will you use VoCript for?",
-      "subtitle": "Pick a profile and we'll set it up for you. You can change everything later in the settings."
+      "title": "Для чего вы будете использовать VoCript?",
+      "subtitle": "Выберите профиль, и мы всё настроим за вас. Позже вы сможете всё изменить в настройках."
     },
     "tour": {
-      "guide": "Guide",
-      "replay": "Replay the welcome tour",
-      "next": "Next",
-      "back": "Back",
-      "skip": "Skip",
-      "finish": "Done",
+      "guide": "Руководство",
+      "replay": "Посмотреть приветственный тур ещё раз",
+      "next": "Далее",
+      "back": "Назад",
+      "skip": "Пропустить",
+      "finish": "Готово",
       "welcome": {
-        "title": "Welcome to VoCript! 🎙️",
-        "body": "Let me show you the basics in under a minute. After each feature you'll get to try it yourself. You can skip the tour anytime."
+        "title": "Добро пожаловать в VoCript! 🎙️",
+        "body": "Я покажу основы меньше чем за минуту. После каждой функции вы сможете попробовать её сами. Тур можно пропустить в любой момент."
       },
       "shortcut": {
-        "title": "Set up your dictation shortcut",
-        "body": "First things first: make the shortcut yours. The recommended one is Ctrl + Space.\n\nChange it right here: click the shortcut below and press the combo you want. You can change it again later in Settings → General."
+        "title": "Настройте сочетание для диктовки",
+        "body": "Сначала: настройте сочетание по своему вкусу. Рекомендуется Ctrl + Пробел.\n\nИзмените его прямо здесь: нажмите на сочетание ниже и нажмите нужную комбинацию. Позже вы сможете изменить его снова в «Настройки → Основные»."
       },
       "systemAudio": {
-        "title": "System audio",
-        "body": "Want to transcribe what's playing on your PC (a video, a call) instead of your voice? Use this shortcut to capture system audio. You can also target a specific app."
+        "title": "Системный звук",
+        "body": "Хотите транскрибировать то, что звучит на ПК (видео, звонок), а не ваш голос? Используйте это сочетание: оно захватывает системный звук. Можно также выбрать конкретное приложение."
       },
       "file": {
-        "title": "Transcribe files",
-        "body": "Here you turn an audio or video file into text or .srt subtitles. Just drag and drop it and pick the output format."
+        "title": "Транскрибировать файлы",
+        "body": "Здесь вы превращаете аудио- или видеофайл в текст или субтитры .srt. Просто перетащите его и выберите формат вывода."
       },
       "dictionary": {
-        "title": "Personal dictionary",
-        "body": "Does VoCript mistype a name or a technical term? Add exact replacements (from → to) and it'll always apply them. You can even import and export your list as CSV."
+        "title": "Персональный словарь",
+        "body": "VoCript неправильно пишет имя или технический термин? Добавьте точные замены (из → в), и они будут применяться всегда. Список можно даже импортировать и экспортировать в CSV."
       },
       "history": {
-        "title": "History",
-        "body": "All your transcriptions are saved here. You can replay the original audio and copy the text whenever you need it."
+        "title": "История",
+        "body": "Все ваши транскрипции сохраняются здесь. Вы можете снова прослушать исходный звук и скопировать текст в любой момент."
       },
       "dictation": {
-        "title": "Voice dictation",
-        "body": "Place your cursor where you want to type, press your dictation shortcut, speak and release — the text appears on its own.\n\nTry it right here: click the box below and dictate something with your shortcut.",
-        "placeholder": "Click here and dictate with your shortcut…",
-        "success": "✓ It works! That easy."
+        "title": "Голосовая диктовка",
+        "body": "Поставьте курсор туда, где хотите печатать, нажмите своё сочетание для диктовки, говорите и отпустите — текст появится сам.\n\nПопробуйте прямо здесь: нажмите на поле ниже и продиктуйте что-нибудь своим сочетанием.",
+        "placeholder": "Нажмите здесь и диктуйте своим сочетанием…",
+        "success": "✓ Работает! Вот так просто."
       },
       "donate": {
-        "title": "That's it! 🎉",
-        "body": "You now know the essentials. VoCript is free and runs 100% on your device.\n\nIf you find it useful and have something to spare, I'd really appreciate a donation to keep improving it. Thanks! 🙂",
+        "title": "Вот и всё! 🎉",
+        "body": "Теперь вы знаете самое главное. VoCript бесплатен и работает на 100% на вашем устройстве.\n\nЕсли он вам полезен и у вас есть возможность, я буду очень благодарен за пожертвование, чтобы продолжать его улучшать. Спасибо! 🙂",
         "button": "Купить мне кофе"
       },
       "customWords": {
@@ -236,7 +236,7 @@
         "body": "И финальный штрих: переключение светлой и тёмной темы. Вот и вся шапка! 🎨"
       }
     },
-    "chooseLanguage": "What language will you dictate in?"
+    "chooseLanguage": "На каком языке вы будете диктовать?"
   },
   "modelSelector": {
     "custom": "Пользовательская",
@@ -292,18 +292,18 @@
       "yourModels": "Загруженные модели",
       "availableModels": "Доступны для загрузки",
       "import": {
-        "title": "Reuse existing models",
-        "description": "Already have a model on this computer (e.g. from a previous install)? Reuse it instead of downloading again.",
-        "scan": "Scan computer",
-        "file": "Import file (.bin)",
-        "folder": "Import folder",
-        "use": "Use",
-        "already": "Already added",
-        "imported": "Model imported",
-        "failed": "Could not import the model",
-        "noneFound": "No reusable models found on this computer."
+        "title": "Повторно использовать существующие модели",
+        "description": "У вас уже есть модель на этом компьютере (например, от предыдущей установки)? Используйте её повторно, вместо того чтобы скачивать снова.",
+        "scan": "Поиск на компьютере",
+        "file": "Импорт файла (.bin)",
+        "folder": "Импорт папки",
+        "use": "Использовать",
+        "already": "Уже добавлено",
+        "imported": "Модель импортирована",
+        "failed": "Не удалось импортировать модель",
+        "noneFound": "На этом устройстве не найдено моделей для повторного использования."
       },
-      "recommendedForLanguage": "Recommended for {{language}}"
+      "recommendedForLanguage": "Рекомендуется для {{language}}"
     },
     "general": {
       "title": "Общие",
@@ -328,12 +328,12 @@
             "description": "Специальное сочетание клавиш для ИИ-постобработки вашей транскрипции."
           },
           "transcribe_system": {
-            "name": "System Audio Hotkey",
-            "description": "The keyboard shortcut to transcribe the audio playing on your computer (e.g. a video) instead of the microphone."
+            "name": "Сочетание для системного звука",
+            "description": "Сочетание клавиш для транскрипции звука, который звучит на компьютере (например, видео), вместо микрофона."
           },
           "transcribe_live": {
-            "name": "Live Transcription Hotkey",
-            "description": "Shows the text live in a floating bubble as you speak. The text stays in the bubble (it is not pasted)."
+            "name": "Сочетание для транскрипции в реальном времени",
+            "description": "Показывает текст в реальном времени в плавающем облачке, пока вы говорите. Текст остаётся в облачке (не вставляется)."
           }
         },
         "errors": {
@@ -355,31 +355,31 @@
         "description": "Удерживайте, чтобы записать, отпустите, чтобы остановить"
       },
       "clipboardOnly": {
-        "label": "Copy to clipboard",
-        "description": "When transcription finishes, copy the text to the clipboard and show a confirmation instead of pasting it into the active app. Recommended when capturing system audio, so the text doesn't land on top of the video or call."
+        "label": "Копировать в буфер обмена",
+        "description": "По завершении транскрипции текст копируется в буфер обмена и показывается уведомление вместо вставки в активное приложение. Рекомендуется при захвате системного звука, чтобы текст не попал поверх видео или звонка."
       },
       "sourceAttribution": {
-        "label": "Add the audio source",
-        "description": "When transcribing system audio, append a \"Source\" line with what was playing (title, artist or channel, app and the exact minute), detected from Spotify, YouTube in the browser, etc. Windows only."
+        "label": "Добавить источник звука",
+        "description": "При транскрипции системного звука в конце добавляется строка «Источник» с тем, что звучало (название, исполнитель или канал, приложение и точная минута), определёнными из Spotify, YouTube в браузере и т. д. Только в Windows."
       },
       "liveMode": {
         "voice": {
-          "label": "Live mode — voice",
-          "description": "When on, your dictation shortcut shows the live capsule (text appears as you speak) instead of pasting at the end. No separate shortcut needed; you can also start it from the tray."
+          "label": "Режим реального времени — голос",
+          "description": "Когда включено, ваше сочетание для диктовки показывает капсулу в реальном времени (текст появляется, пока вы говорите) вместо вставки в конце. Отдельное сочетание не нужно; запустить можно и из трея."
         },
         "system": {
-          "label": "Live mode — system audio",
-          "description": "When on, your system-audio shortcut transcribes what's playing (YouTube, Spotify…) live in the floating capsule. Independent from voice live mode; also available from the tray."
+          "label": "Режим реального времени — системный звук",
+          "description": "Когда включено, ваше сочетание для системного звука транскрибирует в реальном времени то, что звучит (YouTube, Spotify…), в плавающей капсуле. Независимо от голосового режима реального времени; также доступно из трея."
         }
       },
       "liveCopy": {
-        "label": "Auto-paste live",
-        "description": "When the live transcription stops, automatically paste the final text into the active app (like normal dictation). When off, the text stays in an editable bubble and you copy it with the copy button."
+        "label": "Автовставка в реальном времени",
+        "description": "Когда вы останавливаете транскрипцию в реальном времени, итоговый текст вставляется в активное приложение (как при обычной диктовке). Если выключено, текст остаётся в редактируемой капсуле, и вы копируете его кнопкой копирования."
       },
       "systemAudioApp": {
-        "title": "System audio app",
-        "description": "Choose what the system-audio shortcut captures: the whole computer, or just one specific app (e.g. Spotify). The app must be playing audio to appear in the list; use the refresh button.",
-        "wholeSystem": "Whole system"
+        "title": "Приложение системного звука",
+        "description": "Выберите, что захватывать сочетанием для системного звука: весь компьютер или только одно конкретное приложение (напр. Spotify). Приложение должно воспроизводить звук, чтобы появиться в списке; используйте кнопку обновления.",
+        "wholeSystem": "Вся система"
       }
     },
     "sound": {
@@ -413,7 +413,7 @@
         "transcription": "Транскрипция",
         "history": "История",
         "experimental": "Экспериментальное",
-        "appearance": "Appearance"
+        "appearance": "Оформление"
       },
       "experimentalToggle": {
         "label": "Экспериментальные функции",
@@ -526,31 +526,31 @@
         "duplicate": "\"{{word}}\" уже существует"
       },
       "wordReplacements": {
-        "title": "Personal dictionary",
-        "description": "Replaces exact words or phrases when transcribing. Ideal for proper names, jargon or abbreviations. Case-insensitive.",
-        "fromPlaceholder": "When you hear…",
-        "toPlaceholder": "Replace with…",
-        "add": "Add",
-        "remove": "Remove {{word}}",
-        "duplicate": "There's already a replacement for \"{{word}}\"",
-        "hint": "Only the exact, whole word is changed. Add each variant (singular, plural, etc.) separately.",
-        "import": "Import CSV",
-        "export": "Export CSV",
+        "title": "Персональный словарь",
+        "description": "Заменяет точные слова или фразы при транскрипции. Идеально для имён собственных, жаргона или сокращений. Без учёта регистра.",
+        "fromPlaceholder": "Когда слышится…",
+        "toPlaceholder": "Заменить на…",
+        "add": "Добавить",
+        "remove": "Удалить {{word}}",
+        "duplicate": "Замена для \"{{word}}\" уже существует",
+        "hint": "Изменяется только точное слово целиком. Добавляйте каждую форму (единственное, множественное число и т. д.) отдельно.",
+        "import": "Импорт CSV",
+        "export": "Экспорт CSV",
         "csvHelp": {
-          "title": "What should the CSV look like?",
-          "cols": "Two comma-separated columns: the original word and what to replace it with. One row per replacement.",
-          "header": "The header row (de,a) is optional — include it or not.",
-          "exampleLabel": "Example:",
-          "quotes": "If a value contains commas, wrap it in double quotes: \"hello, there\",greeting",
-          "encoding": "Save it as UTF-8. From Excel or Google Sheets: two columns and \"Save as → CSV\".",
-          "tip": "Tip: click \"Export CSV\" to get a file with the exact format ready to edit."
+          "title": "Каким должен быть CSV?",
+          "cols": "Два столбца, разделённых запятой: исходное слово и то, на которое его заменить. По одной строке на каждую замену.",
+          "header": "Строка заголовка (из,в) необязательна — можете добавить её или нет.",
+          "exampleLabel": "Пример:",
+          "quotes": "Если значение содержит запятые, заключите его в двойные кавычки: \"привет, как дела\",приветствие",
+          "encoding": "Сохраните в UTF-8. В Excel или Google Таблицах: два столбца и «Сохранить как → CSV».",
+          "tip": "Совет: нажмите «Экспорт CSV», чтобы получить файл с точным форматом, готовый к редактированию."
         },
-        "imported": "{{count}} replacements imported",
-        "importError": "Couldn't import the file",
-        "importEmpty": "The file has no valid replacements",
-        "exportEmpty": "No replacements to export",
-        "exportError": "Couldn't export the file",
-        "exported": "Dictionary exported"
+        "imported": "Импортировано замен: {{count}}",
+        "importError": "Не удалось импортировать файл",
+        "importEmpty": "В файле нет допустимых замен",
+        "exportEmpty": "Нет замен для экспорта",
+        "exportError": "Не удалось экспортировать файл",
+        "exported": "Словарь экспортирован"
       },
       "customCommands": {
         "group": "Свой профиль",
@@ -632,7 +632,7 @@
       "retranscribeError": "Не удалось перетранскрибировать. Пожалуйста, попробуйте снова.",
       "transcribing": "Транскрибирование...",
       "transcriptionFailed": "Транскрипция не удалась. Вы можете перетранскрибировать, используя значок повтора.",
-      "audioLoadError": "Could not load the recording audio"
+      "audioLoadError": "Не удалось загрузить звук записи"
     },
     "debug": {
       "title": "Отлаживать",
@@ -740,46 +740,46 @@
         },
         "handy": {
           "title": "Handy",
-          "description": "VoCript is a fork of the open-source project Handy, created by cjpais.",
-          "button": "View Handy"
+          "description": "VoCript — это форк проекта с открытым исходным кодом Handy, созданного cjpais.",
+          "button": "Открыть Handy"
         }
       },
       "contact": {
-        "title": "Contact",
-        "description": "About me and my other projects",
-        "button": "View portfolio"
+        "title": "Контакт",
+        "description": "Обо мне и моих других проектах",
+        "button": "Открыть портфолио"
       }
     },
     "theme": {
-      "title": "Theme",
-      "description": "Choose VoCript's appearance: follow the system, light, or dark.",
-      "system": "System",
-      "light": "Light",
-      "dark": "Dark"
+      "title": "Тема",
+      "description": "Выберите оформление VoCript: следовать системе, светлое или тёмное.",
+      "system": "Системное",
+      "light": "Светлая",
+      "dark": "Тёмная"
     },
     "fileTranscription": {
-      "title": "Transcribe file",
-      "description": "Transcribe an audio or video file to text or subtitles (.srt). Everything is processed on your device, offline.",
-      "dropzone": "Drag an audio or video file here",
-      "selectFile": "or click to choose one",
-      "changeFile": "Click to change the file",
-      "supportedFormats": "Supported formats: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus not supported).",
-      "fileFilter": "Audio or video",
-      "format": "Format:",
-      "formatText": "Text",
-      "formatSrt": "Subtitles (SRT)",
-      "transcribe": "Transcribe",
-      "transcribing": "Transcribing… (this may take a while)",
-      "duration": "Duration: {{duration}}",
-      "copy": "Copy",
-      "copied": "Copied",
-      "save": "Save…",
-      "saved": "File saved",
+      "title": "Транскрибировать файл",
+      "description": "Транскрибируйте аудио- или видеофайл в текст или субтитры (.srt). Всё обрабатывается на вашем устройстве, офлайн.",
+      "dropzone": "Перетащите сюда аудио- или видеофайл",
+      "selectFile": "или нажмите, чтобы выбрать",
+      "changeFile": "Нажмите, чтобы сменить файл",
+      "supportedFormats": "Поддерживаемые форматы: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus не поддерживается).",
+      "fileFilter": "Аудио или видео",
+      "format": "Формат:",
+      "formatText": "Текст",
+      "formatSrt": "Субтитры (SRT)",
+      "transcribe": "Транскрибировать",
+      "transcribing": "Транскрибирование… (может занять время)",
+      "duration": "Длительность: {{duration}}",
+      "copy": "Копировать",
+      "copied": "Скопировано",
+      "save": "Сохранить…",
+      "saved": "Файл сохранён",
       "errors": {
-        "failed": "Could not transcribe the file",
-        "unsupported": "Unsupported file format",
-        "copy": "Could not copy to clipboard",
-        "save": "Could not save the file"
+        "failed": "Не удалось транскрибировать файл",
+        "unsupported": "Неподдерживаемый формат файла",
+        "copy": "Не удалось скопировать в буфер обмена",
+        "save": "Не удалось сохранить файл"
       }
     },
     "feedback": {
@@ -816,9 +816,9 @@
     "portableUpdateTitle": "Manual update required",
     "portableUpdateMessage": "Portable installs cannot be updated automatically. To update: download the latest NSIS installer from GitHub Releases, install it to the same folder, then copy your Data/ folder (settings, models, recordings) from the old version to the new one.",
     "portableUpdateButton": "Open GitHub Releases",
-    "updateNow": "Update",
-    "later": "Later",
-    "updateAvailableDescription": "It will install and the app will restart itself."
+    "updateNow": "Обновить",
+    "later": "Позже",
+    "updateAvailableDescription": "Будет установлено, и приложение перезапустится само."
   },
   "common": {
     "loading": "Загрузка...",
@@ -872,11 +872,11 @@
   "overlay": {
     "transcribing": "Расшифровка...",
     "processing": "Обработка...",
-    "copied": "✓ Copied",
-    "listening": "Listening…",
-    "cancel": "Cancel",
-    "copyToClipboard": "Copy to clipboard",
-    "editTranscription": "Edit transcription"
+    "copied": "✓ Скопировано",
+    "listening": "Слушаю…",
+    "cancel": "Отмена",
+    "copyToClipboard": "Копировать в буфер обмена",
+    "editTranscription": "Редактировать транскрипцию"
   },
   "header": {
     "profile": {

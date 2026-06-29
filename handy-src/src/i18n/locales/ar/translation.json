@@ -7,8 +7,8 @@
     "model": "النموذج",
     "quit": "إنهاء",
     "cancel": "إلغاء",
-    "liveTranscriptionVoice": "Live: Voice",
-    "liveTranscriptionSystem": "Live: System Audio"
+    "liveTranscriptionVoice": "مباشر: الصوت",
+    "liveTranscriptionSystem": "مباشر: صوت النظام"
   },
   "sidebar": {
     "general": "عام",
@@ -18,7 +18,7 @@
     "debug": "تصحيح الأخطاء",
     "about": "حول",
     "models": "النماذج",
-    "fileTranscription": "Transcribe",
+    "fileTranscription": "تفريغ",
     "feedback": "الملاحظات"
   },
   "onboarding": {
@@ -125,74 +125,74 @@
     "profiles": {
       "writing": {
         "label": "الكتابة والملاحظات",
-        "description": "Emails, notes and documents. Dictation with an automatic space between phrases."
+        "description": "رسائل البريد والملاحظات والمستندات. إملاء مع مسافة تلقائية بين الجمل."
       },
       "coding": {
         "label": "البرمجة",
-        "description": "Code and comments. The personal dictionary shines with technical terms."
+        "description": "التعليمات البرمجية والتعليقات. يتألق القاموس الشخصي مع المصطلحات التقنية."
       },
       "meetings": {
         "label": "الاجتماعات والفيديو",
-        "description": "Transcribe calls, meetings and videos via system audio and files."
+        "description": "فرّغ المكالمات والاجتماعات ومقاطع الفيديو من صوت النظام والملفات."
       },
       "study": {
         "label": "الدراسة والدروس",
-        "description": "Take notes by dictating and transcribe your recorded lectures to text."
+        "description": "دوّن الملاحظات بالإملاء وفرّغ محاضراتك المسجلة إلى نص."
       },
       "accessibility": {
         "label": "без hands",
-        "description": "Voice control without holding keys: press once to start, once to stop."
+        "description": "تحكم صوتي دون الضغط المستمر على المفاتيح: اضغط مرة للبدء ومرة أخرى للإيقاف."
       },
       "multilingual": {
         "label": "متعدد اللغات",
-        "description": "Dictate in several languages with automatic detection."
+        "description": "أملِ بعدة لغات مع الكشف التلقائي."
       },
       "custom": {
         "label": "مخصص"
       },
-      "title": "What will you use VoCript for?",
-      "subtitle": "Pick a profile and we'll set it up for you. You can change everything later in the settings."
+      "title": "فيمَ ستستخدم VoCript؟",
+      "subtitle": "اختر ملفًا تعريفيًا وسنُعدّه لك. يمكنك تغيير كل شيء لاحقًا في الإعدادات."
     },
     "tour": {
-      "guide": "Guide",
-      "replay": "Replay the welcome tour",
-      "next": "Next",
-      "back": "Back",
-      "skip": "Skip",
-      "finish": "Done",
+      "guide": "الدليل",
+      "replay": "إعادة مشاهدة جولة الترحيب",
+      "next": "التالي",
+      "back": "رجوع",
+      "skip": "تخطّي",
+      "finish": "تم",
       "welcome": {
-        "title": "Welcome to VoCript! 🎙️",
-        "body": "Let me show you the basics in under a minute. After each feature you'll get to try it yourself. You can skip the tour anytime."
+        "title": "مرحبًا بك في VoCript! 🎙️",
+        "body": "سأريك الأساسيات في أقل من دقيقة. بعد كل ميزة ستتمكن من تجربتها بنفسك. يمكنك تخطّي الجولة في أي وقت."
       },
       "shortcut": {
-        "title": "Set up your dictation shortcut",
-        "body": "First things first: make the shortcut yours. The recommended one is Ctrl + Space.\n\nChange it right here: click the shortcut below and press the combo you want. You can change it again later in Settings → General."
+        "title": "اضبط اختصار الإملاء الخاص بك",
+        "body": "أولًا: اضبط الاختصار حسب رغبتك. الموصى به هو Ctrl + مسافة.\n\nغيّره هنا مباشرة: انقر الاختصار أدناه واضغط التركيبة التي تريدها. يمكنك تغييره لاحقًا في الإعدادات → عام."
       },
       "systemAudio": {
-        "title": "System audio",
-        "body": "Want to transcribe what's playing on your PC (a video, a call) instead of your voice? Use this shortcut to capture system audio. You can also target a specific app."
+        "title": "صوت النظام",
+        "body": "هل تريد تفريغ ما يُشغَّل على الحاسوب (فيديو، مكالمة) بدلًا من صوتك؟ استخدم هذا الاختصار: يلتقط صوت النظام. يمكنك أيضًا اختيار تطبيق محدد."
       },
       "file": {
-        "title": "Transcribe files",
-        "body": "Here you turn an audio or video file into text or .srt subtitles. Just drag and drop it and pick the output format."
+        "title": "تفريغ الملفات",
+        "body": "هنا تحوّل ملف صوت أو فيديو إلى نص أو ترجمات .srt. ما عليك سوى سحبه وإفلاته واختيار صيغة الإخراج."
       },
       "dictionary": {
-        "title": "Personal dictionary",
-        "body": "Does VoCript mistype a name or a technical term? Add exact replacements (from → to) and it'll always apply them. You can even import and export your list as CSV."
+        "title": "القاموس الشخصي",
+        "body": "هل يكتب VoCript اسمًا أو مصطلحًا تقنيًا بشكل خاطئ؟ أضف استبدالات دقيقة (من → إلى) وسيطبّقها دائمًا. يمكنك حتى استيراد قائمتك وتصديرها بصيغة CSV."
       },
       "history": {
-        "title": "History",
-        "body": "All your transcriptions are saved here. You can replay the original audio and copy the text whenever you need it."
+        "title": "السجل",
+        "body": "تُحفظ جميع عمليات التفريغ هنا. يمكنك إعادة تشغيل الصوت الأصلي ونسخ النص متى احتجت إليه."
       },
       "dictation": {
-        "title": "Voice dictation",
-        "body": "Place your cursor where you want to type, press your dictation shortcut, speak and release — the text appears on its own.\n\nTry it right here: click the box below and dictate something with your shortcut.",
-        "placeholder": "Click here and dictate with your shortcut…",
-        "success": "✓ It works! That easy."
+        "title": "الإملاء الصوتي",
+        "body": "ضع المؤشر حيث تريد الكتابة، اضغط اختصار الإملاء، تحدّث ثم أفلِت: يظهر النص من تلقاء نفسه.\n\nجرّب هنا مباشرة: انقر المربع أدناه وأملِ شيئًا باختصارك.",
+        "placeholder": "انقر هنا وأملِ باختصارك…",
+        "success": "✓ إنه يعمل! بهذه البساطة."
       },
       "donate": {
-        "title": "That's it! 🎉",
-        "body": "You now know the essentials. VoCript is free and runs 100% on your device.\n\nIf you find it useful and have something to spare, I'd really appreciate a donation to keep improving it. Thanks! 🙂",
+        "title": "هذا كل شيء! 🎉",
+        "body": "أنت الآن تعرف الأساسيات. VoCript مجاني ويعمل بنسبة 100% على جهازك.\n\nإذا كان مفيدًا لك ولديك ما تجود به، سأكون ممتنًا جدًا لتبرّع يساعدني على مواصلة تحسينه. شكرًا لك! 🙂",
         "button": "اشترِ لي قهوة"
       },
       "customWords": {
@@ -236,7 +236,7 @@
         "body": "واللمسة الأخيرة: بدّل بين السمة الفاتحة والداكنة. وهذا كل الشريط العلوي! 🎨"
       }
     },
-    "chooseLanguage": "What language will you dictate in?"
+    "chooseLanguage": "بأي لغة ستُملي؟"
   },
   "modelSelector": {
     "custom": "مخصص",
@@ -293,12 +293,12 @@
             "description": "اختياري: مفتاح اختصار مخصص يطبق دائماً المعالجة اللاحقة بالذكاء الاصطناعي على التفريغ الصوتي."
           },
           "transcribe_system": {
-            "name": "System Audio Hotkey",
-            "description": "The keyboard shortcut to transcribe the audio playing on your computer (e.g. a video) instead of the microphone."
+            "name": "اختصار صوت النظام",
+            "description": "اختصار لوحة المفاتيح لتفريغ الصوت الذي يُشغَّل على الحاسوب (مثل فيديو) بدلًا من الميكروفون."
           },
           "transcribe_live": {
-            "name": "Live Transcription Hotkey",
-            "description": "Shows the text live in a floating bubble as you speak. The text stays in the bubble (it is not pasted)."
+            "name": "اختصار التفريغ المباشر",
+            "description": "يعرض النص مباشرةً في فقاعة عائمة أثناء حديثك. يبقى النص في الفقاعة (لا يُلصق)."
           }
         },
         "errors": {
@@ -320,31 +320,31 @@
         "description": "استمر في الضغط للتسجيل، واترك للتوقف"
       },
       "clipboardOnly": {
-        "label": "Copy to clipboard",
-        "description": "When transcription finishes, copy the text to the clipboard and show a confirmation instead of pasting it into the active app. Recommended when capturing system audio, so the text doesn't land on top of the video or call."
+        "label": "نسخ إلى الحافظة",
+        "description": "عند انتهاء التفريغ، يُنسخ النص إلى الحافظة ويُعرض تنبيه بدلًا من لصقه في التطبيق النشط. يُوصى به عند التقاط صوت النظام، حتى لا يقع النص فوق الفيديو أو المكالمة."
       },
       "sourceAttribution": {
-        "label": "Add the audio source",
-        "description": "When transcribing system audio, append a \"Source\" line with what was playing (title, artist or channel, app and the exact minute), detected from Spotify, YouTube in the browser, etc. Windows only."
+        "label": "إضافة مصدر الصوت",
+        "description": "عند تفريغ صوت النظام، يضيف في النهاية سطر «المصدر» بما كان يُشغَّل (العنوان، الفنان أو القناة، التطبيق والدقيقة المحددة)، مُكتشَفًا من Spotify، YouTube في المتصفح، إلخ. على Windows فقط."
       },
       "liveMode": {
         "voice": {
-          "label": "Live mode — voice",
-          "description": "When on, your dictation shortcut shows the live capsule (text appears as you speak) instead of pasting at the end. No separate shortcut needed; you can also start it from the tray."
+          "label": "الوضع المباشر — الصوت",
+          "description": "عند التفعيل، يعرض اختصار الإملاء الكبسولة المباشرة (يظهر النص أثناء حديثك) بدلًا من لصقه في النهاية. لا حاجة إلى اختصار منفصل؛ يمكنك أيضًا تشغيله من شريط النظام."
         },
         "system": {
-          "label": "Live mode — system audio",
-          "description": "When on, your system-audio shortcut transcribes what's playing (YouTube, Spotify…) live in the floating capsule. Independent from voice live mode; also available from the tray."
+          "label": "الوضع المباشر — صوت النظام",
+          "description": "عند التفعيل، يفرّغ اختصار صوت النظام مباشرةً ما يُشغَّل (YouTube، Spotify…) في الكبسولة العائمة. مستقل عن وضع الصوت المباشر؛ متاح أيضًا من شريط النظام."
         }
       },
       "liveCopy": {
-        "label": "Auto-paste live",
-        "description": "When the live transcription stops, automatically paste the final text into the active app (like normal dictation). When off, the text stays in an editable bubble and you copy it with the copy button."
+        "label": "اللصق المباشر التلقائي",
+        "description": "عند إيقاف التفريغ المباشر، يُلصق النص النهائي في التطبيق النشط (مثل الإملاء العادي). عند الإيقاف، يبقى النص في كبسولة قابلة للتحرير وتنسخه بزر النسخ."
       },
       "systemAudioApp": {
-        "title": "System audio app",
-        "description": "Choose what the system-audio shortcut captures: the whole computer, or just one specific app (e.g. Spotify). The app must be playing audio to appear in the list; use the refresh button.",
-        "wholeSystem": "Whole system"
+        "title": "تطبيق صوت النظام",
+        "description": "اختر ما يلتقطه اختصار صوت النظام: الحاسوب بأكمله، أو تطبيق محدد واحد فقط (مثل Spotify). يجب أن يُشغّل التطبيق صوتًا ليظهر في القائمة؛ استخدم زر التحديث.",
+        "wholeSystem": "النظام بأكمله"
       }
     },
     "sound": {
@@ -378,7 +378,7 @@
         "transcription": "التفريغ الصوتي",
         "history": "السجل",
         "experimental": "تجريبي",
-        "appearance": "Appearance"
+        "appearance": "المظهر"
       },
       "experimentalToggle": {
         "label": "الميزات التجريبية",
@@ -491,31 +491,31 @@
         "duplicate": "\"{{word}}\" موجود بالفعل"
       },
       "wordReplacements": {
-        "title": "Personal dictionary",
-        "description": "Replaces exact words or phrases when transcribing. Ideal for proper names, jargon or abbreviations. Case-insensitive.",
-        "fromPlaceholder": "When you hear…",
-        "toPlaceholder": "Replace with…",
-        "add": "Add",
-        "remove": "Remove {{word}}",
-        "duplicate": "There's already a replacement for \"{{word}}\"",
-        "hint": "Only the exact, whole word is changed. Add each variant (singular, plural, etc.) separately.",
-        "import": "Import CSV",
-        "export": "Export CSV",
+        "title": "القاموس الشخصي",
+        "description": "يستبدل كلمات أو عبارات دقيقة عند التفريغ. مثالي لأسماء العلم أو المصطلحات أو الاختصارات. لا يميّز بين الأحرف الكبيرة والصغيرة.",
+        "fromPlaceholder": "عند سماع…",
+        "toPlaceholder": "استبدلها بـ…",
+        "add": "إضافة",
+        "remove": "إزالة {{word}}",
+        "duplicate": "يوجد بالفعل استبدال لـ \"{{word}}\"",
+        "hint": "تُغيَّر الكلمة الدقيقة والكاملة فقط. أضف كل صيغة (المفرد، الجمع، إلخ) على حدة.",
+        "import": "استيراد CSV",
+        "export": "تصدير CSV",
         "csvHelp": {
-          "title": "What should the CSV look like?",
-          "cols": "Two comma-separated columns: the original word and what to replace it with. One row per replacement.",
-          "header": "The header row (de,a) is optional — include it or not.",
-          "exampleLabel": "Example:",
-          "quotes": "If a value contains commas, wrap it in double quotes: \"hello, there\",greeting",
-          "encoding": "Save it as UTF-8. From Excel or Google Sheets: two columns and \"Save as → CSV\".",
-          "tip": "Tip: click \"Export CSV\" to get a file with the exact format ready to edit."
+          "title": "كيف ينبغي أن يكون ملف CSV؟",
+          "cols": "عمودان مفصولان بفاصلة: الكلمة الأصلية والكلمة التي تحل محلها. سطر واحد لكل استبدال.",
+          "header": "صف العنوان (من,إلى) اختياري؛ يمكنك إدراجه أو لا.",
+          "exampleLabel": "مثال:",
+          "quotes": "إذا احتوت قيمة على فواصل، فضعها بين علامتي اقتباس مزدوجتين: \"مرحبًا، كيف الحال\",تحية",
+          "encoding": "احفظه بترميز UTF-8. من Excel أو Google Sheets: عمودان و«حفظ باسم → CSV».",
+          "tip": "نصيحة: انقر «تصدير CSV» للحصول على ملف بالصيغة الدقيقة، جاهز للتحرير."
         },
-        "imported": "{{count}} replacements imported",
-        "importError": "Couldn't import the file",
-        "importEmpty": "The file has no valid replacements",
-        "exportEmpty": "No replacements to export",
-        "exportError": "Couldn't export the file",
-        "exported": "Dictionary exported"
+        "imported": "تم استيراد {{count}} استبدال",
+        "importError": "تعذّر استيراد الملف",
+        "importEmpty": "الملف لا يحتوي على استبدالات صالحة",
+        "exportEmpty": "لا توجد استبدالات للتصدير",
+        "exportError": "تعذّر تصدير الملف",
+        "exported": "تم تصدير القاموس"
       },
       "customCommands": {
         "group": "ملف مخصص",
@@ -597,7 +597,7 @@
       "retranscribeError": "فشلت إعادة النسخ. يرجى المحاولة مرة أخرى.",
       "transcribing": "جارٍ النسخ...",
       "transcriptionFailed": "فشل النسخ. يمكنك إعادة النسخ باستخدام أيقونة إعادة المحاولة.",
-      "audioLoadError": "Could not load the recording audio"
+      "audioLoadError": "تعذّر تحميل صوت التسجيل"
     },
     "debug": {
       "title": "تصحيح الأخطاء",
@@ -705,14 +705,14 @@
         },
         "handy": {
           "title": "Handy",
-          "description": "VoCript is a fork of the open-source project Handy, created by cjpais.",
-          "button": "View Handy"
+          "description": "VoCript نسخة معدّلة (fork) من مشروع Handy مفتوح المصدر، من إنشاء cjpais.",
+          "button": "عرض Handy"
         }
       },
       "contact": {
-        "title": "Contact",
-        "description": "About me and my other projects",
-        "button": "View portfolio"
+        "title": "تواصل",
+        "description": "عني وعن مشاريعي الأخرى",
+        "button": "عرض ملف الأعمال"
       }
     },
     "modelSettings": {
@@ -737,49 +737,49 @@
       },
       "noModelsMatch": "لا توجد نماذج مطابقة لهذا الفلتر.",
       "import": {
-        "title": "Reuse existing models",
-        "description": "Already have a model on this computer (e.g. from a previous install)? Reuse it instead of downloading again.",
-        "scan": "Scan computer",
-        "file": "Import file (.bin)",
-        "folder": "Import folder",
-        "use": "Use",
-        "already": "Already added",
-        "imported": "Model imported",
-        "failed": "Could not import the model",
-        "noneFound": "No reusable models found on this computer."
+        "title": "إعادة استخدام النماذج الموجودة",
+        "description": "هل لديك بالفعل نموذج على هذا الحاسوب (مثلًا من تثبيت سابق)؟ أعد استخدامه بدلًا من تنزيله مرة أخرى.",
+        "scan": "البحث في الحاسوب",
+        "file": "استيراد ملف (.bin)",
+        "folder": "استيراد مجلد",
+        "use": "استخدام",
+        "already": "مُضاف بالفعل",
+        "imported": "تم استيراد النموذج",
+        "failed": "تعذّر استيراد النموذج",
+        "noneFound": "لم يُعثر على نماذج قابلة لإعادة الاستخدام على هذا الجهاز."
       },
-      "recommendedForLanguage": "Recommended for {{language}}"
+      "recommendedForLanguage": "موصى به لـ {{language}}"
     },
     "theme": {
-      "title": "Theme",
-      "description": "Choose VoCript's appearance: follow the system, light, or dark.",
-      "system": "System",
-      "light": "Light",
-      "dark": "Dark"
+      "title": "السمة",
+      "description": "اختر مظهر VoCript: اتّباع النظام، فاتح أو داكن.",
+      "system": "النظام",
+      "light": "فاتح",
+      "dark": "داكن"
     },
     "fileTranscription": {
-      "title": "Transcribe file",
-      "description": "Transcribe an audio or video file to text or subtitles (.srt). Everything is processed on your device, offline.",
-      "dropzone": "Drag an audio or video file here",
-      "selectFile": "or click to choose one",
-      "changeFile": "Click to change the file",
-      "supportedFormats": "Supported formats: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus not supported).",
-      "fileFilter": "Audio or video",
-      "format": "Format:",
-      "formatText": "Text",
-      "formatSrt": "Subtitles (SRT)",
-      "transcribe": "Transcribe",
-      "transcribing": "Transcribing… (this may take a while)",
-      "duration": "Duration: {{duration}}",
-      "copy": "Copy",
-      "copied": "Copied",
-      "save": "Save…",
-      "saved": "File saved",
+      "title": "تفريغ ملف",
+      "description": "فرّغ ملف صوت أو فيديو إلى نص أو ترجمات (.srt). تتم معالجة كل شيء على جهازك دون اتصال.",
+      "dropzone": "اسحب ملف صوت أو فيديو إلى هنا",
+      "selectFile": "أو انقر لاختيار واحد",
+      "changeFile": "انقر لتغيير الملف",
+      "supportedFormats": "الصيغ المدعومة: MP3، WAV، FLAC، OGG، M4A، MP4، AAC، MKV… (Opus غير مدعوم).",
+      "fileFilter": "صوت أو فيديو",
+      "format": "الصيغة:",
+      "formatText": "نص",
+      "formatSrt": "ترجمات (SRT)",
+      "transcribe": "تفريغ",
+      "transcribing": "جارٍ التفريغ… (قد يستغرق بعض الوقت)",
+      "duration": "المدة: {{duration}}",
+      "copy": "نسخ",
+      "copied": "تم النسخ",
+      "save": "حفظ…",
+      "saved": "تم حفظ الملف",
       "errors": {
-        "failed": "Could not transcribe the file",
-        "unsupported": "Unsupported file format",
-        "copy": "Could not copy to clipboard",
-        "save": "Could not save the file"
+        "failed": "تعذّر تفريغ الملف",
+        "unsupported": "صيغة ملف غير مدعومة",
+        "copy": "تعذّر النسخ إلى الحافظة",
+        "save": "تعذّر حفظ الملف"
       }
     },
     "feedback": {
@@ -816,9 +816,9 @@
     "portableUpdateTitle": "Manual update required",
     "portableUpdateMessage": "Portable installs cannot be updated automatically. To update: download the latest NSIS installer from GitHub Releases, install it to the same folder, then copy your Data/ folder (settings, models, recordings) from the old version to the new one.",
     "portableUpdateButton": "Open GitHub Releases",
-    "updateNow": "Update",
-    "later": "Later",
-    "updateAvailableDescription": "It will install and the app will restart itself."
+    "updateNow": "تحديث",
+    "later": "لاحقًا",
+    "updateAvailableDescription": "سيتم التثبيت وسيعيد التطبيق تشغيل نفسه."
   },
   "common": {
     "loading": "...جاري التحميل",
@@ -872,11 +872,11 @@
   "overlay": {
     "transcribing": "...جاري التفريغ",
     "processing": "...جاري المعالجة",
-    "copied": "✓ Copied",
-    "listening": "Listening…",
-    "cancel": "Cancel",
-    "copyToClipboard": "Copy to clipboard",
-    "editTranscription": "Edit transcription"
+    "copied": "✓ تم النسخ",
+    "listening": "يستمع…",
+    "cancel": "إلغاء",
+    "copyToClipboard": "نسخ إلى الحافظة",
+    "editTranscription": "تحرير التفريغ"
   },
   "header": {
     "profile": {

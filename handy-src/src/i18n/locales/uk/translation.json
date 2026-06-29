@@ -7,8 +7,8 @@
     "model": "Модель",
     "quit": "Вийти",
     "cancel": "Скасувати",
-    "liveTranscriptionVoice": "Live: Voice",
-    "liveTranscriptionSystem": "Live: System Audio"
+    "liveTranscriptionVoice": "У реальному часі: голос",
+    "liveTranscriptionSystem": "У реальному часі: системний звук"
   },
   "sidebar": {
     "general": "Загальні",
@@ -18,7 +18,7 @@
     "history": "Історія",
     "debug": "Дебаг",
     "about": "Інфо",
-    "fileTranscription": "Transcribe",
+    "fileTranscription": "Транскрибувати",
     "feedback": "Зворотний зв'язок"
   },
   "onboarding": {
@@ -125,74 +125,74 @@
     "profiles": {
       "writing": {
         "label": "Письмо та нотатки",
-        "description": "Emails, notes and documents. Dictation with an automatic space between phrases."
+        "description": "Листи, нотатки та документи. Диктування з автоматичним пробілом між реченнями."
       },
       "coding": {
         "label": "Програмування",
-        "description": "Code and comments. The personal dictionary shines with technical terms."
+        "description": "Код і коментарі. Персональний словник розкривається на технічних термінах."
       },
       "meetings": {
         "label": "Zustrichi ta video",
-        "description": "Transcribe calls, meetings and videos via system audio and files."
+        "description": "Транскрибуйте дзвінки, зустрічі та відео через системний звук і файли."
       },
       "study": {
         "label": "Навчання та уроки",
-        "description": "Take notes by dictating and transcribe your recorded lectures to text."
+        "description": "Робіть нотатки диктуванням і перетворюйте записані лекції на текст."
       },
       "accessibility": {
         "label": "Вільні руки",
-        "description": "Voice control without holding keys: press once to start, once to stop."
+        "description": "Голосове керування без утримання клавіш: натисніть один раз, щоб почати, і ще раз, щоб зупинити."
       },
       "multilingual": {
         "label": "Багатомовний",
-        "description": "Dictate in several languages with automatic detection."
+        "description": "Диктуйте кількома мовами з автоматичним визначенням."
       },
       "custom": {
         "label": "Власний"
       },
-      "title": "What will you use VoCript for?",
-      "subtitle": "Pick a profile and we'll set it up for you. You can change everything later in the settings."
+      "title": "Для чого ви використовуватимете VoCript?",
+      "subtitle": "Виберіть профіль, і ми все налаштуємо за вас. Пізніше ви зможете все змінити в налаштуваннях."
     },
     "tour": {
-      "guide": "Guide",
-      "replay": "Replay the welcome tour",
-      "next": "Next",
-      "back": "Back",
-      "skip": "Skip",
-      "finish": "Done",
+      "guide": "Посібник",
+      "replay": "Переглянути вітальний тур ще раз",
+      "next": "Далі",
+      "back": "Назад",
+      "skip": "Пропустити",
+      "finish": "Готово",
       "welcome": {
-        "title": "Welcome to VoCript! 🎙️",
-        "body": "Let me show you the basics in under a minute. After each feature you'll get to try it yourself. You can skip the tour anytime."
+        "title": "Ласкаво просимо до VoCript! 🎙️",
+        "body": "Я покажу основи менш ніж за хвилину. Після кожної функції ви зможете спробувати її самі. Тур можна пропустити будь-коли."
       },
       "shortcut": {
-        "title": "Set up your dictation shortcut",
-        "body": "First things first: make the shortcut yours. The recommended one is Ctrl + Space.\n\nChange it right here: click the shortcut below and press the combo you want. You can change it again later in Settings → General."
+        "title": "Налаштуйте сполучення для диктування",
+        "body": "Спершу: налаштуйте сполучення на свій смак. Рекомендоване — Ctrl + Пробіл.\n\nЗмініть його просто тут: натисніть на сполучення нижче й натисніть потрібну комбінацію. Пізніше ви зможете змінити його знову в «Налаштування → Загальні»."
       },
       "systemAudio": {
-        "title": "System audio",
-        "body": "Want to transcribe what's playing on your PC (a video, a call) instead of your voice? Use this shortcut to capture system audio. You can also target a specific app."
+        "title": "Системний звук",
+        "body": "Хочете транскрибувати те, що звучить на ПК (відео, дзвінок), а не ваш голос? Скористайтеся цим сполученням: воно захоплює системний звук. Можна також вибрати конкретний застосунок."
       },
       "file": {
-        "title": "Transcribe files",
-        "body": "Here you turn an audio or video file into text or .srt subtitles. Just drag and drop it and pick the output format."
+        "title": "Транскрибувати файли",
+        "body": "Тут ви перетворюєте аудіо- чи відеофайл на текст або субтитри .srt. Просто перетягніть його та виберіть формат виводу."
       },
       "dictionary": {
-        "title": "Personal dictionary",
-        "body": "Does VoCript mistype a name or a technical term? Add exact replacements (from → to) and it'll always apply them. You can even import and export your list as CSV."
+        "title": "Персональний словник",
+        "body": "VoCript неправильно пише ім'я чи технічний термін? Додайте точні заміни (з → на), і вони застосовуватимуться завжди. Список можна навіть імпортувати та експортувати у форматі CSV."
       },
       "history": {
-        "title": "History",
-        "body": "All your transcriptions are saved here. You can replay the original audio and copy the text whenever you need it."
+        "title": "Історія",
+        "body": "Усі ваші транскрипції зберігаються тут. Ви можете знову прослухати оригінальний звук і скопіювати текст, коли потрібно."
       },
       "dictation": {
-        "title": "Voice dictation",
-        "body": "Place your cursor where you want to type, press your dictation shortcut, speak and release — the text appears on its own.\n\nTry it right here: click the box below and dictate something with your shortcut.",
-        "placeholder": "Click here and dictate with your shortcut…",
-        "success": "✓ It works! That easy."
+        "title": "Голосове диктування",
+        "body": "Поставте курсор туди, де хочете писати, натисніть своє сполучення для диктування, говоріть і відпустіть — текст з'явиться сам.\n\nСпробуйте просто тут: натисніть на поле нижче й продиктуйте щось своїм сполученням.",
+        "placeholder": "Натисніть тут і диктуйте своїм сполученням…",
+        "success": "✓ Працює! Ось так просто."
       },
       "donate": {
-        "title": "That's it! 🎉",
-        "body": "You now know the essentials. VoCript is free and runs 100% on your device.\n\nIf you find it useful and have something to spare, I'd really appreciate a donation to keep improving it. Thanks! 🙂",
+        "title": "Ось і все! 🎉",
+        "body": "Тепер ви знаєте найголовніше. VoCript безкоштовний і працює на 100% на вашому пристрої.\n\nЯкщо він вам корисний і у вас є можливість, я був би дуже вдячний за пожертву, щоб продовжувати його вдосконалювати. Дякую! 🙂",
         "button": "Купити мені каву"
       },
       "customWords": {
@@ -236,7 +236,7 @@
         "body": "І останній штрих: перемикання світлої та темної теми. Ось і вся шапка! 🎨"
       }
     },
-    "chooseLanguage": "What language will you dictate in?"
+    "chooseLanguage": "Якою мовою ви диктуватимете?"
   },
   "modelSelector": {
     "custom": "Користувацька",
@@ -297,12 +297,12 @@
             "description": "Необов'язково: Спеціальна гаряча клавіша, яка завжди застосовує AI-постобробку до вашої транскрипції."
           },
           "transcribe_system": {
-            "name": "System Audio Hotkey",
-            "description": "The keyboard shortcut to transcribe the audio playing on your computer (e.g. a video) instead of the microphone."
+            "name": "Сполучення для системного звуку",
+            "description": "Сполучення клавіш для транскрипції звуку, що звучить на комп'ютері (наприклад, відео), замість мікрофона."
           },
           "transcribe_live": {
-            "name": "Live Transcription Hotkey",
-            "description": "Shows the text live in a floating bubble as you speak. The text stays in the bubble (it is not pasted)."
+            "name": "Сполучення для транскрипції в реальному часі",
+            "description": "Показує текст у реальному часі в плавучій бульбашці, поки ви говорите. Текст залишається в бульбашці (не вставляється)."
           }
         },
         "errors": {
@@ -324,31 +324,31 @@
         "description": "Утримуйте для запису, відпустіть для зупинки"
       },
       "clipboardOnly": {
-        "label": "Copy to clipboard",
-        "description": "When transcription finishes, copy the text to the clipboard and show a confirmation instead of pasting it into the active app. Recommended when capturing system audio, so the text doesn't land on top of the video or call."
+        "label": "Копіювати в буфер обміну",
+        "description": "Після завершення транскрипції текст копіюється в буфер обміну й показується сповіщення замість вставлення в активний застосунок. Рекомендовано під час захоплення системного звуку, щоб текст не потрапив поверх відео чи дзвінка."
       },
       "sourceAttribution": {
-        "label": "Add the audio source",
-        "description": "When transcribing system audio, append a \"Source\" line with what was playing (title, artist or channel, app and the exact minute), detected from Spotify, YouTube in the browser, etc. Windows only."
+        "label": "Додати джерело звуку",
+        "description": "Під час транскрипції системного звуку в кінці додається рядок «Джерело» з тим, що звучало (назва, виконавець або канал, застосунок і точна хвилина), визначеними зі Spotify, YouTube у браузері тощо. Лише у Windows."
       },
       "liveMode": {
         "voice": {
-          "label": "Live mode — voice",
-          "description": "When on, your dictation shortcut shows the live capsule (text appears as you speak) instead of pasting at the end. No separate shortcut needed; you can also start it from the tray."
+          "label": "Режим реального часу — голос",
+          "description": "Коли увімкнено, ваше сполучення для диктування показує капсулу в реальному часі (текст з'являється, поки ви говорите) замість вставлення в кінці. Окреме сполучення не потрібне; запустити можна й з лотка."
         },
         "system": {
-          "label": "Live mode — system audio",
-          "description": "When on, your system-audio shortcut transcribes what's playing (YouTube, Spotify…) live in the floating capsule. Independent from voice live mode; also available from the tray."
+          "label": "Режим реального часу — системний звук",
+          "description": "Коли увімкнено, ваше сполучення для системного звуку транскрибує в реальному часі те, що звучить (YouTube, Spotify…), у плавучій капсулі. Незалежно від голосового режиму реального часу; також доступно з лотка."
         }
       },
       "liveCopy": {
-        "label": "Auto-paste live",
-        "description": "When the live transcription stops, automatically paste the final text into the active app (like normal dictation). When off, the text stays in an editable bubble and you copy it with the copy button."
+        "label": "Автовставлення в реальному часі",
+        "description": "Коли ви зупиняєте транскрипцію в реальному часі, кінцевий текст вставляється в активний застосунок (як звичайне диктування). Якщо вимкнено, текст залишається в редагованій капсулі, і ви копіюєте його кнопкою копіювання."
       },
       "systemAudioApp": {
-        "title": "System audio app",
-        "description": "Choose what the system-audio shortcut captures: the whole computer, or just one specific app (e.g. Spotify). The app must be playing audio to appear in the list; use the refresh button.",
-        "wholeSystem": "Whole system"
+        "title": "Застосунок системного звуку",
+        "description": "Виберіть, що захоплювати сполученням для системного звуку: весь комп'ютер чи лише один конкретний застосунок (напр. Spotify). Застосунок має відтворювати звук, щоб з'явитися у списку; скористайтеся кнопкою оновлення.",
+        "wholeSystem": "Уся система"
       }
     },
     "models": {
@@ -369,18 +369,18 @@
       "yourModels": "Завантажені моделі",
       "availableModels": "Доступні для завантаження",
       "import": {
-        "title": "Reuse existing models",
-        "description": "Already have a model on this computer (e.g. from a previous install)? Reuse it instead of downloading again.",
-        "scan": "Scan computer",
-        "file": "Import file (.bin)",
-        "folder": "Import folder",
-        "use": "Use",
-        "already": "Already added",
-        "imported": "Model imported",
-        "failed": "Could not import the model",
-        "noneFound": "No reusable models found on this computer."
+        "title": "Повторно використати наявні моделі",
+        "description": "У вас уже є модель на цьому комп'ютері (наприклад, від попереднього встановлення)? Використайте її повторно замість повторного завантаження.",
+        "scan": "Пошук на комп'ютері",
+        "file": "Імпортувати файл (.bin)",
+        "folder": "Імпортувати папку",
+        "use": "Використати",
+        "already": "Уже додано",
+        "imported": "Модель імпортовано",
+        "failed": "Не вдалося імпортувати модель",
+        "noneFound": "На цьому пристрої не знайдено моделей для повторного використання."
       },
-      "recommendedForLanguage": "Recommended for {{language}}"
+      "recommendedForLanguage": "Рекомендовано для {{language}}"
     },
     "sound": {
       "title": "Звук",
@@ -413,7 +413,7 @@
         "transcription": "Транскрипція",
         "history": "Історія",
         "experimental": "Експериментальне",
-        "appearance": "Appearance"
+        "appearance": "Вигляд"
       },
       "experimentalToggle": {
         "label": "Експериментальні функції",
@@ -526,31 +526,31 @@
         "duplicate": "\"{{word}}\" вже існує"
       },
       "wordReplacements": {
-        "title": "Personal dictionary",
-        "description": "Replaces exact words or phrases when transcribing. Ideal for proper names, jargon or abbreviations. Case-insensitive.",
-        "fromPlaceholder": "When you hear…",
-        "toPlaceholder": "Replace with…",
-        "add": "Add",
-        "remove": "Remove {{word}}",
-        "duplicate": "There's already a replacement for \"{{word}}\"",
-        "hint": "Only the exact, whole word is changed. Add each variant (singular, plural, etc.) separately.",
-        "import": "Import CSV",
-        "export": "Export CSV",
+        "title": "Персональний словник",
+        "description": "Замінює точні слова чи фрази під час транскрипції. Ідеально для власних назв, жаргону чи скорочень. Без урахування регістру.",
+        "fromPlaceholder": "Коли чується…",
+        "toPlaceholder": "Замінити на…",
+        "add": "Додати",
+        "remove": "Видалити {{word}}",
+        "duplicate": "Заміна для \"{{word}}\" уже існує",
+        "hint": "Змінюється лише точне слово цілком. Додавайте кожну форму (однину, множину тощо) окремо.",
+        "import": "Імпортувати CSV",
+        "export": "Експортувати CSV",
         "csvHelp": {
-          "title": "What should the CSV look like?",
-          "cols": "Two comma-separated columns: the original word and what to replace it with. One row per replacement.",
-          "header": "The header row (de,a) is optional — include it or not.",
-          "exampleLabel": "Example:",
-          "quotes": "If a value contains commas, wrap it in double quotes: \"hello, there\",greeting",
-          "encoding": "Save it as UTF-8. From Excel or Google Sheets: two columns and \"Save as → CSV\".",
-          "tip": "Tip: click \"Export CSV\" to get a file with the exact format ready to edit."
+          "title": "Яким має бути CSV?",
+          "cols": "Два стовпці, розділені комою: вихідне слово і те, на яке його замінити. По одному рядку на кожну заміну.",
+          "header": "Рядок заголовка (з,на) необов'язковий — можете додати його чи ні.",
+          "exampleLabel": "Приклад:",
+          "quotes": "Якщо значення містить коми, візьміть його в подвійні лапки: \"привіт, як справи\",привітання",
+          "encoding": "Збережіть у UTF-8. У Excel або Google Таблицях: два стовпці та «Зберегти як → CSV».",
+          "tip": "Порада: натисніть «Експортувати CSV», щоб отримати файл у точному форматі, готовий до редагування."
         },
-        "imported": "{{count}} replacements imported",
-        "importError": "Couldn't import the file",
-        "importEmpty": "The file has no valid replacements",
-        "exportEmpty": "No replacements to export",
-        "exportError": "Couldn't export the file",
-        "exported": "Dictionary exported"
+        "imported": "Імпортовано замін: {{count}}",
+        "importError": "Не вдалося імпортувати файл",
+        "importEmpty": "У файлі немає дійсних замін",
+        "exportEmpty": "Немає замін для експорту",
+        "exportError": "Не вдалося експортувати файл",
+        "exported": "Словник експортовано"
       },
       "customCommands": {
         "group": "Власний профіль",
@@ -632,7 +632,7 @@
       "retranscribeError": "Не вдалося перетранскрибувати. Будь ласка, спробуйте ще раз.",
       "transcribing": "Транскрибування...",
       "transcriptionFailed": "Транскрипція не вдалася. Ви можете перетранскрибувати за допомогою іконки повтору.",
-      "audioLoadError": "Could not load the recording audio"
+      "audioLoadError": "Не вдалося завантажити звук запису"
     },
     "debug": {
       "title": "Дебаг",
@@ -740,46 +740,46 @@
         },
         "handy": {
           "title": "Handy",
-          "description": "VoCript is a fork of the open-source project Handy, created by cjpais.",
-          "button": "View Handy"
+          "description": "VoCript — це форк проєкту з відкритим кодом Handy, створеного cjpais.",
+          "button": "Відкрити Handy"
         }
       },
       "contact": {
-        "title": "Contact",
-        "description": "About me and my other projects",
-        "button": "View portfolio"
+        "title": "Контакт",
+        "description": "Про мене та мої інші проєкти",
+        "button": "Відкрити портфоліо"
       }
     },
     "theme": {
-      "title": "Theme",
-      "description": "Choose VoCript's appearance: follow the system, light, or dark.",
-      "system": "System",
-      "light": "Light",
-      "dark": "Dark"
+      "title": "Тема",
+      "description": "Виберіть вигляд VoCript: за системою, світла чи темна.",
+      "system": "Системна",
+      "light": "Світла",
+      "dark": "Темна"
     },
     "fileTranscription": {
-      "title": "Transcribe file",
-      "description": "Transcribe an audio or video file to text or subtitles (.srt). Everything is processed on your device, offline.",
-      "dropzone": "Drag an audio or video file here",
-      "selectFile": "or click to choose one",
-      "changeFile": "Click to change the file",
-      "supportedFormats": "Supported formats: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus not supported).",
-      "fileFilter": "Audio or video",
-      "format": "Format:",
-      "formatText": "Text",
-      "formatSrt": "Subtitles (SRT)",
-      "transcribe": "Transcribe",
-      "transcribing": "Transcribing… (this may take a while)",
-      "duration": "Duration: {{duration}}",
-      "copy": "Copy",
-      "copied": "Copied",
-      "save": "Save…",
-      "saved": "File saved",
+      "title": "Транскрибувати файл",
+      "description": "Транскрибуйте аудіо- чи відеофайл на текст або субтитри (.srt). Усе обробляється на вашому пристрої, офлайн.",
+      "dropzone": "Перетягніть сюди аудіо- чи відеофайл",
+      "selectFile": "або натисніть, щоб вибрати",
+      "changeFile": "Натисніть, щоб змінити файл",
+      "supportedFormats": "Підтримувані формати: MP3, WAV, FLAC, OGG, M4A, MP4, AAC, MKV… (Opus не підтримується).",
+      "fileFilter": "Аудіо або відео",
+      "format": "Формат:",
+      "formatText": "Текст",
+      "formatSrt": "Субтитри (SRT)",
+      "transcribe": "Транскрибувати",
+      "transcribing": "Транскрибування… (може зайняти час)",
+      "duration": "Тривалість: {{duration}}",
+      "copy": "Копіювати",
+      "copied": "Скопійовано",
+      "save": "Зберегти…",
+      "saved": "Файл збережено",
       "errors": {
-        "failed": "Could not transcribe the file",
-        "unsupported": "Unsupported file format",
-        "copy": "Could not copy to clipboard",
-        "save": "Could not save the file"
+        "failed": "Не вдалося транскрибувати файл",
+        "unsupported": "Непідтримуваний формат файлу",
+        "copy": "Не вдалося скопіювати в буфер обміну",
+        "save": "Не вдалося зберегти файл"
       }
     },
     "feedback": {
@@ -816,9 +816,9 @@
     "portableUpdateTitle": "Manual update required",
     "portableUpdateMessage": "Portable installs cannot be updated automatically. To update: download the latest NSIS installer from GitHub Releases, install it to the same folder, then copy your Data/ folder (settings, models, recordings) from the old version to the new one.",
     "portableUpdateButton": "Open GitHub Releases",
-    "updateNow": "Update",
-    "later": "Later",
-    "updateAvailableDescription": "It will install and the app will restart itself."
+    "updateNow": "Оновити",
+    "later": "Пізніше",
+    "updateAvailableDescription": "Буде встановлено, і застосунок перезапуститься сам."
   },
   "common": {
     "loading": "Завантаження...",
@@ -872,11 +872,11 @@
   "overlay": {
     "transcribing": "Обробка...",
     "processing": "Постобробка...",
-    "copied": "✓ Copied",
-    "listening": "Listening…",
-    "cancel": "Cancel",
-    "copyToClipboard": "Copy to clipboard",
-    "editTranscription": "Edit transcription"
+    "copied": "✓ Скопійовано",
+    "listening": "Слухаю…",
+    "cancel": "Скасувати",
+    "copyToClipboard": "Копіювати в буфер обміну",
+    "editTranscription": "Редагувати транскрипцію"
   },
   "header": {
     "profile": {
