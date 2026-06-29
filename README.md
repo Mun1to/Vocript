@@ -40,6 +40,20 @@ el reconocimiento ocurre **en tu equipo**: tu audio nunca sale de tu ordenador.
 
 ---
 
+## 📸 Así se ve
+
+<div align="center">
+  <img src="brand/screenshots/01-general.png" alt="VoCript — pantalla principal" width="820" />
+</div>
+
+<p align="center"><em>Pantalla principal: barra de controles rápidos en el header — modo voz/sistema, salida (pegar/copiar), activación, perfil e idioma. Todo el reconocimiento ocurre en tu equipo.</em></p>
+
+| Transcribir archivos | Modelos de transcripción | Ajustes avanzados |
+| :--: | :--: | :--: |
+| <img src="brand/screenshots/03-transcribe.png" alt="Transcribir archivos a texto o SRT" /> | <img src="brand/screenshots/02-models.png" alt="Modelos de transcripción" /> | <img src="brand/screenshots/04-advanced.png" alt="Ajustes avanzados" /> |
+
+---
+
 ## ⬇️ Descargar
 
 1. Entra en **[la última versión (Releases)](https://github.com/Mun1to/Vocript/releases/latest)**.

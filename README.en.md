@@ -40,6 +40,20 @@ All recognition happens **on your device** — your audio never leaves your comp
 
 ---
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="brand/screenshots/01-general.png" alt="VoCript — main screen" width="820" />
+</div>
+
+<p align="center"><em>Main screen: the header's quick-control bar — voice/system mode, output (paste/copy), activation, profile and language. All recognition runs on your device.</em></p>
+
+| Transcribe files | Transcription models | Advanced settings |
+| :--: | :--: | :--: |
+| <img src="brand/screenshots/03-transcribe.png" alt="Transcribe files to text or SRT" /> | <img src="brand/screenshots/02-models.png" alt="Transcription models" /> | <img src="brand/screenshots/04-advanced.png" alt="Advanced settings" /> |
+
+---
+
 ## ⬇️ Download
 
 1. Go to **[the latest release (Releases)](https://github.com/Mun1to/Vocript/releases/latest)**.

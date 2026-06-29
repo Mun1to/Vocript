@@ -5,7 +5,7 @@ import { useSettings } from "../hooks/useSettings";
 import { TranscriptionModeSwitch } from "./TranscriptionModeSwitch";
 import { ProfileSelect } from "./ProfileSelect";
 import { LanguageQuickSwitch } from "./LanguageQuickSwitch";
-import type { SidebarSection } from "./Sidebar";
+import { SECTIONS_CONFIG, type SidebarSection } from "./Sidebar";
 import type { AppTheme } from "@/bindings";
 
 interface HeaderProps {
@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = ({ currentSection }) => {
             isLight ? "text-slate-900" : "text-slate-200"
           }`}
         >
-          {t(`sidebar.${currentSection}`)}
+          {t(SECTIONS_CONFIG[currentSection].labelKey)}
         </span>
       </div>
 
