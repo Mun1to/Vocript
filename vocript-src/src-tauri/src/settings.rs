@@ -969,6 +969,13 @@ pub fn load_or_create_app_settings(app: &AppHandle) -> AppSettings {
         default_settings
     };
 
+    // Migra el volumen heredado fuera de escala (p. ej. 80 de una antigua
+    // escala 0-100) a la escala 0-1 actual, para que no aparezca como "8000%".
+    if settings.audio_feedback_volume > 1.0 {
+        settings.audio_feedback_volume = (settings.audio_feedback_volume / 100.0).clamp(0.0, 1.0);
+        store.set("settings", serde_json::to_value(&settings).unwrap());
+    }
+
     if ensure_post_process_defaults(&mut settings) {
         store.set("settings", serde_json::to_value(&settings).unwrap());
     }
@@ -992,6 +999,13 @@ pub fn get_settings(app: &AppHandle) -> AppSettings {
         store.set("settings", serde_json::to_value(&default_settings).unwrap());
         default_settings
     };
+
+    // Migra el volumen heredado fuera de escala (p. ej. 80 de una antigua
+    // escala 0-100) a la escala 0-1 actual, para que no aparezca como "8000%".
+    if settings.audio_feedback_volume > 1.0 {
+        settings.audio_feedback_volume = (settings.audio_feedback_volume / 100.0).clamp(0.0, 1.0);
+        store.set("settings", serde_json::to_value(&settings).unwrap());
+    }
 
     if ensure_post_process_defaults(&mut settings) {
         store.set("settings", serde_json::to_value(&settings).unwrap());

@@ -8,7 +8,11 @@ export const VolumeSlider: React.FC<{ disabled?: boolean }> = ({
 }) => {
   const { t } = useTranslation();
   const { getSetting, updateSetting } = useSettings();
-  const audioFeedbackVolume = getSetting("audio_feedback_volume") ?? 0.5;
+  // Sanea valores heredados fuera de la escala 0–1 (p. ej. 80 de una escala
+  // antigua 0–100, que se mostraba como 8000%): los reescala y acota a [0, 1].
+  const rawVolume = getSetting("audio_feedback_volume") ?? 1;
+  const audioFeedbackVolume =
+    rawVolume > 1 ? Math.min(rawVolume / 100, 1) : Math.max(rawVolume, 0);
 
   return (
     <Slider

@@ -89,7 +89,7 @@ fn play_sound_blocking(app: &AppHandle, path: &Path) {
 
 fn play_sound_at_path(app: &AppHandle, path: &Path) -> Result<(), Box<dyn std::error::Error>> {
     let settings = settings::get_settings(app);
-    let volume = settings.audio_feedback_volume;
+    let volume = settings.audio_feedback_volume.clamp(0.0, 1.0);
     let selected_device = settings.selected_output_device.clone();
     play_audio_file(path, selected_device, volume)
 }
