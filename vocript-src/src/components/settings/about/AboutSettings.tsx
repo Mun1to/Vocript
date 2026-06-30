@@ -11,7 +11,6 @@ import { AppLanguageSelector } from "../AppLanguageSelector";
 import { LogDirectory } from "../debug";
 
 const BMC_URL = "https://buymeacoffee.com/munito";
-const HANDY_DONATE_URL = "https://handy.computer/donate";
 const VOCRIPT_REPO_URL = "https://github.com/Mun1to/VoCript";
 
 export const AboutSettings: React.FC = () => {
@@ -61,15 +60,6 @@ export const AboutSettings: React.FC = () => {
             >
               <Coffee className="w-4 h-4" />
               {t("settings.about.supportDevelopment.coffee")}
-            </Button>
-            <Button
-              variant="secondary"
-              size="md"
-              onClick={() => openUrl(HANDY_DONATE_URL)}
-              className="flex items-center gap-2"
-            >
-              <Heart className="w-4 h-4" />
-              {t("settings.about.supportDevelopment.handy")}
             </Button>
           </div>
         </SettingContainer>
