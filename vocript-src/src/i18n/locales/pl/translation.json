@@ -16,6 +16,7 @@
     "advanced": "Zaawansowane",
     "postProcessing": "Postproces",
     "history": "Historia",
+    "themes": "Motywy",
     "debug": "Debugowanie",
     "about": "O programie",
     "fileTranscription": "Transkrybuj",
@@ -919,5 +920,10 @@
     "language": {
       "label": "Język"
     }
+  },
+  "themes": {
+    "title": "Motywy niestandardowe",
+    "subtitle": "Wybierz kolor akcentu interfejsu.",
+    "comingSoon": "Typografia i więcej opcji wkrótce."
   }
 }

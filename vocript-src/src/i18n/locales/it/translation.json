@@ -16,6 +16,7 @@
     "advanced": "Avanzate",
     "postProcessing": "Post-Elaborazione",
     "history": "Cronologia",
+    "themes": "Temi",
     "debug": "Debug",
     "about": "Informazioni",
     "fileTranscription": "Trascrivi",
@@ -919,5 +920,10 @@
     "language": {
       "label": "Lingua"
     }
+  },
+  "themes": {
+    "title": "Temi personalizzati",
+    "subtitle": "Scegli il colore d'accento dell'interfaccia.",
+    "comingSoon": "Tipografia e altre opzioni in arrivo."
   }
 }

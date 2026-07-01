@@ -16,6 +16,7 @@
     "advanced": "Gelişmiş",
     "postProcessing": "Son İşlem",
     "history": "Geçmiş",
+    "themes": "Temalar",
     "debug": "Hata Ayıklama",
     "about": "Hakkında",
     "fileTranscription": "Yazıya dök",
@@ -919,5 +920,10 @@
     "language": {
       "label": "Dil"
     }
+  },
+  "themes": {
+    "title": "Özel temalar",
+    "subtitle": "Arayüzün vurgu rengini seç.",
+    "comingSoon": "Tipografi ve daha fazlası yakında."
   }
 }

@@ -20,10 +20,10 @@ export const SettingsGroup: React.FC<SettingsGroupProps> = ({
         <div className="px-1.5 mb-2.5">
           <h2
             className={`flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider ${
-              isLight ? "text-blue-600" : "text-blue-400"
+              isLight ? "text-logo-primary" : "text-logo-primary"
             }`}
           >
-            <span className="h-3.5 w-1 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+            <span className="h-3.5 w-1 rounded-full bg-logo-primary shadow-[0_0_8px_var(--color-logo-glow)]" />
             {title}
           </h2>
           {description && (

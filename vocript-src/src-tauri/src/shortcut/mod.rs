@@ -1163,6 +1163,15 @@ pub fn change_theme_setting(app: AppHandle, theme: settings::AppTheme) -> Result
 
 #[tauri::command]
 #[specta::specta]
+pub fn change_accent_color_setting(app: AppHandle, color: String) -> Result<(), String> {
+    let mut settings = settings::get_settings(&app);
+    settings.accent_color = color;
+    settings::write_settings(&app, settings);
+    Ok(())
+}
+
+#[tauri::command]
+#[specta::specta]
 pub fn change_source_attribution_setting(app: AppHandle, enabled: bool) -> Result<(), String> {
     let mut settings = settings::get_settings(&app);
     settings.source_attribution = enabled;

@@ -91,7 +91,7 @@ export const TranscriptionModeSwitch: React.FC = () => {
     const optionClass = (active: boolean) =>
       `block w-full text-center px-4 py-2 rounded-md text-[11px] font-semibold whitespace-nowrap transition-colors ${
         active
-          ? "bg-blue-600 text-white shadow-[0_0_10px_1px_rgba(37,99,235,0.55)]"
+          ? "bg-logo-primary text-white shadow-[0_0_10px_1px_var(--color-logo-glow)]"
           : isLight
             ? "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
             : "text-slate-300 hover:bg-white/[0.06] hover:text-white"
@@ -101,7 +101,7 @@ export const TranscriptionModeSwitch: React.FC = () => {
       <div key={control.key} data-tour={control.tour} className="relative group">
         <div
           title={t(control.labelKey)}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-blue-600 text-white shadow-[0_0_11px_1px_rgba(37,99,235,0.55)] select-none"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold bg-logo-primary text-white shadow-[0_0_11px_1px_var(--color-logo-glow)] select-none"
         >
           <Icon className="w-3.5 h-3.5 shrink-0" />
           <span>{currentLabel}</span>

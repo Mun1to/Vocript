@@ -19,16 +19,16 @@ export interface TourStep {
   id: string;
   section?: SidebarSection;
   target?: string;
-  practice?: "dictation" | "shortcut";
+  practice?: "dictation" | "shortcut" | "microphone";
   donate?: boolean;
 }
 
 export const TOUR_STEPS: TourStep[] = [
   // 1. Welcome.
   { id: "welcome" },
-  // 2. Microphone first: before dictating anything, make sure the right input
-  //    device is selected so VoCript actually hears the user.
-  { id: "microphone", section: "general", target: "microphone" },
+  // 2. Microphone first: before dictating anything, let the user pick the right
+  //    input device right here (embedded in the card) so VoCript hears them.
+  { id: "microphone", section: "general", practice: "microphone" },
   // 3. Configure the shortcut: a brand-new user has no shortcut muscle memory,
   //    so we embed the real shortcut control right in the card to set it live.
   { id: "shortcut", section: "general", practice: "shortcut" },

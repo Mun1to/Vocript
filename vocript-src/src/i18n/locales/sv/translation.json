@@ -16,6 +16,7 @@
     "advanced": "Avancerat",
     "postProcessing": "Efterbearbetning",
     "history": "Historik",
+    "themes": "Teman",
     "debug": "Felsökning",
     "about": "Om",
     "fileTranscription": "Transkribera",
@@ -919,5 +920,10 @@
     "language": {
       "label": "Språk"
     }
+  },
+  "themes": {
+    "title": "Egna teman",
+    "subtitle": "Välj gränssnittets accentfärg.",
+    "comingSoon": "Typografi och mer kommer snart."
   }
 }

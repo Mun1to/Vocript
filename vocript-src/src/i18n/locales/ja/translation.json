@@ -16,6 +16,7 @@
     "advanced": "詳細設定",
     "postProcessing": "後処理",
     "history": "履歴",
+    "themes": "テーマ",
     "debug": "デバッグ",
     "about": "概要",
     "fileTranscription": "文字起こし",
@@ -919,5 +920,10 @@
     "language": {
       "label": "言語"
     }
+  },
+  "themes": {
+    "title": "カスタムテーマ",
+    "subtitle": "インターフェースのアクセントカラーを選びましょう。",
+    "comingSoon": "タイポグラフィなどは近日対応予定です。"
   }
 }

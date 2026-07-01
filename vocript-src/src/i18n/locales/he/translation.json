@@ -16,6 +16,7 @@
     "advanced": "מתקדם",
     "postProcessing": "עיבוד משלים",
     "history": "היסטוריה",
+    "themes": "ערכות נושא",
     "debug": "ניפוי שגיאות",
     "about": "אודות",
     "fileTranscription": "תמלל",
@@ -919,5 +920,10 @@
     "language": {
       "label": "שפה"
     }
+  },
+  "themes": {
+    "title": "ערכות נושא מותאמות",
+    "subtitle": "בחר את צבע ההדגשה של הממשק.",
+    "comingSoon": "טיפוגרפיה ואפשרויות נוספות בקרוב."
   }
 }

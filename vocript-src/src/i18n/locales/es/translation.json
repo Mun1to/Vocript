@@ -48,6 +48,7 @@
     "advanced": "Ajustes avanzados",
     "postProcessing": "Post Proceso",
     "history": "Historial",
+    "themes": "Temas",
     "debug": "Depuración",
     "about": "Acerca de",
     "feedback": "Feedback"
@@ -919,5 +920,10 @@
     "cancel": "Cancelar",
     "copyToClipboard": "Copiar al portapapeles",
     "editTranscription": "Editar transcripción"
+  },
+  "themes": {
+    "title": "Temas personalizados",
+    "subtitle": "Elige el color de acento de la interfaz.",
+    "comingSoon": "Tipografía y más opciones, próximamente."
   }
 }

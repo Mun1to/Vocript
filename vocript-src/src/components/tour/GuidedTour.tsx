@@ -12,6 +12,7 @@ import { useTourStore } from "../../stores/tourStore";
 import { useSettings } from "../../hooks/useSettings";
 import { TOUR_STEPS } from "../../lib/constants/tourSteps";
 import { ShortcutInput } from "../settings/ShortcutInput";
+import { MicrophoneSelector } from "../settings/MicrophoneSelector";
 import type { SidebarSection } from "../Sidebar";
 
 const BMC_URL = "https://buymeacoffee.com/munito";
@@ -177,6 +178,12 @@ export const GuidedTour: React.FC<GuidedTourProps> = ({ onNavigate }) => {
             grouped
             descriptionMode="tooltip"
           />
+        </div>
+      )}
+
+      {step.practice === "microphone" && (
+        <div className="rounded-lg border border-mid-gray/20 bg-mid-gray/5">
+          <MicrophoneSelector grouped descriptionMode="tooltip" />
         </div>
       )}
 

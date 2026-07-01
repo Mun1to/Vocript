@@ -16,6 +16,7 @@
     "advanced": "進階",
     "postProcessing": "後處理",
     "history": "歷史紀錄",
+    "themes": "主題",
     "debug": "偵錯",
     "about": "關於",
     "fileTranscription": "轉寫",
@@ -919,5 +920,10 @@
     "language": {
       "label": "語言"
     }
+  },
+  "themes": {
+    "title": "自訂主題",
+    "subtitle": "選擇介面的強調色。",
+    "comingSoon": "字型等更多選項即將推出。"
   }
 }

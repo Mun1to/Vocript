@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
                 : "bg-white/[0.05] hover:text-white border-white/5 text-slate-300"
             }`}
           >
-            <HelpCircle className="w-3.5 h-3.5 text-blue-500" />
+            <HelpCircle className="w-3.5 h-3.5 text-logo-primary" />
             <span>{t("onboarding.tour.guide")}</span>
           </button>
           <span className="opacity-40">•</span>

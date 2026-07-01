@@ -29,9 +29,9 @@ const VoCriptMark: React.FC<VoCriptMarkProps> = ({
     >
       <defs>
         <linearGradient id="vocript-mark-gradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#93c5fd" />
-          <stop offset="55%" stopColor="#60a5fa" />
-          <stop offset="100%" stopColor="#3b82f6" />
+          <stop offset="0%" stopColor="var(--color-logo-primary)" />
+          <stop offset="55%" stopColor="var(--color-logo-primary)" />
+          <stop offset="100%" stopColor="var(--color-logo-stroke)" />
         </linearGradient>
       </defs>
 

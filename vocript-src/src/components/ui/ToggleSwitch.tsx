@@ -43,8 +43,8 @@ export const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
           className={`text-[11px] font-bold uppercase tracking-wider transition-colors ${
             checked
               ? isLight
-                ? "text-blue-600 font-mono"
-                : "text-blue-400 font-mono"
+                ? "text-logo-primary font-mono"
+                : "text-logo-primary font-mono"
               : isLight
                 ? "text-slate-400 font-mono"
                 : "text-slate-500 font-mono opacity-60"
@@ -63,17 +63,17 @@ export const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
             onChange={(e) => onChange(e.target.checked)}
           />
           <div
-            className={`w-11 h-6 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600 ${
+            className={`w-11 h-6 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-logo-primary ${
               isLight
-                ? "bg-slate-200 border border-slate-300 peer-checked:border-blue-600 shadow-inner"
-                : "bg-slate-800/80 border border-white/10 peer-checked:shadow-[0_0_12px_rgba(59,130,246,0.5)]"
+                ? "bg-slate-200 border border-slate-300 peer-checked:border-logo-primary shadow-inner"
+                : "bg-slate-800/80 border border-white/10 peer-checked:shadow-[0_0_12px_var(--color-logo-glow)]"
             }`}
           ></div>
         </label>
       </div>
       {isUpdating && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/20 rounded-lg">
-          <div className="w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-4 h-4 border-2 border-logo-primary border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
     </SettingContainer>

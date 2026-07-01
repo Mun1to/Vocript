@@ -75,7 +75,7 @@ export const FeedbackSettings: React.FC = () => {
               onClick={() => setCategory("idea")}
               className={`flex items-center gap-3 p-3.5 rounded-xl border text-start transition-all ${
                 category === "idea"
-                  ? "bg-blue-500/10 border-blue-500 text-blue-400 font-semibold shadow-[0_0_12px_rgba(59,130,246,0.2)]"
+                  ? "bg-logo-primary/10 border-logo-primary text-logo-primary font-semibold shadow-[0_0_12px_var(--color-logo-glow)]"
                   : isLight
                     ? "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                     : "bg-white/[0.02] border-white/10 text-slate-300 hover:bg-white/[0.05]"
@@ -101,7 +101,7 @@ export const FeedbackSettings: React.FC = () => {
               onClick={() => setCategory("bug")}
               className={`flex items-center gap-3 p-3.5 rounded-xl border text-start transition-all ${
                 category === "bug"
-                  ? "bg-blue-500/10 border-blue-500 text-blue-400 font-semibold shadow-[0_0_12px_rgba(59,130,246,0.2)]"
+                  ? "bg-logo-primary/10 border-logo-primary text-logo-primary font-semibold shadow-[0_0_12px_var(--color-logo-glow)]"
                   : isLight
                     ? "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                     : "bg-white/[0.02] border-white/10 text-slate-300 hover:bg-white/[0.05]"
@@ -127,7 +127,7 @@ export const FeedbackSettings: React.FC = () => {
               onClick={() => setCategory("general")}
               className={`flex items-center gap-3 p-3.5 rounded-xl border text-start transition-all ${
                 category === "general"
-                  ? "bg-blue-500/10 border-blue-500 text-blue-400 font-semibold shadow-[0_0_12px_rgba(59,130,246,0.2)]"
+                  ? "bg-logo-primary/10 border-logo-primary text-logo-primary font-semibold shadow-[0_0_12px_var(--color-logo-glow)]"
                   : isLight
                     ? "bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100"
                     : "bg-white/[0.02] border-white/10 text-slate-300 hover:bg-white/[0.05]"
@@ -179,7 +179,7 @@ export const FeedbackSettings: React.FC = () => {
               <span
                 className={`text-[11px] flex items-center gap-1.5 ${isLight ? "text-slate-500" : "text-slate-400"}`}
               >
-                <Sparkles className="w-3.5 h-3.5 text-blue-500" />
+                <Sparkles className="w-3.5 h-3.5 text-logo-primary" />
                 {t("settings.feedback.note", {
                   defaultValue:
                     "Revisamos cada mensaje para mejorar la suite de apps.",
@@ -193,7 +193,7 @@ export const FeedbackSettings: React.FC = () => {
                   submitted
                     ? "bg-emerald-600 shadow-[0_0_12px_rgba(16,185,129,0.4)]"
                     : message.trim()
-                      ? "bg-blue-600 hover:bg-blue-500 shadow-[0_0_12px_rgba(37,99,235,0.4)] active:scale-95"
+                      ? "bg-logo-primary hover:bg-logo-primary shadow-[0_0_12px_var(--color-logo-glow)] active:scale-95"
                       : "bg-slate-700 opacity-50 cursor-not-allowed"
                 }`}
               >

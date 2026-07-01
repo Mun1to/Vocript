@@ -6,14 +6,10 @@ import { useResolvedTheme } from "../hooks/useResolvedTheme";
 import { TranscriptionModeSwitch } from "./TranscriptionModeSwitch";
 import { ProfileSelect } from "./ProfileSelect";
 import { LanguageQuickSwitch } from "./LanguageQuickSwitch";
-import { SECTIONS_CONFIG, type SidebarSection } from "./Sidebar";
+import { AccentThemeSwitch } from "./AccentThemeSwitch";
 import type { AppTheme } from "@/bindings";
 
-interface HeaderProps {
-  currentSection: SidebarSection;
-}
-
-export const Header: React.FC<HeaderProps> = ({ currentSection }) => {
+export const Header: React.FC = () => {
   const { t } = useTranslation();
   const { settings, updateSetting } = useSettings();
 
@@ -29,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ currentSection }) => {
   };
   const themeMeta = {
     system: {
-      icon: <Monitor className="w-3.5 h-3.5 text-blue-500" />,
+      icon: <Monitor className="w-3.5 h-3.5 text-logo-primary" />,
       label: t("header.systemMode"),
     },
     light: {
@@ -37,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ currentSection }) => {
       label: t("header.lightMode"),
     },
     dark: {
-      icon: <Moon className="w-3.5 h-3.5 text-blue-600" />,
+      icon: <Moon className="w-3.5 h-3.5 text-logo-primary" />,
       label: t("header.darkMode"),
     },
   }[theme];
@@ -48,16 +44,11 @@ export const Header: React.FC<HeaderProps> = ({ currentSection }) => {
         isLight ? "bg-white border-slate-200" : "bg-[#0c0d12] border-white/10"
       }`}
     >
-      {/* Left: active section title (flex-1 so the center group stays centered) */}
-      <div className="flex-1 min-w-0 flex items-center gap-2.5">
-        <span className="w-1.5 h-4 bg-blue-500 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
-        <span
-          className={`text-xs font-bold uppercase tracking-wider truncate ${
-            isLight ? "text-slate-900" : "text-slate-200"
-          }`}
-        >
-          {t(SECTIONS_CONFIG[currentSection].labelKey)}
-        </span>
+      {/* Left slot (flex-1 keeps the center group centered): quick accent-color
+          picker. The full control lives in the Themes section. The active
+          section isn't repeated here (it's in the sidebar + page heading). */}
+      <div className="flex-1 min-w-0 flex items-center">
+        <AccentThemeSwitch />
       </div>
 
       {/* Center: profile + control pills + language, grouped together */}

@@ -48,6 +48,7 @@
     "advanced": "Advanced settings",
     "postProcessing": "Post Process",
     "history": "History",
+    "themes": "Themes",
     "debug": "Debug",
     "about": "About",
     "feedback": "Feedback"
@@ -919,5 +920,10 @@
     "cancel": "Cancel",
     "copyToClipboard": "Copy to clipboard",
     "editTranscription": "Edit transcription"
+  },
+  "themes": {
+    "title": "Custom themes",
+    "subtitle": "Choose the interface accent color.",
+    "comingSoon": "Typography and more options coming soon."
   }
 }

@@ -119,6 +119,7 @@ const MOCK_FALLBACK_SETTINGS: Settings = {
   append_trailing_space: true,
   app_language: "es",
   theme: "dark",
+  accent_color: "#3b82f6",
   live_mode: false,
   live_mode_system: false,
   tour_completed: true,
@@ -203,6 +204,7 @@ const settingUpdaters: {
   log_level: (value) => commands.setLogLevel(value as any),
   app_language: (value) => commands.changeAppLanguageSetting(value as string),
   theme: (value) => commands.changeThemeSetting(value as AppTheme),
+  accent_color: (value) => commands.changeAccentColorSetting(value as string),
   source_attribution: (value) =>
     commands.changeSourceAttributionSetting(value as boolean),
   live_mode: (value) => commands.changeLiveModeSetting(value as boolean),

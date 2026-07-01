@@ -382,6 +382,14 @@ async changeThemeSetting(theme: AppTheme) : Promise<Result<null, string>> {
     else return { status: "error", error: e  as any };
 }
 },
+async changeAccentColorSetting(color: string) : Promise<Result<null, string>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("change_accent_color_setting", { color }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
 async changeSourceAttributionSetting(enabled: boolean) : Promise<Result<null, string>> {
     try {
     return { status: "ok", data: await TAURI_INVOKE("change_source_attribution_setting", { enabled }) };
@@ -1044,6 +1052,10 @@ live_auto_paste?: boolean; auto_submit?: boolean; auto_submit_key?: AutoSubmitKe
  * Apariencia de la interfaz: seguir el sistema, claro u oscuro.
  */
 theme?: AppTheme; 
+/**
+ * Color de acento de la interfaz (hex, p. ej. "#3b82f6"). Tema de color.
+ */
+accent_color?: string; 
 /**
  * Al transcribir audio del sistema, añade al final una línea de «Fuente»
  * con lo que sonaba (título, artista/canal, app y minuto), vía SMTC.

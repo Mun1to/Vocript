@@ -60,8 +60,8 @@ export const LanguageQuickSwitch: React.FC = () => {
         onClick={() => setOpen((o) => !o)}
         className={`flex items-center gap-1.5 py-1 px-1.5 rounded-lg text-xs font-bold transition-colors ${
           isLight
-            ? "text-blue-600 hover:bg-slate-100"
-            : "text-blue-400 hover:bg-white/[0.06]"
+            ? "text-logo-primary hover:bg-slate-100"
+            : "text-logo-primary hover:bg-white/[0.06]"
         }`}
       >
         <Globe
@@ -93,7 +93,7 @@ export const LanguageQuickSwitch: React.FC = () => {
                 onClick={() => handleSelect(lang.code)}
                 className={`block w-full text-start px-3 py-1.5 text-xs font-semibold whitespace-nowrap transition-colors ${
                   active
-                    ? "text-blue-500"
+                    ? "text-logo-primary"
                     : isLight
                       ? "text-slate-700 hover:bg-slate-100"
                       : "text-slate-300 hover:bg-white/[0.06]"

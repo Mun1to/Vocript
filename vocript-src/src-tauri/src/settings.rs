@@ -431,6 +431,9 @@ pub struct AppSettings {
     /// Apariencia de la interfaz: seguir el sistema, claro u oscuro.
     #[serde(default)]
     pub theme: AppTheme,
+    /// Color de acento de la interfaz (hex, p. ej. "#3b82f6"). Tema de color.
+    #[serde(default = "default_accent_color")]
+    pub accent_color: String,
     /// Al transcribir audio del sistema, añade al final una línea de «Fuente»
     /// con lo que sonaba (título, artista/canal, app y minuto), vía SMTC.
     #[serde(default)]
@@ -583,6 +586,12 @@ fn default_app_language() -> String {
         })
         .map(|c| c.to_string())
         .unwrap_or_else(|| "en".to_string())
+}
+
+/// Default UI accent color (the classic VoCript blue). Stored as a hex string so
+/// presets and a future free-color picker share the same field.
+fn default_accent_color() -> String {
+    "#3b82f6".to_string()
 }
 
 fn default_show_tray_icon() -> bool {
@@ -905,6 +914,7 @@ pub fn get_default_settings() -> AppSettings {
         append_trailing_space: false,
         app_language: default_app_language(),
         theme: AppTheme::System,
+        accent_color: default_accent_color(),
         source_attribution: false,
         live_mode: false,
         live_mode_system: false,

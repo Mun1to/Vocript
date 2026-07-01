@@ -16,6 +16,7 @@
     "advanced": "Nâng cao",
     "postProcessing": "Xử lý sau",
     "history": "Lịch sử",
+    "themes": "Chủ đề",
     "debug": "Gỡ lỗi",
     "about": "Giới thiệu",
     "fileTranscription": "Chép lời",
@@ -919,5 +920,10 @@
     "language": {
       "label": "Ngôn ngữ"
     }
+  },
+  "themes": {
+    "title": "Chủ đề tùy chỉnh",
+    "subtitle": "Chọn màu nhấn của giao diện.",
+    "comingSoon": "Kiểu chữ và nhiều tùy chọn khác sắp có."
   }
 }

@@ -10,7 +10,7 @@ interface CopyIconProps {
 const CopyIcon: React.FC<CopyIconProps> = ({
   width = 18,
   height = 18,
-  color = "#93c5fd",
+  color = "var(--color-logo-primary)",
   className = "",
 }) => {
   return (

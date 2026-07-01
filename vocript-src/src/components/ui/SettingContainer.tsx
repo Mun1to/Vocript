@@ -54,8 +54,8 @@ export const SettingContainer: React.FC<SettingContainerProps> = ({
       }`
     : `px-4 py-3 rounded-xl border transition-all ${
         isLight
-          ? "bg-white border-slate-200 hover:border-blue-300 shadow-sm"
-          : "bg-white/[0.01] border-white/10 hover:border-blue-500/30"
+          ? "bg-white border-slate-200 hover:border-logo-primary shadow-sm"
+          : "bg-white/[0.01] border-white/10 hover:border-logo-primary/30"
       }`;
 
   const titleColor = isLight
@@ -63,8 +63,8 @@ export const SettingContainer: React.FC<SettingContainerProps> = ({
     : "text-slate-200 font-semibold";
   const descColor = isLight ? "text-slate-500" : "text-slate-400";
   const iconColor = isLight
-    ? "text-slate-400 hover:text-blue-600"
-    : "text-slate-500 hover:text-blue-400";
+    ? "text-slate-400 hover:text-logo-primary"
+    : "text-slate-500 hover:text-logo-primary";
 
   if (layout === "stacked") {
     return (

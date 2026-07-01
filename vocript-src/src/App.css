@@ -23,6 +23,9 @@
   --color-background-ui: #2563eb;
   --color-logo-primary: #3b82f6;
   --color-logo-stroke: #1d4ed8;
+  /* Accent glow (recolored at runtime from accent_color; see App.tsx). */
+  --color-logo-glow: rgba(59, 130, 246, 0.5);
+  --color-logo-glow-soft: rgba(59, 130, 246, 0.16);
   --color-text-stroke: #f8fafc;
   --color-mid-gray: #64748b;
 }
@@ -38,7 +41,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   --scrollbar-thumb: rgba(255, 255, 255, 0.15);
-  --scrollbar-thumb-hover: rgba(59, 130, 246, 0.5);
+  --scrollbar-thumb-hover: var(--color-logo-glow);
 
   color: #f8fafc;
   background-color: #090a0f;
@@ -104,8 +107,8 @@
 }
 
 :root[data-theme="dark"] .vc-card-glow:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.12);
+  border-color: var(--color-logo-glow);
+  box-shadow: 0 0 20px var(--color-logo-glow-soft);
 }
 
 :root[data-theme="light"] .vc-card-glow {
@@ -113,7 +116,7 @@
 }
 
 .vc-blue-glow {
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 15px var(--color-logo-glow);
 }
 
 /* Smooth Fade Animations */

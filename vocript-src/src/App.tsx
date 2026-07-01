@@ -17,6 +17,11 @@ import Header from "./components/Header";
 import { GuidedTour } from "./components/tour/GuidedTour";
 import { useSettings } from "./hooks/useSettings";
 import { useResolvedTheme } from "./hooks/useResolvedTheme";
+import {
+  DEFAULT_ACCENT,
+  darkenHex,
+  hexToRgba,
+} from "./lib/constants/accentColors";
 import { useSettingsStore } from "./stores/settingsStore";
 import { useTourStore } from "./stores/tourStore";
 import { commands } from "@/bindings";
@@ -67,6 +72,19 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", resolvedTheme);
   }, [resolvedTheme]);
+
+  // Apply the chosen accent color to the CSS variables that drive the whole UI
+  // (overrides the App.css defaults for --color-logo-primary / -stroke).
+  const accentColor = settings?.accent_color ?? DEFAULT_ACCENT;
+  useEffect(() => {
+    const root = document.documentElement;
+    root.style.setProperty("--color-logo-primary", accentColor);
+    root.style.setProperty("--color-logo-stroke", darkenHex(accentColor));
+    root.style.setProperty("--color-logo-glow", hexToRgba(accentColor, 0.5));
+    root.style.setProperty("--color-logo-glow-soft", hexToRgba(accentColor, 0.16));
+    // Primary buttons + slider fill use this slightly deeper accent token.
+    root.style.setProperty("--color-background-ui", darkenHex(accentColor, 0.12));
+  }, [accentColor]);
 
   // Initialize Enigo, shortcuts, and refresh audio devices when main app loads
   useEffect(() => {
@@ -306,7 +324,7 @@ function App() {
         />
         {/* Scrollable content area */}
         <div className="flex-1 flex flex-col overflow-hidden">
-          <Header currentSection={currentSection} />
+          <Header />
           <div className="flex-1 overflow-y-auto">
             <div className="flex flex-col items-center p-4 gap-4">
               <AccessibilityPermissions />

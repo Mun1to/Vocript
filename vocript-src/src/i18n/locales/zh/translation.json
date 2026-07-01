@@ -16,6 +16,7 @@
     "advanced": "高级",
     "postProcessing": "后处理",
     "history": "历史记录",
+    "themes": "主题",
     "debug": "调试",
     "about": "关于",
     "fileTranscription": "文件转录",
@@ -919,5 +920,10 @@
     "language": {
       "label": "语言"
     }
+  },
+  "themes": {
+    "title": "自定义主题",
+    "subtitle": "选择界面的强调色。",
+    "comingSoon": "字体等更多选项即将推出。"
   }
 }

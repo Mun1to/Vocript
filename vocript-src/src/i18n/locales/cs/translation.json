@@ -16,6 +16,7 @@
     "advanced": "Pokročilé",
     "postProcessing": "Následné zpracování",
     "history": "Historie",
+    "themes": "Motivy",
     "debug": "Ladění",
     "about": "O aplikaci",
     "fileTranscription": "Přepsat",
@@ -919,5 +920,10 @@
     "language": {
       "label": "Jazyk"
     }
+  },
+  "themes": {
+    "title": "Vlastní motivy",
+    "subtitle": "Vyberte zvýrazňovací barvu rozhraní.",
+    "comingSoon": "Typografie a další možnosti brzy."
   }
 }

@@ -16,6 +16,7 @@
     "advanced": "고급",
     "postProcessing": "후처리",
     "history": "히스토리",
+    "themes": "테마",
     "debug": "디버그",
     "about": "정보",
     "fileTranscription": "받아쓰기",
@@ -919,5 +920,10 @@
     "language": {
       "label": "언어"
     }
+  },
+  "themes": {
+    "title": "사용자 지정 테마",
+    "subtitle": "인터페이스 강조 색상을 선택하세요.",
+    "comingSoon": "타이포그래피 등은 곧 추가됩니다."
   }
 }

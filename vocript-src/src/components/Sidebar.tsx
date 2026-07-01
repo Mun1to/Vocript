@@ -10,6 +10,7 @@ import {
   AudioLines,
   FileAudio,
   MessageSquare,
+  Palette,
 } from "lucide-react";
 import VoCriptTextLogo from "./icons/VoCriptTextLogo";
 import { useSettings } from "../hooks/useSettings";
@@ -24,6 +25,7 @@ import {
   ModelsSettings,
   FileTranscription,
   FeedbackSettings,
+  ThemesSettings,
 } from "./settings";
 
 export type SidebarSection = keyof typeof SECTIONS_CONFIG;
@@ -66,6 +68,12 @@ export const SECTIONS_CONFIG = {
     labelKey: "sidebar.history",
     icon: History,
     component: HistorySettings,
+    enabled: () => true,
+  },
+  themes: {
+    labelKey: "sidebar.themes",
+    icon: Palette,
+    component: ThemesSettings,
     enabled: () => true,
   },
   postprocessing: {
@@ -129,7 +137,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         title={t(section.labelKey)}
         className={`group relative flex items-center gap-3 w-full rounded-xl ps-3.5 pe-3 py-2.5 text-start transition-all duration-200 font-semibold text-xs ${
           isActive
-            ? "bg-blue-600 text-white shadow-[0_0_15px_rgba(37,99,235,0.4)]"
+            ? "bg-logo-primary text-white shadow-[0_0_15px_var(--color-logo-glow)]"
             : isLight
               ? "text-slate-600 hover:bg-slate-200/60 hover:text-slate-900"
               : "text-slate-400 hover:bg-white/[0.05] hover:text-slate-200"
@@ -142,8 +150,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
             isActive
               ? "text-white"
               : isLight
-                ? "text-blue-600 group-hover:text-blue-700"
-                : "text-blue-400 group-hover:text-blue-300"
+                ? "text-logo-primary group-hover:text-logo-primary"
+                : "text-logo-primary group-hover:text-logo-primary"
           }`}
         />
         <span className="truncate">{t(section.labelKey)}</span>
