@@ -171,6 +171,10 @@
         "title": "Bienvenue sur VoCript ! 🎙️",
         "body": "Je vous montre les bases en moins d'une minute. Après chaque fonction, vous pourrez l'essayer vous-même. Vous pouvez passer la visite à tout moment."
       },
+      "microphone": {
+        "title": "Choisissez votre micro",
+        "body": "D'abord, choisissez le micro avec lequel vous allez dicter. Si vous en avez plusieurs — casque, webcam ou intégré — sélectionnez le bon ici pour que VoCript vous entende bien."
+      },
       "shortcut": {
         "title": "Configurez votre raccourci de dictée",
         "body": "D'abord : réglez le raccourci à votre goût. Celui recommandé est Ctrl + Espace.\n\nChangez-le ici même : cliquez sur le raccourci ci-dessous et appuyez sur la combinaison voulue. Vous pourrez le changer à nouveau dans Réglages → Général."

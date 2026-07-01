@@ -171,6 +171,10 @@
         "title": "VoCript'e hoş geldiniz! 🎙️",
         "body": "Temel özellikleri bir dakikadan kısa sürede göstereceğim. Her özellikten sonra kendiniz deneyebilirsiniz. Turu istediğiniz zaman atlayabilirsiniz."
       },
+      "microphone": {
+        "title": "Mikrofonunu seç",
+        "body": "Önce dikte edeceğin mikrofonu seç. Birden fazlaysa — kulaklık, web kamerası veya dahili — doğru olanı buradan seç ki VoCript seni net duysun."
+      },
       "shortcut": {
         "title": "Dikte kısayolunuzu ayarlayın",
         "body": "Önce: kısayolu istediğiniz gibi ayarlayın. Önerilen Ctrl + Boşluk'tur.\n\nHemen burada değiştirin: aşağıdaki kısayola tıklayın ve istediğiniz kombinasyona basın. Daha sonra Ayarlar → Genel'den tekrar değiştirebilirsiniz."

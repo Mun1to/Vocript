@@ -95,6 +95,10 @@
         "title": "Welcome to VoCript! 🎙️",
         "body": "Let me show you the basics in under a minute. After each feature you'll get to try it yourself. You can skip the tour anytime."
       },
+      "microphone": {
+        "title": "Pick your microphone",
+        "body": "First, choose the mic you'll dictate with. If you have more than one — a headset, webcam or built-in mic — pick the right one here so VoCript hears you clearly."
+      },
       "shortcut": {
         "title": "Set up your dictation shortcut",
         "body": "First things first: make the shortcut yours. The recommended one is Ctrl + Space.\n\nChange it right here: click the shortcut below and press the combo you want. You can change it again later in Settings → General."

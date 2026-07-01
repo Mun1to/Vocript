@@ -95,6 +95,10 @@
         "title": "¡Bienvenido a VoCript! 🎙️",
         "body": "Te enseño lo básico en menos de un minuto. Tras explicarte cada función podrás probarla tú mismo. Puedes omitir el tour cuando quieras."
       },
+      "microphone": {
+        "title": "Elige tu micrófono",
+        "body": "Antes de nada, elige el micrófono con el que vas a dictar. Si tienes varios —auriculares, webcam o el integrado—, selecciona aquí el correcto para que VoCript te oiga bien."
+      },
       "shortcut": {
         "title": "Configura tu atajo de dictado",
         "body": "Lo primero: deja el atajo a tu gusto. El recomendado es Ctrl + Espacio.\n\nCámbialo aquí mismo: haz clic en el atajo de abajo y pulsa la combinación que quieras. Podrás volver a cambiarlo en Ajustes → General."

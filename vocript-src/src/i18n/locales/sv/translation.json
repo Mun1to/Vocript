@@ -171,6 +171,10 @@
         "title": "Välkommen till VoCript! 🎙️",
         "body": "Jag visar grunderna på under en minut. Efter varje funktion får du prova den själv. Du kan hoppa över rundturen när som helst."
       },
+      "microphone": {
+        "title": "Välj din mikrofon",
+        "body": "Välj först mikrofonen du ska diktera med. Om du har flera — headset, webbkamera eller inbyggd — väljer du rätt här så att VoCript hör dig tydligt."
+      },
       "shortcut": {
         "title": "Ställ in din dikteringsgenväg",
         "body": "Först: ställ in genvägen som du vill ha den. Den rekommenderade är Ctrl + Mellanslag.\n\nÄndra den direkt här: klicka på genvägen nedan och tryck på önskad kombination. Du kan ändra den igen senare under Inställningar → Allmänt."

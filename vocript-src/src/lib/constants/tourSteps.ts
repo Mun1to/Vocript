@@ -10,8 +10,8 @@ import type { SidebarSection } from "../../components/Sidebar";
  * - `practice`: render a small hands-on widget so the user can try the feature.
  * - `donate`: the closing step — shows the support/donation call to action.
  *
- * The tour walks the main features end to end: welcome → shortcut → dictation
- * → system audio → source, then each header control one by one (profile →
+ * The tour walks the main features end to end: welcome → microphone → shortcut
+ * → dictation → system audio → source, then each header control one by one (profile →
  * voice → system → output → activation → language → theme) → files → custom
  * words → dictionary → history → feedback → donate.
  */
@@ -26,8 +26,11 @@ export interface TourStep {
 export const TOUR_STEPS: TourStep[] = [
   // 1. Welcome.
   { id: "welcome" },
-  // 2. Configure first: a brand-new user has no shortcut muscle memory, so we
-  //    embed the real shortcut control right in the card to set it live.
+  // 2. Microphone first: before dictating anything, make sure the right input
+  //    device is selected so VoCript actually hears the user.
+  { id: "microphone", section: "general", target: "microphone" },
+  // 3. Configure the shortcut: a brand-new user has no shortcut muscle memory,
+  //    so we embed the real shortcut control right in the card to set it live.
   { id: "shortcut", section: "general", practice: "shortcut" },
   // 3. Now try dictating with it.
   { id: "dictation", section: "general", practice: "dictation" },

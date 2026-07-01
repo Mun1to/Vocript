@@ -171,6 +171,10 @@
         "title": "Chào mừng đến với VoCript! 🎙️",
         "body": "Tôi sẽ giới thiệu những điều cơ bản trong chưa đầy một phút. Sau mỗi tính năng, bạn có thể tự thử. Bạn có thể bỏ qua phần giới thiệu bất cứ lúc nào."
       },
+      "microphone": {
+        "title": "Chọn micrô của bạn",
+        "body": "Trước tiên, hãy chọn micrô bạn sẽ dùng để đọc. Nếu bạn có nhiều — tai nghe, webcam hoặc micrô tích hợp — hãy chọn đúng cái ở đây để VoCript nghe rõ bạn."
+      },
       "shortcut": {
         "title": "Thiết lập phím tắt đọc chính tả của bạn",
         "body": "Trước tiên: đặt phím tắt theo ý bạn. Phím tắt được khuyến nghị là Ctrl + Phím cách.\n\nThay đổi ngay tại đây: nhấp vào phím tắt bên dưới và nhấn tổ hợp bạn muốn. Sau này bạn có thể đổi lại trong Cài đặt → Chung."

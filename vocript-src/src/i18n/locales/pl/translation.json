@@ -171,6 +171,10 @@
         "title": "Witamy w VoCript! 🎙️",
         "body": "Pokażę Ci podstawy w niecałą minutę. Po każdej funkcji będziesz mógł ją sam wypróbować. Samouczek możesz pominąć w dowolnej chwili."
       },
+      "microphone": {
+        "title": "Wybierz mikrofon",
+        "body": "Najpierw wybierz mikrofon, którym będziesz dyktować. Jeśli masz kilka — zestaw słuchawkowy, kamerę lub wbudowany — wskaż tutaj właściwy, aby VoCript dobrze Cię słyszał."
+      },
       "shortcut": {
         "title": "Skonfiguruj swój skrót dyktowania",
         "body": "Najpierw: ustaw skrót po swojemu. Zalecany to Ctrl + Spacja.\n\nZmień go od razu tutaj: kliknij skrót poniżej i naciśnij wybraną kombinację. Później możesz go ponownie zmienić w Ustawienia → Ogólne."

@@ -171,6 +171,10 @@
         "title": "Benvenuto in VoCript! 🎙️",
         "body": "Ti mostro le basi in meno di un minuto. Dopo ogni funzione potrai provarla tu stesso. Puoi saltare il tour in qualsiasi momento."
       },
+      "microphone": {
+        "title": "Scegli il microfono",
+        "body": "Per prima cosa, scegli il microfono con cui detterai. Se ne hai più di uno — cuffie, webcam o integrato — seleziona qui quello giusto così VoCript ti sente bene."
+      },
       "shortcut": {
         "title": "Configura la tua scorciatoia di dettatura",
         "body": "Per prima cosa: imposta la scorciatoia come preferisci. Quella consigliata è Ctrl + Spazio.\n\nCambiala proprio qui: fai clic sulla scorciatoia qui sotto e premi la combinazione che vuoi. Potrai cambiarla di nuovo in Impostazioni → Generali."

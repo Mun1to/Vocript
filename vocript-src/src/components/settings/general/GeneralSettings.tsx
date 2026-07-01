@@ -55,7 +55,9 @@ export const GeneralSettings: React.FC = () => {
       </SettingsGroup>
       <ModelSettingsCard />
       <SettingsGroup title={t("settings.sound.title")}>
-        <MicrophoneSelector descriptionMode="tooltip" grouped={true} />
+        <div data-tour="microphone">
+          <MicrophoneSelector descriptionMode="tooltip" grouped={true} />
+        </div>
         <MuteWhileRecording descriptionMode="tooltip" grouped={true} />
         <AudioFeedback descriptionMode="tooltip" grouped={true} />
         <OutputDeviceSelector

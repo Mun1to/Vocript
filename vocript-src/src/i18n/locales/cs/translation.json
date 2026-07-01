@@ -171,6 +171,10 @@
         "title": "Vítejte ve VoCript! 🎙️",
         "body": "Ukážu vám základy za méně než minutu. Po každé funkci si ji budete moci sami vyzkoušet. Prohlídku můžete kdykoli přeskočit."
       },
+      "microphone": {
+        "title": "Vyberte mikrofon",
+        "body": "Nejprve vyberte mikrofon, kterým budete diktovat. Pokud jich máte více — headset, webkameru nebo vestavěný — zvolte tady ten správný, aby vás VoCript dobře slyšel."
+      },
       "shortcut": {
         "title": "Nastavte si zkratku pro diktování",
         "body": "Nejprve: nastavte si zkratku podle sebe. Doporučená je Ctrl + Mezerník.\n\nZměňte ji hned tady: klikněte na zkratku níže a stiskněte požadovanou kombinaci. Později ji můžete znovu změnit v Nastavení → Obecné."

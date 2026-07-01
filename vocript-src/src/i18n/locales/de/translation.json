@@ -171,6 +171,10 @@
         "title": "Willkommen bei VoCript! 🎙️",
         "body": "Ich zeige dir die Grundlagen in unter einer Minute. Nach jeder Funktion kannst du sie selbst ausprobieren. Du kannst die Tour jederzeit überspringen."
       },
+      "microphone": {
+        "title": "Wähle dein Mikrofon",
+        "body": "Wähle zuerst das Mikrofon, mit dem du diktierst. Wenn du mehrere hast — Headset, Webcam oder eingebaut — wähle hier das richtige, damit VoCript dich klar hört."
+      },
       "shortcut": {
         "title": "Richte deinen Diktat-Shortcut ein",
         "body": "Zuerst: Stelle den Shortcut nach deinem Geschmack ein. Empfohlen wird Strg + Leertaste.\n\nÄndere ihn gleich hier: Klicke unten auf den Shortcut und drücke die gewünschte Kombination. Du kannst ihn später unter Einstellungen → Allgemein wieder ändern."
