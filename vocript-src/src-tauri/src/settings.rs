@@ -555,9 +555,33 @@ fn default_post_process_enabled() -> bool {
     false
 }
 
+/// UI languages VoCript ships translations for (the `src/i18n/locales/*`
+/// folders). Keep in sync with the frontend locale list.
+const SUPPORTED_APP_LANGUAGES: &[&str] = &[
+    "ar", "bg", "cs", "de", "en", "es", "fr", "he", "it", "ja", "ko", "pl",
+    "pt", "ru", "sv", "tr", "uk", "vi", "zh", "zh-TW",
+];
+
+/// Default UI language on a fresh install: the OS language when VoCript is
+/// translated into it, otherwise English (the global fallback). Mirrors the
+/// frontend `getSupportedLanguage` normalization so the stored value is always
+/// a real supported code (e.g. "es-ES" -> "es", "th-TH" -> "en").
 fn default_app_language() -> String {
-    tauri_plugin_os::locale()
-        .map(|l| l.replace('_', "-"))
+    let locale = match tauri_plugin_os::locale() {
+        Some(l) => l.replace('_', "-").to_lowercase(),
+        None => return "en".to_string(),
+    };
+    // Exact match first (e.g. "zh-TW"), then the language subtag ("es-ES" -> "es").
+    let prefix = locale.split('-').next().unwrap_or("");
+    SUPPORTED_APP_LANGUAGES
+        .iter()
+        .find(|c| c.to_lowercase() == locale)
+        .or_else(|| {
+            SUPPORTED_APP_LANGUAGES
+                .iter()
+                .find(|c| c.to_lowercase() == prefix)
+        })
+        .map(|c| c.to_string())
         .unwrap_or_else(|| "en".to_string())
 }
 

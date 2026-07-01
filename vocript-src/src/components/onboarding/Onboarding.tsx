@@ -126,6 +126,29 @@ const Onboarding: React.FC<OnboardingProps> = ({ onModelSelected }) => {
     return { recommendedModel: rec, otherModels: others };
   }, [models, recommendedModelId]);
 
+  // Models already present on disk (e.g. a reinstall that kept them). If any,
+  // offer to continue with them instead of forcing a fresh download.
+  const downloadedModels = useMemo(
+    () => models.filter((m: ModelInfo) => m.is_downloaded),
+    [models],
+  );
+  const [skipInstalledPrompt, setSkipInstalledPrompt] = useState(false);
+  const showInstalledPrompt =
+    downloadedModels.length > 0 && !skipInstalledPrompt;
+
+  const handleUseInstalled = async () => {
+    const best =
+      downloadedModels.find((m) => m.id === recommendedModelId) ??
+      downloadedModels[0];
+    if (!best) return;
+    const success = await selectModel(best.id);
+    if (success) {
+      onModelSelected();
+    } else {
+      toast.error(t("onboarding.errors.selectModel"));
+    }
+  };
+
   const recommendedBadge =
     language && language !== "auto" && languageLabel
       ? t("settings.models.recommendedForLanguage", { language: languageLabel })
@@ -140,7 +163,7 @@ const Onboarding: React.FC<OnboardingProps> = ({ onModelSelected }) => {
         </p>
       </div>
 
-      <div className="max-w-[600px] w-full mx-auto text-center flex-1 flex flex-col min-h-0 overflow-y-auto">
+      <div className="max-w-[600px] w-full mx-auto text-center flex-1 flex flex-col min-h-0 overflow-y-auto px-2">
         {/* Language quick-pick: recommends the best model for your language */}
         <div className="flex flex-col gap-2 pb-4 shrink-0">
           <p className="text-sm font-medium text-text/70">
@@ -200,6 +223,37 @@ const Onboarding: React.FC<OnboardingProps> = ({ onModelSelected }) => {
           ))}
         </div>
       </div>
+
+      {showInstalledPrompt && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-6">
+          <div className="flex w-full max-w-md flex-col gap-4 rounded-2xl border-2 border-mid-gray/20 bg-[var(--color-background)] p-6 text-center shadow-2xl">
+            <h2 className="text-lg font-bold text-text">
+              {t("onboarding.installed.title")}
+            </h2>
+            <p className="text-sm text-text/70">
+              {t("onboarding.installed.description", {
+                count: downloadedModels.length,
+              })}
+            </p>
+            <div className="flex flex-col gap-2 pt-1">
+              <button
+                type="button"
+                onClick={handleUseInstalled}
+                className="rounded-lg bg-logo-primary px-4 py-2.5 font-semibold text-white transition hover:bg-logo-primary/90"
+              >
+                {t("onboarding.installed.continue")}
+              </button>
+              <button
+                type="button"
+                onClick={() => setSkipInstalledPrompt(true)}
+                className="rounded-lg px-4 py-2 font-medium text-text/70 transition hover:bg-mid-gray/10 hover:text-text"
+              >
+                {t("onboarding.installed.downloadNew")}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

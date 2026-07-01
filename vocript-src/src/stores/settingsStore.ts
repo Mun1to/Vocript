@@ -234,7 +234,11 @@ export const useSettingsStore = create<SettingsStore>()(
   subscribeWithSelector((set, get) => ({
     settings: MOCK_FALLBACK_SETTINGS,
     defaultSettings: MOCK_FALLBACK_SETTINGS,
-    isLoading: false,
+    // Start in the loading state so `useSettings` triggers initialize() on mount
+    // and the REAL settings are fetched from the backend. With `false`, the app
+    // kept the mock settings (e.g. theme "dark", losing the user's "system") and
+    // never loaded the saved values until the user changed something by hand.
+    isLoading: true,
     isUpdating: {},
     audioDevices: [],
     outputDevices: [],

@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "Pour commencer, choisissez un modèle de transcription",
     "recommended": "Recommandé",
+    "installed": {
+      "title": "Vous avez déjà des modèles installés",
+      "description_one": "Nous avons trouvé {{count}} modèle de transcription déjà présent sur votre appareil. Continuer avec celui-ci ou en télécharger un nouveau ?",
+      "description_other": "Nous avons trouvé {{count}} modèles de transcription déjà présents sur votre appareil. Continuer avec ceux-ci ou en télécharger un nouveau ?",
+      "continue": "Continuer avec ce que j'ai",
+      "downloadNew": "Télécharger un nouveau"
+    },
     "download": "Télécharger",
     "downloading": "Téléchargement...",
     "customModelDescription": "Non officiellement pris en charge",
@@ -887,6 +894,7 @@
     },
     "lightMode": "Clair",
     "darkMode": "Sombre",
+    "systemMode": "Système",
     "micReady": "Micro prêt",
     "mode": {
       "voice": "Voix",

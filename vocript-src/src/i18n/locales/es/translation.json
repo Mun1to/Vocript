@@ -19,6 +19,7 @@
     },
     "lightMode": "Claro",
     "darkMode": "Oscuro",
+    "systemMode": "Sistema",
     "micReady": "Mic listo",
     "mode": {
       "voice": "Voz",
@@ -169,6 +170,13 @@
     "subtitle": "Para comenzar, elige un modelo de transcripción",
     "chooseLanguage": "¿En qué idioma vas a dictar?",
     "recommended": "Recomendado",
+    "installed": {
+      "title": "Ya tienes modelos instalados",
+      "description_one": "Hemos detectado {{count}} modelo de transcripción en tu equipo. ¿Continúas con él o descargas uno nuevo?",
+      "description_other": "Hemos detectado {{count}} modelos de transcripción en tu equipo. ¿Continúas con ellos o descargas uno nuevo?",
+      "continue": "Continuar con los que tengo",
+      "downloadNew": "Descargar uno nuevo"
+    },
     "download": "Descargar",
     "downloading": "Descargando...",
     "customModelDescription": "Sin soporte oficial",

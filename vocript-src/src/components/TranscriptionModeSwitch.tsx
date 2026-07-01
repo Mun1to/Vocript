@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Mic, Volume2, Clipboard, Hand, ChevronDown } from "lucide-react";
 import type { AppSettings } from "@/bindings";
 import { useSettings } from "../hooks/useSettings";
+import { useResolvedTheme } from "../hooks/useResolvedTheme";
 import { useOsType } from "../hooks/useOsType";
 
 /**
@@ -78,7 +79,7 @@ const CONTROLS: QuickControl[] = [
 export const TranscriptionModeSwitch: React.FC = () => {
   const { t } = useTranslation();
   const { settings, getSetting, updateSetting, isUpdating } = useSettings();
-  const isLight = settings?.theme === "light";
+  const isLight = useResolvedTheme() === "light";
   const isWindows = useOsType() === "windows";
 
   const renderControl = (control: QuickControl) => {

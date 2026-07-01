@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "Pro začátek vyberte model pro přepis",
     "recommended": "Doporučeno",
+    "installed": {
+      "title": "Už máte nainstalované modely",
+      "description_one": "Na vašem zařízení jsme našli {{count}} přepisovací model. Chcete pokračovat s ním, nebo stáhnout nový?",
+      "description_other": "Na vašem zařízení jsme našli {{count}} přepisovacích modelů. Chcete pokračovat s nimi, nebo stáhnout nový?",
+      "continue": "Pokračovat s tím, co mám",
+      "downloadNew": "Stáhnout nový"
+    },
     "download": "Stáhnout",
     "downloading": "Stahování...",
     "customModelDescription": "Oficiálně nepodporováno",
@@ -887,6 +894,7 @@
     },
     "lightMode": "Světlý",
     "darkMode": "Tmavý",
+    "systemMode": "Systémový",
     "micReady": "Mikrofon připraven",
     "mode": {
       "voice": "Hlas",

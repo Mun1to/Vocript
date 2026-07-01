@@ -330,6 +330,47 @@ fn show_main_window_command(app: AppHandle) -> Result<(), String> {
     Ok(())
 }
 
+/// Current OS theme ("light"/"dark"). On Windows it reads the registry value
+/// `AppsUseLightTheme`, because WebView2 does not reliably expose
+/// `prefers-color-scheme`; the frontend uses this to resolve the "system" theme.
+#[tauri::command]
+#[specta::specta]
+fn get_system_theme() -> String {
+    #[cfg(windows)]
+    {
+        use std::os::windows::process::CommandExt;
+        const CREATE_NO_WINDOW: u32 = 0x0800_0000;
+        let resolved = match std::process::Command::new("reg")
+            .args([
+                "query",
+                r"HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize",
+                "/v",
+                "AppsUseLightTheme",
+            ])
+            .creation_flags(CREATE_NO_WINDOW)
+            .output()
+        {
+            Ok(out) => {
+                let stdout = String::from_utf8_lossy(&out.stdout);
+                if stdout.contains("0x1") {
+                    "light"
+                } else {
+                    "dark"
+                }
+            }
+            Err(e) => {
+                log::warn!("Failed to read system theme from registry: {e}");
+                "dark"
+            }
+        };
+        resolved.to_string()
+    }
+    #[cfg(not(windows))]
+    {
+        "dark".to_string()
+    }
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run(cli_args: CliArgs) {
     // Detect portable mode before anything else
@@ -461,6 +502,7 @@ pub fn run(cli_args: CliArgs) {
             commands::history::update_history_limit,
             commands::history::update_recording_retention_period,
             helpers::clamshell::is_laptop,
+            get_system_theme,
         ])
         .events(collect_events![managers::history::HistoryUpdatePayload,]);
 

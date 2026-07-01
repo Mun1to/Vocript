@@ -1,7 +1,8 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Monitor } from "lucide-react";
 import { useSettings } from "../hooks/useSettings";
+import { useResolvedTheme } from "../hooks/useResolvedTheme";
 import { TranscriptionModeSwitch } from "./TranscriptionModeSwitch";
 import { ProfileSelect } from "./ProfileSelect";
 import { LanguageQuickSwitch } from "./LanguageQuickSwitch";
@@ -16,13 +17,30 @@ export const Header: React.FC<HeaderProps> = ({ currentSection }) => {
   const { t } = useTranslation();
   const { settings, updateSetting } = useSettings();
 
-  const currentTheme: AppTheme = settings?.theme || "dark";
-  const isLight = currentTheme === "light";
+  const isLight = useResolvedTheme() === "light";
 
-  const toggleTheme = () => {
-    const nextTheme: AppTheme = isLight ? "dark" : "light";
-    updateSetting("theme", nextTheme);
+  // Header toggle cycles through the three real settings (system → light →
+  // dark) so "system" stays reachable; the button shows the current mode.
+  const theme: AppTheme = settings?.theme ?? "system";
+  const cycleTheme = () => {
+    const order: AppTheme[] = ["system", "light", "dark"];
+    const next = order[(order.indexOf(theme) + 1) % order.length];
+    updateSetting("theme", next);
   };
+  const themeMeta = {
+    system: {
+      icon: <Monitor className="w-3.5 h-3.5 text-blue-500" />,
+      label: t("header.systemMode"),
+    },
+    light: {
+      icon: <Sun className="w-3.5 h-3.5 text-amber-400" />,
+      label: t("header.lightMode"),
+    },
+    dark: {
+      icon: <Moon className="w-3.5 h-3.5 text-blue-600" />,
+      label: t("header.darkMode"),
+    },
+  }[theme];
 
   return (
     <header
@@ -54,25 +72,16 @@ export const Header: React.FC<HeaderProps> = ({ currentSection }) => {
         <button
           type="button"
           data-tour="header-theme"
-          onClick={toggleTheme}
-          title={isLight ? t("header.darkMode") : t("header.lightMode")}
+          onClick={cycleTheme}
+          title={themeMeta.label}
           className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-colors active:scale-95 ${
             isLight
               ? "text-slate-800 hover:bg-slate-100"
               : "text-slate-200 hover:bg-white/[0.06]"
           }`}
         >
-          {isLight ? (
-            <>
-              <Moon className="w-3.5 h-3.5 text-blue-600" />
-              <span>{t("header.darkMode")}</span>
-            </>
-          ) : (
-            <>
-              <Sun className="w-3.5 h-3.5 text-amber-400" />
-              <span>{t("header.lightMode")}</span>
-            </>
-          )}
+          {themeMeta.icon}
+          <span>{themeMeta.label}</span>
         </button>
       </div>
     </header>

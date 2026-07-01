@@ -16,6 +16,7 @@ import { Sidebar, SidebarSection, SECTIONS_CONFIG } from "./components/Sidebar";
 import Header from "./components/Header";
 import { GuidedTour } from "./components/tour/GuidedTour";
 import { useSettings } from "./hooks/useSettings";
+import { useResolvedTheme } from "./hooks/useResolvedTheme";
 import { useSettingsStore } from "./stores/settingsStore";
 import { useTourStore } from "./stores/tourStore";
 import { commands } from "@/bindings";
@@ -60,17 +61,12 @@ function App() {
     initializeRTL(i18n.language);
   }, [i18n.language]);
 
-  // Apply the selected theme to <html>. "system" follows the OS preference
-  // (no attribute), "light"/"dark" force the chosen theme (see App.css).
+  // Resolve "system" to a concrete light/dark (shared with Header/Sidebar via the
+  // same hook) and apply it to <html> so the CSS theme variables follow the OS.
+  const resolvedTheme = useResolvedTheme();
   useEffect(() => {
-    const theme = settings?.theme ?? "system";
-    const root = document.documentElement;
-    if (theme === "system") {
-      root.removeAttribute("data-theme");
-    } else {
-      root.setAttribute("data-theme", theme);
-    }
-  }, [settings?.theme]);
+    document.documentElement.setAttribute("data-theme", resolvedTheme);
+  }, [resolvedTheme]);
 
   // Initialize Enigo, shortcuts, and refresh audio devices when main app loads
   useEffect(() => {
@@ -190,6 +186,7 @@ function App() {
   const checkOnboardingStatus = async () => {
     try {
       // Check if they have any models available
+      const onboarded = localStorage.getItem("vocript_onboarded") === "1";
       const result = await commands.hasAnyModelsAvailable();
       const hasModels = result.status === "ok" && result.data;
       let currentPlatform = "windows";
@@ -199,7 +196,7 @@ function App() {
         currentPlatform = "windows";
       }
 
-      if (hasModels) {
+      if (onboarded) {
         // Returning user - check if they need to grant permissions first
         setIsReturningUser(true);
 
@@ -240,9 +237,11 @@ function App() {
 
         setOnboardingStep("done");
       } else {
-        // New user - start full onboarding
+        // First run: full onboarding. If models are already on disk, jump
+        // straight to the model step so the "use installed vs download" prompt
+        // shows; otherwise start from the accessibility step.
         setIsReturningUser(false);
-        setOnboardingStep("accessibility");
+        setOnboardingStep(hasModels ? "model" : "accessibility");
       }
     } catch (error) {
       console.error(
@@ -260,6 +259,8 @@ function App() {
   };
 
   const handleModelSelected = () => {
+    // Remember onboarding is done so future launches skip straight to the app.
+    localStorage.setItem("vocript_onboarded", "1");
     // New users go straight into the app with the guided tour running.
     startTour();
     setOnboardingStep("done");

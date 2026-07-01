@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "Aby rozpocząć, wybierz model transkrypcji",
     "recommended": "Polecane",
+    "installed": {
+      "title": "Masz już zainstalowane modele",
+      "description_one": "Znaleźliśmy {{count}} model transkrypcji na Twoim urządzeniu. Kontynuować z nim czy pobrać nowy?",
+      "description_other": "Znaleźliśmy {{count}} modeli transkrypcji na Twoim urządzeniu. Kontynuować z nimi czy pobrać nowy?",
+      "continue": "Kontynuuj z tym, co mam",
+      "downloadNew": "Pobierz nowy"
+    },
     "download": "Pobierz",
     "downloading": "Pobieranie...",
     "customModelDescription": "Nieoficjalnie wspierane",
@@ -887,6 +894,7 @@
     },
     "lightMode": "Jasny",
     "darkMode": "Ciemny",
+    "systemMode": "Systemowy",
     "micReady": "Mikrofon gotowy",
     "mode": {
       "voice": "Głos",

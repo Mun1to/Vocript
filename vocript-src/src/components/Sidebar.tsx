@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import VoCriptTextLogo from "./icons/VoCriptTextLogo";
 import { useSettings } from "../hooks/useSettings";
+import { useResolvedTheme } from "../hooks/useResolvedTheme";
 import {
   GeneralSettings,
   AdvancedSettings,
@@ -110,7 +111,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const { t } = useTranslation();
   const { settings } = useSettings();
-  const isLight = settings?.theme === "light";
+  const isLight = useResolvedTheme() === "light";
 
   const availableSections = Object.entries(SECTIONS_CONFIG)
     .filter(([_, config]) => config.enabled(settings))

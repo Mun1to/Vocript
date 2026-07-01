@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "Wähle ein Transkriptionsmodell, um loszulegen",
     "recommended": "Empfohlen",
+    "installed": {
+      "title": "Du hast bereits Modelle installiert",
+      "description_one": "Wir haben {{count}} Transkriptionsmodell auf deinem Gerät gefunden. Damit fortfahren oder ein neues herunterladen?",
+      "description_other": "Wir haben {{count}} Transkriptionsmodelle auf deinem Gerät gefunden. Damit fortfahren oder ein neues herunterladen?",
+      "continue": "Mit dem Vorhandenen fortfahren",
+      "downloadNew": "Neues herunterladen"
+    },
     "download": "Herunterladen",
     "downloading": "Wird heruntergeladen...",
     "customModelDescription": "Nicht offiziell unterstützt",
@@ -887,6 +894,7 @@
     },
     "lightMode": "Hell",
     "darkMode": "Dunkel",
+    "systemMode": "System",
     "micReady": "Mikrofon bereit",
     "mode": {
       "voice": "Stimme",

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Globe, ChevronDown } from "lucide-react";
 import { useSettings } from "../hooks/useSettings";
+import { useResolvedTheme } from "../hooks/useResolvedTheme";
 import { SUPPORTED_LANGUAGES, type SupportedLanguageCode } from "../i18n";
 
 /**
@@ -21,7 +22,7 @@ const APP_TO_MODEL: Record<string, string> = {
 export const LanguageQuickSwitch: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { settings, updateSetting } = useSettings();
-  const isLight = settings?.theme === "light";
+  const isLight = useResolvedTheme() === "light";
   const current = (settings?.app_language ||
     i18n.language) as SupportedLanguageCode;
   const [open, setOpen] = useState(false);

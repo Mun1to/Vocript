@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "Başlamak için bir transkripsiyon modeli seçin",
     "recommended": "Önerilen",
+    "installed": {
+      "title": "Zaten yüklü modelleriniz var",
+      "description_one": "Cihazınızda {{count}} transkripsiyon modeli bulduk. Bununla devam mı etmek istersiniz, yoksa yenisini mi indirmek?",
+      "description_other": "Cihazınızda {{count}} transkripsiyon modeli bulduk. Bunlarla devam mı etmek istersiniz, yoksa yenisini mi indirmek?",
+      "continue": "Mevcut olanlarla devam et",
+      "downloadNew": "Yeni bir tane indir"
+    },
     "download": "İndir",
     "downloading": "İndiriliyor...",
     "customModelDescription": "Resmi olarak desteklenmiyor",
@@ -887,6 +894,7 @@
     },
     "lightMode": "Açık",
     "darkMode": "Koyu",
+    "systemMode": "Sistem",
     "micReady": "Mikrofon hazır",
     "mode": {
       "voice": "Ses",

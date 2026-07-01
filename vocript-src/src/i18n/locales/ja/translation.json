@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "開始するには、文字起こしモデルを選択してください",
     "recommended": "おすすめ",
+    "installed": {
+      "title": "すでにモデルがインストールされています",
+      "description_one": "お使いのデバイスに文字起こしモデルが{{count}}個見つかりました。このまま続けますか、それとも新しいモデルをダウンロードしますか？",
+      "description_other": "お使いのデバイスに文字起こしモデルが{{count}}個見つかりました。このまま続けますか、それとも新しいモデルをダウンロードしますか？",
+      "continue": "今あるモデルで続ける",
+      "downloadNew": "新しいモデルをダウンロード"
+    },
     "download": "ダウンロード",
     "downloading": "ダウンロード中...",
     "customModelDescription": "公式サポート対象外",
@@ -887,6 +894,7 @@
     },
     "lightMode": "ライト",
     "darkMode": "ダーク",
+    "systemMode": "システム",
     "micReady": "マイク準備完了",
     "mode": {
       "voice": "音声",

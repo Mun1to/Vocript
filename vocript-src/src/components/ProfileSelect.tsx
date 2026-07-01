@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Briefcase, ChevronDown } from "lucide-react";
 import { useSettings } from "../hooks/useSettings";
+import { useResolvedTheme } from "../hooks/useResolvedTheme";
 
 /**
  * Professional-profile selector shown in the header. Picking a profile writes
@@ -24,7 +25,7 @@ const PROFILES = [
 export const ProfileSelect: React.FC = () => {
   const { t } = useTranslation();
   const { settings, updateSetting } = useSettings();
-  const isLight = settings?.theme === "light";
+  const isLight = useResolvedTheme() === "light";
   const current = settings?.work_profile ?? "normal";
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

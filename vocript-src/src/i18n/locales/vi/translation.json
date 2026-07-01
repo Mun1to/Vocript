@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "Để bắt đầu, hãy chọn một mô hình chuyển đổi giọng nói",
     "recommended": "Đề xuất",
+    "installed": {
+      "title": "Bạn đã có các mô hình được cài đặt",
+      "description_one": "Chúng tôi tìm thấy {{count}} mô hình phiên âm đã có trên thiết bị của bạn. Tiếp tục với nó hay tải về mô hình mới?",
+      "description_other": "Chúng tôi tìm thấy {{count}} mô hình phiên âm đã có trên thiết bị của bạn. Tiếp tục với chúng hay tải về mô hình mới?",
+      "continue": "Tiếp tục với những gì đang có",
+      "downloadNew": "Tải về mô hình mới"
+    },
     "download": "Tải xuống",
     "downloading": "Đang tải xuống...",
     "customModelDescription": "Không được hỗ trợ chính thức",
@@ -887,6 +894,7 @@
     },
     "lightMode": "Sáng",
     "darkMode": "Tối",
+    "systemMode": "Hệ thống",
     "micReady": "Mic sẵn sàng",
     "mode": {
       "voice": "Giọng",

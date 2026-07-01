@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "Per cominciare, scegli un modello di riconoscimento vocale",
     "recommended": "Raccomandato",
+    "installed": {
+      "title": "Hai già dei modelli installati",
+      "description_one": "Abbiamo trovato {{count}} modello di trascrizione già presente sul tuo dispositivo. Vuoi continuare con quello o scaricarne uno nuovo?",
+      "description_other": "Abbiamo trovato {{count}} modelli di trascrizione già presenti sul tuo dispositivo. Vuoi continuare con quelli o scaricarne uno nuovo?",
+      "continue": "Continua con quelli che ho",
+      "downloadNew": "Scarica uno nuovo"
+    },
     "download": "Scarica",
     "downloading": "Download in corso...",
     "customModelDescription": "Non ufficialmente supportato",
@@ -887,6 +894,7 @@
     },
     "lightMode": "Chiaro",
     "darkMode": "Scuro",
+    "systemMode": "Sistema",
     "micReady": "Microfono pronto",
     "mode": {
       "voice": "Voce",

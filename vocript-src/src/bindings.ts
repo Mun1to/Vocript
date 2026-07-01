@@ -991,6 +991,14 @@ async isLaptop() : Promise<Result<boolean, string>> {
     if(e instanceof Error) throw e;
     else return { status: "error", error: e  as any };
 }
+},
+/**
+ * Current OS theme ("light"/"dark"). On Windows it reads the registry value
+ * `AppsUseLightTheme`, because WebView2 does not reliably expose
+ * `prefers-color-scheme`; the frontend uses this to resolve the "system" theme.
+ */
+async getSystemTheme() : Promise<string> {
+    return await TAURI_INVOKE("get_system_theme");
 }
 }
 

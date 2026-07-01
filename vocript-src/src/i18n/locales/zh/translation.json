@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "请选择一个转录模型以开始使用",
     "recommended": "推荐",
+    "installed": {
+      "title": "你已经安装了模型",
+      "description_one": "我们在你的设备上发现了 {{count}} 个转录模型。要继续使用还是下载新的？",
+      "description_other": "我们在你的设备上发现了 {{count}} 个转录模型。要继续使用还是下载新的？",
+      "continue": "使用现有模型",
+      "downloadNew": "下载新模型"
+    },
     "download": "下载",
     "downloading": "下载中...",
     "customModelDescription": "非官方支持",
@@ -887,6 +894,7 @@
     },
     "lightMode": "浅色",
     "darkMode": "深色",
+    "systemMode": "跟随系统",
     "micReady": "麦克风就绪",
     "mode": {
       "voice": "语音",

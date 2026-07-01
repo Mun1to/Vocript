@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Tooltip } from "./Tooltip";
-import { useSettings } from "../../hooks/useSettings";
+import { useResolvedTheme } from "../../hooks/useResolvedTheme";
 
 interface SettingContainerProps {
   title: string;
@@ -25,8 +25,7 @@ export const SettingContainer: React.FC<SettingContainerProps> = ({
 }) => {
   const [showTooltip, setShowTooltip] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
-  const { settings } = useSettings();
-  const isLight = settings?.theme === "light";
+  const isLight = useResolvedTheme() === "light";
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

@@ -9,15 +9,14 @@ import {
   HeartHandshake,
 } from "lucide-react";
 import { SettingsGroup } from "../../ui/SettingsGroup";
-import { useSettings } from "../../../hooks/useSettings";
+import { useResolvedTheme } from "../../../hooks/useResolvedTheme";
 import { openUrl } from "@tauri-apps/plugin-opener";
 
 const REPO_ISSUES_URL = "https://github.com/Mun1to/Vocript/issues/new";
 
 export const FeedbackSettings: React.FC = () => {
   const { t } = useTranslation();
-  const { settings } = useSettings();
-  const isLight = settings?.theme === "light";
+  const isLight = useResolvedTheme() === "light";
 
   const [category, setCategory] = useState<"idea" | "bug" | "general">("idea");
   const [message, setMessage] = useState("");

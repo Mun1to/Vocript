@@ -19,6 +19,7 @@
     },
     "lightMode": "Light",
     "darkMode": "Dark",
+    "systemMode": "System",
     "micReady": "Mic ready",
     "mode": {
       "voice": "Voice",
@@ -169,6 +170,13 @@
     "subtitle": "To get started, choose a transcription model",
     "chooseLanguage": "What language will you dictate in?",
     "recommended": "Recommended",
+    "installed": {
+      "title": "You already have models installed",
+      "description_one": "We found {{count}} transcription model already on your device. Continue with it, or download a new one?",
+      "description_other": "We found {{count}} transcription models already on your device. Continue with them, or download a new one?",
+      "continue": "Continue with what I have",
+      "downloadNew": "Download a new one"
+    },
     "download": "Download",
     "downloading": "Downloading...",
     "customModelDescription": "Not officially supported",

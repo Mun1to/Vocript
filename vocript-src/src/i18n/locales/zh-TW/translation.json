@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "首先，請選擇一種模型",
     "recommended": "推薦",
+    "installed": {
+      "title": "你已經安裝了模型",
+      "description_one": "我們在你的裝置上發現了 {{count}} 個轉錄模型。要繼續使用還是下載新的？",
+      "description_other": "我們在你的裝置上發現了 {{count}} 個轉錄模型。要繼續使用還是下載新的？",
+      "continue": "使用現有模型",
+      "downloadNew": "下載新模型"
+    },
     "download": "下載",
     "downloading": "下載中...",
     "customModelDescription": "官方不支援",
@@ -887,6 +894,7 @@
     },
     "lightMode": "淺色",
     "darkMode": "深色",
+    "systemMode": "跟隨系統",
     "micReady": "麥克風就緒",
     "mode": {
       "voice": "語音",

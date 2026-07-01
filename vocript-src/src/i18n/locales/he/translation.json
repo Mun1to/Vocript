@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "כדי להתחיל, בחר מודל תמלול",
     "recommended": "מומלץ",
+    "installed": {
+      "title": "כבר מותקנים אצלך מודלים",
+      "description_one": "מצאנו {{count}} מודל תמלול שכבר קיים במכשיר שלך. להמשיך איתו או להוריד חדש?",
+      "description_other": "מצאנו {{count}} מודלי תמלול שכבר קיימים במכשיר שלך. להמשיך איתם או להוריד חדש?",
+      "continue": "להמשיך עם מה שיש לי",
+      "downloadNew": "להוריד מודל חדש"
+    },
     "download": "הורדה",
     "downloading": "מוריד...",
     "customModelDescription": "לא נתמך באופן רשמי",
@@ -887,6 +894,7 @@
     },
     "lightMode": "בהיר",
     "darkMode": "כהה",
+    "systemMode": "מערכת",
     "micReady": "מיקרופון מוכן",
     "mode": {
       "voice": "קול",

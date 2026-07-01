@@ -7,12 +7,11 @@ import { HelpCircle } from "lucide-react";
 import ModelSelector from "../model-selector";
 import UpdateChecker from "../update-checker";
 import { useTourStore } from "../../stores/tourStore";
-import { useSettings } from "../../hooks/useSettings";
+import { useResolvedTheme } from "../../hooks/useResolvedTheme";
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
-  const { settings } = useSettings();
-  const isLight = settings?.theme === "light";
+  const isLight = useResolvedTheme() === "light";
   const startTour = useTourStore((state) => state.start);
   const [version, setVersion] = useState("");
 

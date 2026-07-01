@@ -24,6 +24,13 @@
   "onboarding": {
     "subtitle": "För att komma igång, välj en transkriptionsmodell",
     "recommended": "Rekommenderat",
+    "installed": {
+      "title": "Du har redan modeller installerade",
+      "description_one": "Vi hittade {{count}} transkriberingsmodell på din enhet. Vill du fortsätta med den eller ladda ner en ny?",
+      "description_other": "Vi hittade {{count}} transkriberingsmodeller på din enhet. Vill du fortsätta med dem eller ladda ner en ny?",
+      "continue": "Fortsätt med det jag har",
+      "downloadNew": "Ladda ner en ny"
+    },
     "download": "Ladda ner",
     "downloading": "Laddar ner...",
     "customModelDescription": "Stöds inte officiellt",
@@ -887,6 +894,7 @@
     },
     "lightMode": "Ljust",
     "darkMode": "Mörkt",
+    "systemMode": "System",
     "micReady": "Mikrofon redo",
     "mode": {
       "voice": "Röst",

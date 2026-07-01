@@ -1,5 +1,5 @@
 import React from "react";
-import { useSettings } from "../../hooks/useSettings";
+import { useResolvedTheme } from "../../hooks/useResolvedTheme";
 
 interface SettingsGroupProps {
   title?: string;
@@ -12,8 +12,7 @@ export const SettingsGroup: React.FC<SettingsGroupProps> = ({
   description,
   children,
 }) => {
-  const { settings } = useSettings();
-  const isLight = settings?.theme === "light";
+  const isLight = useResolvedTheme() === "light";
 
   return (
     <div className="space-y-2 w-full max-w-3xl">

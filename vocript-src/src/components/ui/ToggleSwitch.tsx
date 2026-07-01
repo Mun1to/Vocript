@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { SettingContainer } from "./SettingContainer";
-import { useSettings } from "../../hooks/useSettings";
+import { useResolvedTheme } from "../../hooks/useResolvedTheme";
 
 interface ToggleSwitchProps {
   checked: boolean;
@@ -27,8 +27,7 @@ export const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
   tooltipPosition = "top",
 }) => {
   const { t } = useTranslation();
-  const { settings } = useSettings();
-  const isLight = settings?.theme === "light";
+  const isLight = useResolvedTheme() === "light";
 
   return (
     <SettingContainer
