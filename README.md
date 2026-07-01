@@ -2,25 +2,25 @@
 
 # 🎙️ VoCript
 
-**Dicta y se escribe.** Convierte tu **voz** y el **audio de tu PC** en texto, al instante y 100 % offline.
+**Speak and it types.** Turn your **voice** and your **PC's audio** into text, instantly and 100% offline.
 
-🌍 Español · [English](README.en.md)
+🌍 [Español](README.es.md) · English
 
 <p>
   <a href="https://github.com/Mun1to/VoCript/releases/latest">
-    <img src="https://img.shields.io/github/v/release/Mun1to/VoCript?label=versi%C3%B3n&style=for-the-badge&color=3b82f6" alt="Última versión" />
+    <img src="https://img.shields.io/github/v/release/Mun1to/VoCript?label=version&style=for-the-badge&color=3b82f6" alt="Latest release" />
   </a>
   <a href="LICENSE">
-    <img src="https://img.shields.io/badge/licencia-MIT-3b82f6?style=for-the-badge" alt="Licencia MIT" />
+    <img src="https://img.shields.io/badge/license-MIT-3b82f6?style=for-the-badge" alt="MIT license" />
   </a>
   <a href="SECURITY.md">
-    <img src="https://img.shields.io/badge/100%25-local%20y%20privado-22c55e?style=for-the-badge" alt="100% local y privado" />
+    <img src="https://img.shields.io/badge/100%25-local%20%26%20private-22c55e?style=for-the-badge" alt="100% local and private" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/Mun1to/VoCript/releases/latest/download/VoCript-Setup.exe">
-    <img src="brand/download-button.svg" alt="Descargar VoCript" width="320" height="72" />
+    <img src="brand/download-button.svg" alt="Download VoCript" width="320" height="72" />
   </a>
 </p>
 
@@ -28,117 +28,114 @@
 
 ---
 
-## ✨ Qué hace
+## ✨ What it does
 
-VoCript escucha tu **voz** —o el **audio que suena en tu PC**— y lo convierte en texto **justo donde tienes el cursor**, en cualquier aplicación. Todo el reconocimiento ocurre **en tu equipo**: ni cuentas, ni nube, ni esperas.
+VoCript listens to your **voice** —or the **audio playing on your PC**— and turns it into text **right where your cursor is**, in any app. All recognition happens **on your device**: no accounts, no cloud, no waiting.
 
-- 🎤 **Dictado por voz** — pulsa un atajo, habla, y el texto se escribe solo en la app que estés usando.
-- 🔊 **Audio del sistema** — transcribe lo que suena en el PC (un vídeo, una llamada, una reunión) o una app concreta, y opcionalmente añade de dónde viene.
-- ⚡ **Transcripción en vivo** — el texto aparece palabra a palabra en una cápsula flotante mientras hablas o reproduces audio.
-- 📁 **Archivos a texto o subtítulos** — arrastra un audio o vídeo y obtén texto plano o subtítulos `.srt`.
-- 🎯 **Precisión a tu medida** — un **diccionario personal** de reemplazos exactos y **palabras personalizadas** que corrigen nombres o jerga por su sonido (con importar/exportar CSV).
-- 💼 **Perfiles profesionales** — *Normal*, *Programación* (dicta símbolos: «arroba» → `@`, «punto y coma» → `;`) o *Personalizado* con tus propios comandos.
-- 🌍 **Multi-idioma** — interfaz en 20 idiomas y transcripción en decenas, con **cambio rápido de idioma** (app y modelo a la vez). Optimizado para español (acentos y puntuación).
-- 🕑 **Historial** — guarda tus transcripciones y vuelve a escuchar el audio original cuando quieras.
-- 🎨 **A tu gusto** — tema claro, oscuro o **automático según tu sistema**. La primera vez detecta el **idioma y el tema de tu equipo** y te enseña lo básico con un breve tour.
-- 🔒 **100 % local** — sin telemetría, con actualizaciones automáticas y firmadas.
+- 🎤 **Voice dictation** — press a shortcut, speak, and the text types itself into whatever app you're using.
+- 🔊 **System audio** — transcribe what's playing on your PC (a video, a call, a meeting) or a specific app, and optionally tag where it came from.
+- ⚡ **Live transcription** — watch the text appear word by word in a floating bubble as you speak or play audio.
+- 📁 **Files to text or subtitles** — drop in an audio or video file and get plain text or `.srt` subtitles.
+- 🎯 **Accuracy your way** — a **personal dictionary** of exact replacements plus **custom words** that fix names or jargon by how they sound (with CSV import/export).
+- 💼 **Work profiles** — *Normal*, *Coding* (dictate symbols: "at sign" → `@`, "semicolon" → `;`) or *Custom* with your own commands.
+- 🌍 **Multi-language** — interface in 20 languages and transcription in dozens, with a **quick language switch** (app and model at once). Tuned for Spanish accents and punctuation.
+- 🕑 **History** — keeps your transcriptions and lets you replay the original audio anytime.
+- 🎨 **Make it yours** — light, dark or **automatic (follows your system)** theme. On first launch it picks up your device's **language and theme**, then a quick guided tour shows you the basics.
+- 🔒 **100% local** — no telemetry, with automatic, signed updates.
 
 ---
 
-## 📸 Así se ve
+## 📸 Screenshots
 
 <div align="center">
-  <img src="brand/screenshots/01-general.png" alt="VoCript — pantalla principal" width="820" />
+  <img src="brand/screenshots/en/01-general.png" alt="VoCript — main screen" width="820" />
 </div>
 
-<p align="center"><em>Pantalla principal: la barra de controles rápidos del header — voz/sistema, en vivo, salida (pegar/copiar), activación, perfil, idioma y tema (claro/oscuro/sistema). Todo el reconocimiento ocurre en tu equipo.</em></p>
+<p align="center"><em>Main screen: the header's quick-control bar — voice/system, live, output (paste/copy), activation, profile, language and theme (light/dark/system). All recognition runs on your device.</em></p>
 
-| Transcribir archivos | Modelos de transcripción | Ajustes avanzados |
+| Transcribe files | Transcription models | Advanced settings |
 | :--: | :--: | :--: |
-| <img src="brand/screenshots/03-transcribe.png" alt="Transcribir archivos a texto o SRT" /> | <img src="brand/screenshots/02-models.png" alt="Modelos de transcripción" /> | <img src="brand/screenshots/04-advanced.png" alt="Ajustes avanzados" /> |
+| <img src="brand/screenshots/en/03-transcribe.png" alt="Transcribe files to text or SRT" /> | <img src="brand/screenshots/en/02-models.png" alt="Transcription models" /> | <img src="brand/screenshots/en/04-advanced.png" alt="Advanced settings" /> |
 
 <br />
 
 <div align="center">
-  <img src="brand/screenshots/05-personalizar.png" alt="VoCript en modo claro — fácil de personalizar" width="820" />
+  <img src="brand/screenshots/en/05-personalizar.png" alt="VoCript in light mode — easy to customize" width="820" />
 </div>
 
-<p align="center"><em>Fácil de personalizar: tema claro, oscuro o automático según tu sistema. Cambia de perfil, modo, salida, activación e idioma desde el propio header, con un clic.</em></p>
+<p align="center"><em>Easy to make yours: light, dark or automatic (follows your system) theme. Switch profile, mode, output, activation and language right from the header, with a click.</em></p>
 
 ---
 
-## ⬇️ Descargar
+## ⬇️ Download
 
-1. Pulsa el botón **Descargar** de arriba — o este enlace directo: **[descargar VoCript](https://github.com/Mun1to/VoCript/releases/latest/download/VoCript-Setup.exe)**. Se baja el instalador al instante.
-2. Abre el archivo descargado (`VoCript-Setup.exe`).
-3. Sigue los pasos. ¡Listo!
+1. Click the **Download** button above — or this direct link: **[download VoCript](https://github.com/Mun1to/VoCript/releases/latest/download/VoCript-Setup.exe)**. The installer downloads instantly.
+2. Open the downloaded file (`VoCript-Setup.exe`).
+3. Follow the steps. Done!
 
-> 💡 ¿Prefieres ver todas las versiones y archivos? Están en la [página de Releases](https://github.com/Mun1to/VoCript/releases/latest).
+> 💡 Prefer to see all versions and files? They're on the [Releases page](https://github.com/Mun1to/VoCript/releases/latest).
 
-> Windows puede mostrar un aviso de "editor desconocido" (la app aún no está
-> firmada con un certificado de pago). Pulsa **Más información → Ejecutar de
-> todas formas**.
+> Windows may show an "unknown publisher" warning (the app isn't signed with a
+> paid certificate yet). Click **More info → Run anyway**.
 
-## 🔄 Actualizaciones automáticas
+## 🔄 Automatic updates
 
-VoCript se actualiza **solo**: al abrirlo comprueba si hay una versión nueva y,
-si la hay, te la instala con un clic. No tienes que volver a descargar nada a
-mano.
+VoCript updates **itself**: on launch it checks for a new version and, if there
+is one, installs it with a single click. No manual re-downloading.
 
 ---
 
-## ⌨️ Cómo se usa
+## ⌨️ How to use it
 
-1. Abre VoCript (se queda en la bandeja del sistema, junto al reloj).
-2. La primera vez, elige y descarga un modelo de transcripción. Un tour te enseña lo básico.
-3. **Para dictar:** coloca el cursor donde quieras escribir, pulsa el **atajo de dictado**, habla y suéltalo.
-4. **Para el audio del PC:** pulsa el **atajo de audio del sistema** y VoCript transcribe lo que esté sonando.
+1. Open VoCript (it lives in the system tray, next to the clock).
+2. On first run, pick and download a transcription model. A short tour shows you the basics.
+3. **To dictate:** place your cursor where you want to type, press the **dictation shortcut**, speak and release.
+4. **For your PC's audio:** press the **system-audio shortcut** and VoCript transcribes whatever is playing.
 
-El texto aparece donde tenías el cursor. Cambia modos y atajos desde el **header** o en **Ajustes → General**.
+The text appears where your cursor was. Switch modes and shortcuts from the **header** or in **Settings → General**.
 
-## 🔒 Privacidad
+## 🔒 Privacy
 
-VoCript funciona **100 % en local**. No hay cuentas, ni nube, ni telemetría: tu
-voz y tus transcripciones **no salen de tu ordenador**. El post-procesado con IA
-en la nube es opcional y está desactivado por defecto.
+VoCript runs **100% locally**. No accounts, no cloud, no telemetry: your voice
+and transcriptions **never leave your computer**. Optional cloud AI
+post-processing is off by default.
 
-> 🛡️ **Revisado en seguridad.** VoCript ha pasado una revisión de seguridad
-> _sin vulnerabilidades críticas_: reconocimiento 100 % local, sin inyección de
-> comandos, actualizaciones firmadas (minisign) y webview restringido (CSP).
-> Lee el [modelo de seguridad completo](SECURITY.md).
+> 🛡️ **Security-reviewed.** VoCript has passed a security review with _no
+> critical vulnerabilities_: 100% local recognition, no command injection,
+> signed updates (minisign) and a restricted webview (CSP). Read the
+> [full security model](SECURITY.md).
 
 ---
 
-## 🛠️ Para desarrolladores
+## 🛠️ For developers
 
-VoCript está hecho con **Tauri 2** (Rust + React/TypeScript) y **Whisper.cpp**
-con aceleración por GPU (Vulkan). El código fuente está en
-[`vocript-src/`](vocript-src/).
+VoCript is built with **Tauri 2** (Rust + React/TypeScript) and **Whisper.cpp**
+with GPU acceleration (Vulkan). Source code lives in [`vocript-src/`](vocript-src/).
 
 ```bash
 cd vocript-src
 bun install
-bun run tauri dev      # desarrollo (hot-reload)
-bun run tauri build    # instalador de producción
+bun run tauri dev      # development (hot-reload)
+bun run tauri build    # production installer
 ```
 
-## 📄 Licencia y créditos
+## 📄 License & credits
 
-VoCript es software libre bajo licencia [MIT](LICENSE).
+VoCript is free software under the [MIT](LICENSE) license.
 
-Es un **fork de [Handy](https://github.com/cjpais/Handy)**, creado por
-[CJ Pais](https://github.com/cjpais) (también MIT) — gracias por el excelente
-trabajo base. El motor de transcripción es
-[Whisper.cpp](https://github.com/ggerganov/whisper.cpp), de Georgi Gerganov.
+It is a **fork of [Handy](https://github.com/cjpais/Handy)** by
+[CJ Pais](https://github.com/cjpais) (also MIT) — thanks for the great
+foundation. The transcription engine is
+[Whisper.cpp](https://github.com/ggerganov/whisper.cpp) by Georgi Gerganov.
 
-¿Encuentras un fallo de seguridad? Consulta la [política de seguridad](SECURITY.md).
+Found a security issue? See the [security policy](SECURITY.md).
 
 ---
 
 <div align="center">
 
-🌸 Parte de la **Fundación Orquio** · *Easy Tech*
+🌸 Part of the **Orquio Foundation** · *Easy Tech*
 
-<sub>Tecnología esencial orquestada de forma optimizada, positiva y transparente.</sub>
+<sub>Essential technology, orchestrated to be optimized, positive and transparent.</sub>
 
 </div>
